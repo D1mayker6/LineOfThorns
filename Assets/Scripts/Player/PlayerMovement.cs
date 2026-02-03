@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _translationSpeed;
+    [SerializeField] private float _maxVelocity;
     [SerializeField] private float _forcePower;
     [SerializeField] private float _checkRadius;
     [SerializeField] private Transform _groundCheck;
@@ -19,6 +20,10 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+    }
+
+    private void Update()
+    {
         if(Input.GetKeyDown(KeyCode.Space))
             Jump();
     }
@@ -31,6 +36,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        _rb.AddForce(Vector2.right * (_translationSpeed * Time.fixedDeltaTime));
+        var move = Vector2.right * (_translationSpeed * Time.fixedDeltaTime);
+        /*_rb.linearVelocity = Vector2.right * (_translationSpeed);*/
+        /*_rb.AddForce(move);*/
+        /*_rb.MovePosition(_rb.position + move);*/
+        transform.Translate(move);
     }
+    
 }
