@@ -4,9 +4,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _translationSpeed = 0f;
-    [SerializeField] private float _forcePower = 10f;
-    [SerializeField] private float _checkRadius = 5f;
+    [SerializeField] private float _translationSpeed;
+    [SerializeField] private float _forcePower;
+    [SerializeField] private float _checkRadius;
     [SerializeField] private Transform _groundCheck;
     
     private Rigidbody2D _rb;
@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Move();
         if(Input.GetKeyDown(KeyCode.Space))
@@ -31,6 +31,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        transform.Translate(Vector2.right * (_translationSpeed * Time.deltaTime));
+        _rb.AddForce(Vector2.right * (_translationSpeed * Time.fixedDeltaTime));
     }
 }
