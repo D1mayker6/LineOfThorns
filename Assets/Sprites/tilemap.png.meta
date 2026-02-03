@@ -181,9 +181,9 @@ TextureImporter:
       name: tilemap_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 1
-        width: 125
+        width: 124
         height: 125
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -203,9 +203,9 @@ TextureImporter:
       name: tilemap_1
       rect:
         serializedVersion: 2
-        x: 125
+        x: 128
         y: 1
-        width: 125
+        width: 121
         height: 125
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -243,6 +243,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: tilemap_3
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 42
+        width: 125
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b40fb880503a62e49bce91dfb1cbef61
+      internalID: -711600220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -262,6 +284,7 @@ TextureImporter:
       tilemap_0: 8490642196906846815
       tilemap_1: -525137676
       tilemap_2: 10673982
+      tilemap_3: -711600220
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
