@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 83305924949051993}
   - component: {fileID: 3783131894655697476}
   - component: {fileID: 3588313862044684496}
+  - component: {fileID: 8283326798119877624}
   m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
@@ -137,3 +138,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.24, y: 1.24}
   m_EdgeRadius: 0
+--- !u!114 &8283326798119877624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2334718956105816644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f4b70c53f84e1545b76b761ee89057e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Cube

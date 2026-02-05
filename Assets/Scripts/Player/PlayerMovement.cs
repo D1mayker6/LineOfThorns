@@ -10,7 +10,9 @@ namespace Player
         [SerializeField] private float _maxVelocity;
         [SerializeField] private float _forcePower;
         [SerializeField] private float _checkRadius;
+        [SerializeField] private float _rayDuration;
         [SerializeField] private Transform _groundCheck;
+        [SerializeField] private Transform _collisionCheck;
 
         private Vector2 _startPos;
 
@@ -34,6 +36,10 @@ namespace Player
         {
             if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
                 Jump();
+            var ray = new Ray2D(_collisionCheck.position, _collisionCheck.right);
+            var hit = Physics2D.Raycast(ray.origin, ray.direction, _rayDuration);
+                if(hit.collider && hit.collider.TryGetComponent<Cube>(out var cube))
+                    OnPlayerDied?.Invoke();
         }
 
         private void Jump()
