@@ -384,7 +384,7 @@ Transform:
   m_GameObject: {fileID: 173642709}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.451, y: 0, z: 0}
+  m_LocalPosition: {x: 0.503, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1413,7 +1413,9 @@ MonoBehaviour:
   _maxVelocity: 0
   _forcePower: 10
   _checkRadius: 1
+  _rayDuration: 0.01
   _groundCheck: {fileID: 1767375150}
+  _collisionCheck: {fileID: 173642710}
 --- !u!50 &1478124884
 Rigidbody2D:
   serializedVersion: 5
