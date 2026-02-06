@@ -1,15 +1,24 @@
 using System;
 using Player;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace UI
 {
     public class AttemptsCounter : MonoBehaviour
     {
-        private int _attempts;
-    
-        public int Attempts => _attempts;
+        private int _attempts = 1;
+
+        public int Attempts
+        {
+            get => _attempts;
+            set
+            {
+                _attempts = value;
+                OnValueChanged?.Invoke();
+            }
+        }
+
+        public event Action OnValueChanged;
 
         [SerializeField] private PlayerMovement _player;
 
@@ -18,9 +27,9 @@ namespace UI
             _player.OnPlayerDied += AddAttempt;
         }
 
-        public void AddAttempt()
+        private void AddAttempt()
         {
-            _attempts++;
+            Attempts++;
         }
     }
 }
