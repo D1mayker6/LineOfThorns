@@ -50,6 +50,7 @@
     <Compile Include="Assets\Scripts\Environment\Cube.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Environment\Trap.cs" />
+    <Compile Include="Assets\Scripts\UI\AttemptsCounter.cs" />
     <Reference Include="UnityEngine">
       <HintPath>F:\unity\6000.2.7f2\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
