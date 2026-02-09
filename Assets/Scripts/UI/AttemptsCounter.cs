@@ -11,7 +11,7 @@ namespace UI
         public int Attempts
         {
             get => _attempts;
-            set
+            private set
             {
                 _attempts = value;
                 OnValueChanged?.Invoke();
