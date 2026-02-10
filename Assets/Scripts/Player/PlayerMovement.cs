@@ -7,6 +7,7 @@ namespace Player
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] private float _translationSpeed;
+        public float TranslationSpeed => _translationSpeed;
         [SerializeField] private float _maxVelocity;
         [SerializeField] private float _forcePower;
         [SerializeField] private float _checkRadius;

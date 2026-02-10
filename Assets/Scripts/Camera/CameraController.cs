@@ -7,9 +7,7 @@ namespace Camera
     public class CameraController : MonoBehaviour
     {
 
-        [SerializeField] private float _maxXDistance;
-        [SerializeField] private float _maxYDistance;
-        [SerializeField] private float _minYDistance;
+        private float _maxDistance;
         
         private UnityEngine.Camera _camera;
         private PlayerMovement _player;
@@ -25,6 +23,7 @@ namespace Camera
         private void Start()
         {
             _startPosition = gameObject.transform.position;
+            _maxDistance = _player.TranslationSpeed;
             _player.OnPlayerDied += RespawnCamera;
         }
 
@@ -32,11 +31,9 @@ namespace Camera
         {
             var playerPos = _player.transform.position;
             var cameraPos = UnityEngine.Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
-            Debug.Log($"player:{playerPos.y} and camera:{cameraPos.y} and distance: {Mathf.Abs(playerPos.y - cameraPos.y)}");
             var distanceX = Mathf.Abs(cameraPos.x - playerPos.x); 
-            if (distanceX >= _maxXDistance)
-                _camera.transform.position += Vector3.right * ((_maxXDistance) * Time.deltaTime);
-            /*Debug.Log(_camera.transform.position);*/
+            if (distanceX >= _maxDistance)
+                _camera.transform.position += Vector3.right * ((_maxDistance) * Time.deltaTime);
         }
 
         private void RespawnCamera()
