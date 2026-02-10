@@ -53,8 +53,6 @@
     <Compile Include="Assets\Scripts\Environment\Trap.cs" />
     <Compile Include="Assets\Scripts\UI\AttemptsCounter.cs" />
     <Compile Include="Assets\Scripts\UI\AttemptsView.cs" />
-    <None Include="Assets\Resources\PerformanceTestRunInfo.json" />
-    <None Include="Assets\Resources\PerformanceTestRunSettings.json" />
     <Reference Include="UnityEngine">
       <HintPath>F:\unity\6000.2.7f2\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
