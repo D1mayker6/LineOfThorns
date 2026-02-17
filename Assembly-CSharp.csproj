@@ -50,6 +50,7 @@
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
     <Compile Include="Assets\Scripts\Environment\Cube.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Triggers\TeleportRoom.cs" />
     <Compile Include="Assets\Scripts\Environment\Trap.cs" />
     <Compile Include="Assets\Scripts\UI\AttemptsCounter.cs" />
     <Compile Include="Assets\Scripts\Enums\Direction.cs" />
