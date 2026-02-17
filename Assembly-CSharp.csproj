@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Environment\Ground.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Tools\RoomManager.cs" />
     <Compile Include="Assets\Scripts\Environment\Cube.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Triggers\TeleportRoom.cs" />
