@@ -1,4 +1,6 @@
 using System;
+using Enums;
+using Triggers;
 using UnityEngine;
 
 namespace Player
@@ -9,6 +11,7 @@ namespace Player
         [SerializeField] private float _translationSpeed;
         public float TranslationSpeed => _translationSpeed;
         [SerializeField] private float _maxVelocity;
+        [SerializeField] private int _direction;
         [SerializeField] private float _forcePower;
         [SerializeField] private float _checkRadius;
         [SerializeField] private float _rayDuration;
@@ -17,9 +20,8 @@ namespace Player
 
         private Vector2 _startPos;
 
-        public event Action OnPlayerDied; 
-    
         private Rigidbody2D _rb;
+        public event Action OnPlayerDied;
 
         private void Start()
         {
@@ -51,20 +53,30 @@ namespace Player
 
         private void Move()
         {
-            var move = Vector2.right * (_translationSpeed * Time.fixedDeltaTime);
+            var move = Vector2.right * (_direction * _translationSpeed * Time.fixedDeltaTime);
             transform.Translate(move);
         }
 
         private void Respawn()
         {
+            ChangeDirection(Direction.Right);
             transform.position = _startPos;
             Debug.Log("Плеер  здох!");
         }
 
+        private void ChangeDirection(Direction direction)
+        {
+            var dir = (int)direction;
+            _direction = dir;
+            transform.localScale = new Vector2(dir, transform.localScale.y);
+        }
+        
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.TryGetComponent<Trap>(out var trap))
                 OnPlayerDied?.Invoke();
+            if(other.gameObject.TryGetComponent<DirectionChange>(out var dir))
+                ChangeDirection(dir.Direction);
         }
     }
 }
