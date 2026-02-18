@@ -1,16 +1,27 @@
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ScoreView : MonoBehaviour
+namespace UI
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class ScoreView : MonoBehaviour
     {
-        
-    }
+        private ScoreCounter _counter;
+        [SerializeField] private Text _text;
 
-    // Update is called once per frame
-    void Update()
-    {
+        private void Start()
+        {
+            _counter = GetComponentInChildren<ScoreCounter>();
+            _counter.OnScoreChanged += UpdateScoreView;
+            UpdateScoreView();
+        }
+
+        private void UpdateScoreView()
+        {
+            _text.text = _counter.Score.ToString();
+        }
+        
         
     }
+    
 }
