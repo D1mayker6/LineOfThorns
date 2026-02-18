@@ -50,10 +50,12 @@
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
     <Compile Include="Assets\Scripts\Tools\RoomManager.cs" />
     <Compile Include="Assets\Scripts\Environment\Cube.cs" />
+    <Compile Include="Assets\Scripts\UI\ScoreCounter.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Triggers\TeleportRoom.cs" />
     <Compile Include="Assets\Scripts\Environment\Trap.cs" />
     <Compile Include="Assets\Scripts\UI\AttemptsCounter.cs" />
+    <Compile Include="Assets\Scripts\UI\ScoreView.cs" />
     <Compile Include="Assets\Scripts\Enums\Direction.cs" />
     <Compile Include="Assets\Scripts\UI\AttemptsView.cs" />
     <Compile Include="Assets\Scripts\Triggers\DirectionChange.cs" />

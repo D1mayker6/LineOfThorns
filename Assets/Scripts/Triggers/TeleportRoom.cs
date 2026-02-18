@@ -20,6 +20,7 @@ namespace Triggers
                 _player = player;
                 RoomManager.Instance.AddRoom(transform.parent.position);
                 GoToNextRoom();
+                DeletePreviousRoom();
             }
         }
 
@@ -28,6 +29,12 @@ namespace Triggers
             var spawnpoint = FindSpawnpoint();
             _player.transform.position = spawnpoint.transform.position;
             UnityEngine.Camera.main.transform.position += Vector3.right * 30;
+        }
+
+        private void DeletePreviousRoom()
+        {
+            var pr = transform.parent.gameObject;
+            Destroy(pr);
         }
 
         private GameObject FindSpawnpoint()
