@@ -33,7 +33,6 @@ namespace UI
                 Score++;
                 _time = 0;
             }
-            Debug.Log(Score);
         }
     }
 }
