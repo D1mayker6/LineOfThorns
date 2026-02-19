@@ -46,6 +46,7 @@
     <Analyzer Include="F:\unity\6000.2.7f2\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\UI\MenuCanvas.cs" />
     <Compile Include="Assets\Scripts\Environment\Ground.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
     <Compile Include="Assets\Scripts\Tools\RoomManager.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="Assets\Scripts\UI\ScoreView.cs" />
     <Compile Include="Assets\Scripts\Enums\Direction.cs" />
     <Compile Include="Assets\Scripts\UI\AttemptsView.cs" />
+    <Compile Include="Assets\Scripts\UI\RetryCanvas.cs" />
     <Compile Include="Assets\Scripts\Triggers\DirectionChange.cs" />
     <Reference Include="UnityEngine">
       <HintPath>F:\unity\6000.2.7f2\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
