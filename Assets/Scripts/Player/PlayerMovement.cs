@@ -35,6 +35,11 @@ namespace Player
             OnPlayerDied += () => {gameObject.SetActive(false); };
         }
 
+        public void ChangeForcePower()
+        {
+            _forcePower *= -1;
+        }
+
         private void FixedUpdate()
         {
             Move();
@@ -64,24 +69,19 @@ namespace Player
 
         private void Respawn()
         {
-            ChangeDirection(Direction.Right);
             transform.position = _startPos;
             Debug.Log("Плеер  здох!");
         }
 
-        private void ChangeDirection(Direction direction)
+        public void SetDirection(int direction)
         {
-            var dir = (int)direction;
-            _direction = dir;
-            transform.localScale = new Vector2(dir, transform.localScale.y);
+            _direction = direction;
         }
         
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.TryGetComponent<Trap>(out var trap))
                 OnPlayerDied?.Invoke();
-            if(other.gameObject.TryGetComponent<DirectionChange>(out var dir))
-                ChangeDirection(dir.Direction);
             if(other.gameObject.TryGetComponent<TeleportRoom>(out var teleportRoom))
                 _roomManager.GoToNextLevel();
         }
