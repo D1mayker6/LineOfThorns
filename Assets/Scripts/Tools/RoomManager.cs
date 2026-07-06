@@ -1,34 +1,53 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Player;
+using UI;
 using UnityEngine;
+using Random = System.Random;
 
 namespace Tools
 {
     public class RoomManager: MonoBehaviour
     {
-        public static RoomManager Instance;
-
         [SerializeField] private List<GameObject> _roomPrefabs;
-        
-        private float _roomDistance = 30f;
-        
-        private void Awake()
-        {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(gameObject);
-                return;
-            }
+        private Stack<GameObject> _roomsHistory = new Stack<GameObject>();
+        private Vector3 _roomBasePosition;
+        private int _roomValue = 100;
+        [SerializeField] private ScoreCounter  _scoreCounter;
 
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+        public void GoToNextLevel()
+        {
+            AddRoom();
+            AddScore();
         }
 
-        
-        public void AddRoom(Vector3 position)
+        private void AddScore()
         {
-            var roomPos = position + (Vector3.right * _roomDistance);
-            var room = Instantiate(_roomPrefabs[0], roomPos, Quaternion.identity);
+            _scoreCounter.AddScore(_roomValue);
         }
+
+
+        private void AddRoom()
+        {
+            var room = Instantiate(RandomizeRoom());
+        }
+
+        private GameObject RandomizeRoom()
+        {
+            if (_roomsHistory.Count >= _roomPrefabs.Count)
+                _roomsHistory.Clear();
+
+
+            var availableRooms = _roomPrefabs.Where(r => !_roomsHistory.Contains(r)).ToList();
+
+            int randomIndex = UnityEngine.Random.Range(0, availableRooms.Count);
+            GameObject selectedRoom = availableRooms[randomIndex];
+
+            _roomsHistory.Push(selectedRoom);
+
+            return selectedRoom;
+        }
+        
     }
 }

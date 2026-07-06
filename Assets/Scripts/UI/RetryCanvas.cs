@@ -9,11 +9,16 @@ namespace UI
         [SerializeField] private Button _retryButton;
         [SerializeField] private Button _mainMenuButton;
         [SerializeField] private Text _scoreText;
-
+        public void Initialize(int score)
+        {
+            gameObject.SetActive(true);
+            _scoreText.text = "Score: " + score;
+        }
+        
         private void Start()
         {
             _mainMenuButton.onClick.AddListener(Menu);
-            _mainMenuButton.onClick.AddListener(Retry);
+            _retryButton.onClick.AddListener(Retry);
         }
 
         private void Menu()
@@ -23,7 +28,7 @@ namespace UI
 
         private void Retry()
         {
-            
+            SceneManager.LoadScene("Game");
         }
     }
 }

@@ -12,6 +12,8 @@ namespace UI
 
         private float _time;
 
+        private bool _isStopped;
+
         public int Score
         {
             get => _score;
@@ -27,12 +29,30 @@ namespace UI
 
         private void Update()
         {
-            _time += Time.deltaTime;
-            if (_time >= 0.1f)
+            if (!_isStopped)
             {
-                Score++;
-                _time = 0;
+                _time += Time.deltaTime;
+                if (_time >= 0.1f)
+                {
+                    Score++;
+                    _time = 0;
+                }
             }
+        }
+
+        public void StopCounter()
+        {
+            _isStopped = true;
+        }
+
+        public void ResumeCounter()
+        {
+            _isStopped = false;
+        }
+
+        public void AddScore(int value)
+        {
+            Score += value;
         }
     }
 }

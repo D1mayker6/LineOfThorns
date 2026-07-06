@@ -1,5 +1,6 @@
 using System;
 using Enums;
+using Tools;
 using Triggers;
 using UnityEngine;
 
@@ -12,22 +13,26 @@ namespace Player
         public float TranslationSpeed => _translationSpeed;
         [SerializeField] private float _maxVelocity;
         [SerializeField] private int _direction;
-        [SerializeField] private float _forcePower;
-        [SerializeField] private float _checkRadius;
         [SerializeField] private float _rayDuration;
+        [SerializeField] private float _checkRadius;
+        [SerializeField] private float _forcePower;
         [SerializeField] private Transform _groundCheck;
         [SerializeField] private Transform _collisionCheck;
+        
+        [SerializeField] private RoomManager _roomManager;
 
         private Vector2 _startPos;
 
         private Rigidbody2D _rb;
         public event Action OnPlayerDied;
+        
+        
 
         private void Start()
         {
             _rb = GetComponent<Rigidbody2D>();
             _startPos = transform.position;
-            OnPlayerDied += Respawn;
+            OnPlayerDied += () => {gameObject.SetActive(false); };
         }
 
         private void FixedUpdate()
@@ -77,6 +82,8 @@ namespace Player
                 OnPlayerDied?.Invoke();
             if(other.gameObject.TryGetComponent<DirectionChange>(out var dir))
                 ChangeDirection(dir.Direction);
+            if(other.gameObject.TryGetComponent<TeleportRoom>(out var teleportRoom))
+                _roomManager.GoToNextLevel();
         }
     }
 }

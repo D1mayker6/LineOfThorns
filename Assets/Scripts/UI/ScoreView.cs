@@ -20,6 +20,18 @@ namespace UI
         {
             _text.text = _counter.Score.ToString();
         }
+
+        public void StopCounterView()
+        {
+            _text.text = "";
+            _counter.StopCounter();
+        }
+
+        private void ResumeCounterView()
+        {
+            _text.text = _counter.Score.ToString();
+            _counter.ResumeCounter();
+        }
         
         
     }

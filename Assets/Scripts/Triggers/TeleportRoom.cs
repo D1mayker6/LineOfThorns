@@ -10,7 +10,6 @@ namespace Triggers
     {
 
         private PlayerMovement _player;
-        
         public GameObject[] spawnPoints;
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -18,7 +17,6 @@ namespace Triggers
             if (other.gameObject.TryGetComponent<PlayerMovement>(out var player))
             {
                 _player = player;
-                RoomManager.Instance.AddRoom(transform.parent.position);
                 GoToNextRoom();
                 DeletePreviousRoom();
             }
@@ -28,7 +26,6 @@ namespace Triggers
         {
             var spawnpoint = FindSpawnpoint();
             _player.transform.position = spawnpoint.transform.position;
-            UnityEngine.Camera.main.transform.position += Vector3.right * 30;
         }
 
         private void DeletePreviousRoom()
