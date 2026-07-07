@@ -10,7 +10,17 @@ namespace Player
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] private float _translationSpeed;
-        public float TranslationSpeed => _translationSpeed;
+
+        public float TranslationSpeed
+        {
+            get => _translationSpeed;
+            set
+            {
+                if (value <= 0)
+                    return;
+                _translationSpeed = value;
+            }
+        }
         [SerializeField] private float _maxVelocity;
         [SerializeField] private int _direction;
         [SerializeField] private float _rayDuration;
@@ -22,7 +32,7 @@ namespace Player
         [SerializeField] private RoomManager _roomManager;
 
         private Vector2 _startPos;
-
+        
         private Rigidbody2D _rb;
         public event Action OnPlayerDied;
         
@@ -35,7 +45,7 @@ namespace Player
             OnPlayerDied += () => {gameObject.SetActive(false); };
         }
 
-        public void ChangeForcePower()
+        public void ReverseForcePower()
         {
             _forcePower *= -1;
         }
@@ -47,7 +57,8 @@ namespace Player
 
         private void Update()
         {
-            if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            if(Input.GetMouseButtonDown(0) || Input.GetMouseButton(0) ||
+               Input.touches.Length > 0)
                 Jump();
             var ray = new Ray2D(_collisionCheck.position, _collisionCheck.right);
             var hit = Physics2D.Raycast(ray.origin, ray.direction, _rayDuration);
@@ -56,9 +67,13 @@ namespace Player
         }
 
         private void Jump()
-        {   
-            if(Physics2D.OverlapCircle(_groundCheck.position, _checkRadius, 1 << LayerMask.NameToLayer("Ground")))
+        {
+            var overlap = Physics2D.OverlapCircle(_groundCheck.position, _checkRadius,
+                1 << LayerMask.NameToLayer("Ground"));
+            if (overlap && _rb.linearVelocityY < 11f)
+            {
                 _rb.AddForce(Vector2.up * _forcePower, ForceMode2D.Impulse);
+            }
         }
 
         private void Move()
