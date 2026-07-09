@@ -11,6 +11,7 @@ namespace UI
         [SerializeField] private Button _playButton;
         [SerializeField] private GameObject _cinematicTexture;
         [SerializeField] private GameObject _mainMenuPanel;
+        [SerializeField] private VideoClip _menuClip;
         
         private VideoPlayer _videoPlayer;
 
@@ -18,14 +19,16 @@ namespace UI
         {
             _mainMenuPanel.SetActive(false);
             _videoPlayer = _cinematicTexture.GetComponentInChildren<VideoPlayer>();
-            _videoPlayer.Play();
             _videoPlayer.loopPointReached += VideoPlayerOnloopPointReached;
             _playButton.onClick.AddListener(Play);
+            _videoPlayer.Play();
         }
 
         private void VideoPlayerOnloopPointReached(VideoPlayer source)
         {
-            _cinematicTexture.gameObject.SetActive(false);
+            _videoPlayer.clip = _menuClip;
+            _videoPlayer.isLooping = true;
+            _videoPlayer.Play();
             _mainMenuPanel.SetActive(true);
         }
 
