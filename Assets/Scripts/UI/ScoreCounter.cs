@@ -8,7 +8,7 @@ namespace UI
     {
         [SerializeField] private PlayerMovement _playerMovement;
 
-        private int _score;
+        [SerializeField] private int _score;
 
         private float _time;
 
@@ -26,6 +26,8 @@ namespace UI
         
         public event Action OnScoreChanged;
 
+        public event Action OnDiffReached;
+
 
         private void Update()
         {
@@ -38,6 +40,10 @@ namespace UI
                     _time = 0;
                 }
             }
+
+            if (Score % 1000 == 0)
+                OnScoreChanged?.Invoke();    
+            
         }
 
         public void StopCounter()

@@ -2,6 +2,7 @@ using System;
 using Enums;
 using Tools;
 using Triggers;
+using UI;
 using UnityEngine;
 
 namespace Player
@@ -10,7 +11,23 @@ namespace Player
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] private float _translationSpeed;
+        [SerializeField] private float _maxVelocity;
+        [SerializeField] private int _direction;
+        [SerializeField] private float _rayDuration;
+        [SerializeField] private float _checkRadius;
+        [SerializeField] private float _forcePower;
+        [SerializeField] private Transform _groundCheck;
+        [SerializeField] private Transform _collisionCheck;
+        [SerializeField] private float _speedMultiple;
+        
+        [SerializeField] private RoomManager _roomManager;
+        [SerializeField] private ScoreCounter _scoreCounter;
 
+        private Vector2 _startPos;
+        
+        private Rigidbody2D _rb;
+        public event Action OnPlayerDied;
+        
         public float TranslationSpeed
         {
             get => _translationSpeed;
@@ -21,20 +38,6 @@ namespace Player
                 _translationSpeed = value;
             }
         }
-        [SerializeField] private float _maxVelocity;
-        [SerializeField] private int _direction;
-        [SerializeField] private float _rayDuration;
-        [SerializeField] private float _checkRadius;
-        [SerializeField] private float _forcePower;
-        [SerializeField] private Transform _groundCheck;
-        [SerializeField] private Transform _collisionCheck;
-        
-        [SerializeField] private RoomManager _roomManager;
-
-        private Vector2 _startPos;
-        
-        private Rigidbody2D _rb;
-        public event Action OnPlayerDied;
         
         
 
@@ -43,6 +46,7 @@ namespace Player
             _rb = GetComponent<Rigidbody2D>();
             _startPos = transform.position;
             OnPlayerDied += () => {gameObject.SetActive(false); };
+            _scoreCounter.OnDiffReached += DiffIncrease;
         }
 
         public void ReverseForcePower(int direction)
@@ -55,6 +59,11 @@ namespace Player
             Move();
         }
 
+        private void DiffIncrease()
+        {
+            _translationSpeed += _speedMultiple;
+        }
+
         private void Update()
         {
             if(Input.GetMouseButtonDown(0) || Input.GetMouseButton(0) ||
@@ -64,6 +73,7 @@ namespace Player
             var hit = Physics2D.Raycast(ray.origin, ray.direction, _rayDuration);
                 if(hit.collider && hit.collider.TryGetComponent<Cube>(out var cube))
                     OnPlayerDied?.Invoke();
+                
         }
 
         private void Jump()
