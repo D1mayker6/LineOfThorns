@@ -12,6 +12,8 @@ namespace UI
 
         private float _time;
 
+        private int _currentDiff = 0;
+
         private bool _isStopped;
 
         public int Score
@@ -40,9 +42,14 @@ namespace UI
                     _time = 0;
                 }
             }
+            Debug.Log(_currentDiff);
+            var diffLvl = Score / 1000;
 
-            if (Score % 1000 == 0)
-                OnScoreChanged?.Invoke();    
+            if (diffLvl > _currentDiff)
+            {
+                OnDiffReached?.Invoke();    
+                _currentDiff++;
+            }
             
         }
 
