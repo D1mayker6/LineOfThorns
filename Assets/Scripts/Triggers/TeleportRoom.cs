@@ -10,8 +10,7 @@ namespace Triggers
     {
 
         private PlayerMovement _player;
-        public GameObject[] spawnPoints;
-
+        private GameObject _spawnpoint;
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.TryGetComponent<PlayerMovement>(out var player))
@@ -30,18 +29,15 @@ namespace Triggers
 
         private void DeletePreviousRoom()
         {
-            var pr = transform.parent.gameObject;
+            var pr = transform.root.gameObject;
             Destroy(pr);
         }
 
         private GameObject FindSpawnpoint()
         {
-            var spawnpoints = GameObject.FindGameObjectsWithTag("Spawnpoint");
-            spawnpoints = spawnpoints
-                .OrderByDescending(x => x.transform.position.x)
-                .ToArray();
-            spawnPoints = spawnpoints;
-            return spawnpoints[0];
+            var spawnpoint = GameObject.FindGameObjectWithTag("Spawnpoint");
+            return spawnpoint;
         }
+        
     }
 }

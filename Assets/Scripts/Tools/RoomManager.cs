@@ -11,7 +11,7 @@ namespace Tools
     public class RoomManager: MonoBehaviour
     {
         [SerializeField] private List<GameObject> _roomPrefabs;
-        private Stack<GameObject> _roomsHistory = new Stack<GameObject>();
+        private Stack<GameObject> _roomsHistory = new();
         private Vector3 _roomBasePosition;
         private int _roomValue = 100;
         [SerializeField] private ScoreCounter  _scoreCounter;

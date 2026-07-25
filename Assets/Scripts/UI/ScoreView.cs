@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ namespace UI
     public class ScoreView : MonoBehaviour
     {
         private ScoreCounter _counter;
-        [SerializeField] private Text _text;
+        [SerializeField] private TextMeshProUGUI _text;
 
         private void Start()
         {
