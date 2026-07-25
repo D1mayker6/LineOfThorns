@@ -1,8 +1,6 @@
-using System;
 using Enums;
 using Player;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace Triggers
 {
@@ -22,7 +20,8 @@ namespace Triggers
         {
             var dir = (int)_direction;
             playerMovement.SetDirection(dir);
-            playerMovement.transform.localScale = new Vector2(dir, transform.localScale.y);
+            var pos = new Vector3(playerMovement.transform.localScale.x * dir,playerMovement.transform.localScale.y,playerMovement.transform.localScale.z);
+            playerMovement.transform.localScale = pos;
         }
     }
 }

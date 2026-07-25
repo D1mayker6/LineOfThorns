@@ -70,7 +70,7 @@ namespace Player
         {
             var overlap = Physics2D.OverlapCircle(_groundCheck.position, _checkRadius,
                 1 << LayerMask.NameToLayer("Ground"));
-            if (overlap && _rb.linearVelocityY < 11f)
+            if (overlap && Mathf.Abs( _rb.linearVelocityY) < Mathf.Abs(_forcePower))
             {
                 _rb.AddForce(Vector2.up * _forcePower, ForceMode2D.Impulse);
             }
