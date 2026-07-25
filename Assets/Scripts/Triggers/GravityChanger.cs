@@ -1,9 +1,13 @@
 using System;
+using Enums;
 using Player;
 using UnityEngine;
 
 public class GravityChanger : MonoBehaviour
 {
+    
+    [SerializeField] private GravityValue _gravityValue;
+    [SerializeField] private float _impulse = 200f;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.TryGetComponent<PlayerMovement>(out var playerMovement))
@@ -16,9 +20,12 @@ public class GravityChanger : MonoBehaviour
     {
         
         var rb = playerMovement.GetComponent<Rigidbody2D>();
-        rb.gravityScale = -3;
-        rb.AddForceY(200,ForceMode2D.Impulse);
-        playerMovement.ReverseForcePower();
+        var intGravityValue = (int)_gravityValue;
+        rb.gravityScale = Mathf.Abs(rb.gravityScale) * intGravityValue;
+        if(_gravityValue == GravityValue.Down)
+            _impulse *= -1f;
+        rb.AddForceY(_impulse,ForceMode2D.Impulse);
+        playerMovement.ReverseForcePower(intGravityValue);
 
     }
 }

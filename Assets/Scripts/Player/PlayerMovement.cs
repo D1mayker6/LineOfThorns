@@ -45,7 +45,7 @@ namespace Player
             OnPlayerDied += () => {gameObject.SetActive(false); };
         }
 
-        public void ReverseForcePower()
+        public void ReverseForcePower(int direction)
         {
             _forcePower *= -1;
         }
