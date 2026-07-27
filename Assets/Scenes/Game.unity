@@ -555,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eff183802d44ea448e0c524ef382c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  _translationSpeed: 8
+  _translationSpeed: 32
   _maxVelocity: 0
   _direction: 1
   _rayDuration: 0.1
@@ -563,7 +563,7 @@ MonoBehaviour:
   _forcePower: 14
   _groundCheck: {fileID: 1767375150}
   _collisionCheck: {fileID: 173642710}
-  _speedMultiple: 0
+  _speedMultiple: 4
   _roomManager: {fileID: 368679986}
   _scoreCounter: {fileID: 1753602192}
 --- !u!50 &1478124884
@@ -581,7 +581,7 @@ Rigidbody2D:
   m_Mass: 0.9
   m_LinearDamping: 0
   m_AngularDamping: 0
-  m_GravityScale: 3.5
+  m_GravityScale: 6
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -956,6 +956,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5302007420269602061, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.11765562
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302007420269602061, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.8671624
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302007420269602061, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.11765562
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302007420269602061, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.8671624
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302007420269602061, guid: d3b628452ec523d47804779c87456959, type: 3}
       propertyPath: m_SizeDelta.x
       value: 326.8223
       objectReference: {fileID: 0}
@@ -965,15 +981,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5302007420269602061, guid: d3b628452ec523d47804779c87456959, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -973
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 5302007420269602061, guid: d3b628452ec523d47804779c87456959, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 423
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 6574191712473146767, guid: d3b628452ec523d47804779c87456959, type: 3}
       propertyPath: _score
-      value: 900
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6574191712473146767, guid: d3b628452ec523d47804779c87456959, type: 3}
       propertyPath: _playerMovement
