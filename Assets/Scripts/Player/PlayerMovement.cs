@@ -4,6 +4,7 @@ using Tools;
 using Triggers;
 using UI;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 namespace Player
 {
@@ -29,6 +30,8 @@ namespace Player
         [SerializeField] private Animator _animator;
         public event Action OnPlayerDied;
         
+        private bool _isGrounded;
+        
         public float TranslationSpeed
         {
             get => _translationSpeed;
@@ -53,12 +56,7 @@ namespace Player
         {
             _forcePower *= -1;
         }
-
-        private void FixedUpdate()
-        {
-            Move();
-        }
-
+        
         private void DiffIncrease()
         {
             _translationSpeed += _speedMultiple;
@@ -66,37 +64,45 @@ namespace Player
 
         private void Update()
         {
-            if(Input.GetMouseButtonDown(0) || Input.GetMouseButton(0) ||
-               Input.touches.Length > 0)
+            if (Input.GetMouseButton(0) || Input.touches.Length > 0)
                 Jump();
-            var ray = new Ray2D(_collisionCheck.position, _collisionCheck.right);
-            var hit = Physics2D.Raycast(ray.origin, ray.direction, _rayDuration);
-                if(hit.collider && hit.collider.TryGetComponent<Cube>(out var cube))
-                    OnPlayerDied?.Invoke();
-                
+            
+            _isGrounded = Physics2D.OverlapCircle(_groundCheck.position, _checkRadius, 
+                1 << LayerMask.NameToLayer("Ground"));
+            float relativeVelocity = _rb.linearVelocityY * Mathf.Sign(_rb.gravityScale);
+    
+            _animator.SetFloat("velocityY", relativeVelocity);
+            _animator.SetBool("isGrounded", _isGrounded);
         }
+        
+        private void FixedUpdate()
+        {
+            Move();
+            CheckDeath();
+        }
+
 
         private void Jump()
         {
             var overlap = Physics2D.OverlapCircle(_groundCheck.position, _checkRadius,
                 1 << LayerMask.NameToLayer("Ground"));
-            if (overlap && Mathf.Abs( _rb.linearVelocityY) < Mathf.Abs(_forcePower))
+            if (overlap && Mathf.Abs(_rb.linearVelocityY) < Mathf.Abs(_forcePower))
             {
                 _rb.AddForce(Vector2.up * _forcePower, ForceMode2D.Impulse);
-                _animator.SetTrigger("Jump");
             }
+        }
+
+        private void CheckDeath()
+        {
+            var hit = Physics2D.Raycast(_collisionCheck.position, _collisionCheck.right, _rayDuration);
+            if(hit.collider != null)
+                OnPlayerDied?.Invoke();
         }
 
         private void Move()
         {
             var move = Vector2.right * (_direction * _translationSpeed * Time.fixedDeltaTime);
             transform.Translate(move);
-        }
-
-        private void Respawn()
-        {
-            transform.position = _startPos;
-            Debug.Log("Плеер  здох!");
         }
 
         public void SetDirection(int direction)
