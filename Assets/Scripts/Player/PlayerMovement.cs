@@ -25,7 +25,8 @@ namespace Player
 
         private Vector2 _startPos;
         
-        private Rigidbody2D _rb;
+        [SerializeField] private Rigidbody2D _rb;
+        [SerializeField] private Animator _animator;
         public event Action OnPlayerDied;
         
         public float TranslationSpeed
@@ -43,7 +44,6 @@ namespace Player
 
         private void Start()
         {
-            _rb = GetComponent<Rigidbody2D>();
             _startPos = transform.position;
             OnPlayerDied += () => {gameObject.SetActive(false); };
             _scoreCounter.OnDiffReached += DiffIncrease;
@@ -83,6 +83,7 @@ namespace Player
             if (overlap && Mathf.Abs( _rb.linearVelocityY) < Mathf.Abs(_forcePower))
             {
                 _rb.AddForce(Vector2.up * _forcePower, ForceMode2D.Impulse);
+                _animator.SetTrigger("Jump");
             }
         }
 

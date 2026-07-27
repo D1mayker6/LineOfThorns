@@ -2037,7 +2037,7 @@ MonoBehaviour:
   _cinematicTexture: {fileID: 1244052865}
   _mainMenuPanel: {fileID: 962630456}
   _menuClip: {fileID: 32900000, guid: dd0e59a7b32ef8e48ac0e6d133dfa333, type: 3}
-  _loadingScreen: {fileID: 0}
+  _loadingScreen: {fileID: 3820814575428460029, guid: ccec636c8bf545b4aa1e0f4494b44026, type: 3}
 --- !u!114 &2117616851
 MonoBehaviour:
   m_ObjectHideFlags: 0
