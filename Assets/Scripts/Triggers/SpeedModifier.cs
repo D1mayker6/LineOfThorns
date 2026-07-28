@@ -1,11 +1,13 @@
+using Enums;
 using Player;
 using UnityEngine;
 
 namespace Triggers
 {
-    public class SpeedUp : MonoBehaviour
+    public class SpeedModifier : MonoBehaviour
     {
-        private float _modifier = 2f;
+        [SerializeField] private float _modifier = 2f;
+        [SerializeField] private Speed _speed;
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.TryGetComponent<PlayerMovement>(out var playerMovement))
@@ -16,7 +18,10 @@ namespace Triggers
 
         private void SpeedChangeUp(PlayerMovement playerMovement)
         {
-            playerMovement.TranslationSpeed *= _modifier;
+            if(_speed == Speed.Speed)
+                playerMovement.TranslationSpeed *= _modifier;
+            else
+                playerMovement.TranslationSpeed /= _modifier;
         }
     }
 }
