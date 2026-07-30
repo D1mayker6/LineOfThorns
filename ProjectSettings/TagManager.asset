@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spawnpoint
   - Teleport
+  - Trap
   layers:
   - Default
   - TransparentFX

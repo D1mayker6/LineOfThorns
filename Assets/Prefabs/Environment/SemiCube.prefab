@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2099374388679437659}
   - component: {fileID: 3257104056715088293}
   - component: {fileID: 8547561823514333452}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SemiCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

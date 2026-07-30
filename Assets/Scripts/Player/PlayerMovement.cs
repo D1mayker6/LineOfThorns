@@ -28,6 +28,8 @@ namespace Player
         
         [SerializeField] private Rigidbody2D _rb;
         [SerializeField] private Animator _animator;
+        
+        [SerializeField] private LayerMask _mask;
         public event Action OnPlayerDied;
         
         private bool _isGrounded;
@@ -94,7 +96,7 @@ namespace Player
 
         private void CheckDeath()
         {
-            var hit = Physics2D.Raycast(_collisionCheck.position, _collisionCheck.right, _rayDuration);
+            var hit = Physics2D.Raycast(_collisionCheck.position, _collisionCheck.right, _rayDuration, _mask);
             if(hit.collider != null)
                 OnPlayerDied?.Invoke();
         }
@@ -112,9 +114,9 @@ namespace Player
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.TryGetComponent<Trap>(out var trap))
+            if (other.gameObject.CompareTag("Trap"))
                 OnPlayerDied?.Invoke();
-            if(other.gameObject.TryGetComponent<TeleportRoom>(out var teleportRoom))
+            if(other.gameObject.CompareTag("Teleport"))
                 _roomManager.GoToNextLevel();
         }
     }
