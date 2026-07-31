@@ -12,7 +12,6 @@ namespace UI
         [SerializeField] private TextMeshProUGUI _scoreText;
         public void Initialize(int score)
         {
-            gameObject.SetActive(true);
             _scoreText.text = "Score: " + score;
         }
         

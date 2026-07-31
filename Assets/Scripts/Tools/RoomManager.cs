@@ -19,10 +19,10 @@ namespace Tools
         public void GoToNextLevel()
         {
             AddRoom();
-            AddScore();
+            AddScoreForRoom();
         }
 
-        private void AddScore()
+        private void AddScoreForRoom()
         {
             _scoreCounter.AddScore(_roomValue);
         }

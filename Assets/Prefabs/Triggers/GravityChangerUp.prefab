@@ -99,8 +99,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6900161646039679980}
-  - component: {fileID: 599929818433804177}
   - component: {fileID: 613908733604188002}
+  - component: {fileID: 599929818433804177}
   - component: {fileID: 3480295226642210438}
   m_Layer: 0
   m_Name: GravityChangerUp
@@ -125,6 +125,20 @@ Transform:
   - {fileID: 7421297481970321097}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &613908733604188002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8936583503751837991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b14521a0a949d48995414c827b2802, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GravityChanger
+  _gravityValue: -1
+  _impulse: 200
 --- !u!58 &599929818433804177
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -161,20 +175,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &613908733604188002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8936583503751837991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54b14521a0a949d48995414c827b2802, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GravityChanger
-  _gravityValue: -1
-  _impulse: 200
 --- !u!95 &3480295226642210438
 Animator:
   serializedVersion: 7

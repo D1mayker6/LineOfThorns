@@ -586,9 +586,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb1f2acb334bd849b8a965a2e674863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.RetryCanvas
-  _retryButton: {fileID: 0}
-  _mainMenuButton: {fileID: 0}
-  _scoreText: {fileID: 0}
+  _retryButton: {fileID: 537032286252193488}
+  _mainMenuButton: {fileID: 7615884052987202924}
+  _scoreText: {fileID: 7822615276236903833}
 --- !u!1 &6366972297965676595
 GameObject:
   m_ObjectHideFlags: 0

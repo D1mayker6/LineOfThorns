@@ -6,8 +6,6 @@ namespace UI
 {
     public class ScoreCounter : MonoBehaviour
     {
-        [SerializeField] private PlayerMovement _playerMovement;
-
         [SerializeField] private int _score;
 
         private float _time;
