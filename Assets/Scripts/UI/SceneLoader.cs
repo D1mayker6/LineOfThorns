@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 namespace UI
 {
     public class SceneLoader : MonoBehaviour {
-        private static readonly int Start = Animator.StringToHash("start");
         private static readonly int End = Animator.StringToHash("end");
 
         private int _scene;
@@ -21,7 +20,6 @@ namespace UI
 
         IEnumerator LoadNewSceneAsync()
         {
-            _animator.SetTrigger(Start);
             yield return new WaitForSeconds(1f);
             
 

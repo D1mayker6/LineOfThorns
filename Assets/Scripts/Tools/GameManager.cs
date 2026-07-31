@@ -23,17 +23,16 @@ namespace Tools
         {
             var timer = Instantiate(_respawnTimerPrefab.gameObject);
             timer.GetComponent<RespawnTimer>().OnTimerEnded += RestartGame;
+            _scoreCounter = _scoreView.GetComponentInChildren<ScoreCounter>();
+            _scoreView.StopCounterView();
         }
 
         void RestartGame()
         {
             Debug.Log("Restarting game");   
             var retryCanvas = Instantiate(_retryCanvasPrefab);
-            _scoreCounter = _scoreView.GetComponentInChildren<ScoreCounter>();
             var score = _scoreCounter.Score;
             retryCanvas.GetComponent<RetryCanvas>().Initialize(score);
-            _scoreView.StopCounterView();
-
         }
 
     }

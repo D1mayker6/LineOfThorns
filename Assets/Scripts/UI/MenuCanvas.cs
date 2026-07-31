@@ -19,7 +19,7 @@ namespace UI
         [SerializeField] private GameObject _mainMenuPanel;
         [SerializeField] private VideoClip _menuClip;
 
-        [SerializeField] private GameObject _loadingScreen;
+        [SerializeField] private GameObject _sceneLoaderPrefab;
         
         private VideoPlayer _videoPlayer;
 
@@ -48,7 +48,7 @@ namespace UI
 
         private void Play()
         {
-            var loader = Instantiate(_loadingScreen);
+            var loader = Instantiate(_sceneLoaderPrefab);
             loader.GetComponent<SceneLoader>().LoadNewScene(1);
         }
         
