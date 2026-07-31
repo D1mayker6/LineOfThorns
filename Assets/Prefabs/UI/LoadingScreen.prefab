@@ -393,10 +393,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8985585192086410233}
+  - component: {fileID: 8764230145383079381}
   - component: {fileID: 7406099140715210109}
   - component: {fileID: 54381952240529954}
   - component: {fileID: 3035077841768699652}
-  - component: {fileID: 8764230145383079381}
   - component: {fileID: 6565349314717829242}
   m_Layer: 5
   m_Name: LoadingScreen
@@ -426,6 +426,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &8764230145383079381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3820814575428460029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e859a907f8f34a4e8bb7ca3a99b36a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
+  _animator: {fileID: 6565349314717829242}
 --- !u!223 &7406099140715210109
 Canvas:
   m_ObjectHideFlags: 0
@@ -489,19 +502,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8764230145383079381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3820814575428460029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e859a907f8f34a4e8bb7ca3a99b36a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
-  _animator: {fileID: 6565349314717829242}
 --- !u!95 &6565349314717829242
 Animator:
   serializedVersion: 7

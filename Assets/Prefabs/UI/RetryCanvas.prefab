@@ -665,7 +665,7 @@ MonoBehaviour:
   _retryButton: {fileID: 537032286252193488}
   _mainMenuButton: {fileID: 7615884052987202924}
   _scoreText: {fileID: 7822615276236903833}
-  _sceneLoaderPrefab: {fileID: 3820814575428460029, guid: ccec636c8bf545b4aa1e0f4494b44026, type: 3}
+  _sceneLoaderPrefab: {fileID: 8764230145383079381, guid: ccec636c8bf545b4aa1e0f4494b44026, type: 3}
 --- !u!1 &6366972297965676595
 GameObject:
   m_ObjectHideFlags: 0

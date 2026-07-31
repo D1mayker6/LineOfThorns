@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Player;
 using UI;
 using UnityEngine;
@@ -9,30 +10,36 @@ namespace Tools
     {
     
         [SerializeField] private PlayerMovement  _playerMovement;
-        [SerializeField] private GameObject _retryCanvasPrefab;
+        [SerializeField] private RetryCanvas _retryCanvasPrefab;
         [SerializeField] private ScoreView _scoreView;
-        [SerializeField] private GameObject _respawnTimerPrefab;
-        private ScoreCounter _scoreCounter;
+        [SerializeField] private RespawnTimer _respawnTimerPrefab;
+        [SerializeField] private ScoreCounter _scoreCounter;
 
         void Start()
         {
             _playerMovement.OnPlayerDied += RespawnTimer;
+            _scoreCounter = _scoreView.GetComponentInChildren<ScoreCounter>();
+
         }
 
         private void RespawnTimer()
         {
-            var timer = Instantiate(_respawnTimerPrefab.gameObject);
-            timer.GetComponent<RespawnTimer>().OnTimerEnded += RestartGame;
-            _scoreCounter = _scoreView.GetComponentInChildren<ScoreCounter>();
+            StartCoroutine(RespawnTimerCoroutine());
+        }
+
+        IEnumerator RespawnTimerCoroutine()
+        {
             _scoreView.StopCounterView();
+            yield return new WaitForSeconds(2);
+            var timer = Instantiate(_respawnTimerPrefab);
+            timer.OnTimerEnded += RestartGame;
         }
 
         void RestartGame()
         {
-            Debug.Log("Restarting game");   
             var retryCanvas = Instantiate(_retryCanvasPrefab);
             var score = _scoreCounter.Score;
-            retryCanvas.GetComponent<RetryCanvas>().Initialize(score);
+            retryCanvas.Initialize(score);
         }
 
     }

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 namespace UI
 {
     public class SceneLoader : MonoBehaviour {
-        private static readonly int End = Animator.StringToHash("end");
+        private readonly int End = Animator.StringToHash("end");
 
         private int _scene;
         [SerializeField] private Animator _animator;

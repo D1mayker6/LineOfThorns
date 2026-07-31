@@ -10,7 +10,7 @@ namespace UI
         [SerializeField] private Button _retryButton;
         [SerializeField] private Button _mainMenuButton;
         [SerializeField] private TextMeshProUGUI _scoreText;
-        [SerializeField] private GameObject _sceneLoaderPrefab;
+        [SerializeField] private SceneLoader _sceneLoaderPrefab;
         public void Initialize(int score)
         {
             _scoreText.text = "Score: " + score;
@@ -25,13 +25,13 @@ namespace UI
         private void Menu()
         {
             var loader = Instantiate(_sceneLoaderPrefab);
-            loader.GetComponent<SceneLoader>().LoadNewScene(0);
+            loader.LoadNewScene(0);
         }
 
         private void Retry()
         {
             var loader = Instantiate(_sceneLoaderPrefab);
-            loader.GetComponent<SceneLoader>().LoadNewScene(1);
+            loader.LoadNewScene(1);
         }
     }
 }

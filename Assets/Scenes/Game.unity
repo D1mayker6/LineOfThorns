@@ -487,9 +487,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   _playerMovement: {fileID: 1478124883}
-  _retryCanvasPrefab: {fileID: 6197377281967193503, guid: 44c90e4b18f3ae446921314bf3febb2e, type: 3}
+  _retryCanvasPrefab: {fileID: 6369370860313447139, guid: 44c90e4b18f3ae446921314bf3febb2e, type: 3}
   _scoreView: {fileID: 447410326}
-  _respawnTimerPrefab: {fileID: 2487837431425681437, guid: 951ccddb9192b4b4293891908263a35e, type: 3}
+  _respawnTimerPrefab: {fileID: 14292194841401722, guid: 951ccddb9192b4b4293891908263a35e, type: 3}
 --- !u!4 &544231728
 Transform:
   m_ObjectHideFlags: 0

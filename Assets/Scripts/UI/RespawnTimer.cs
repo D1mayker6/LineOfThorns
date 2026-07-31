@@ -20,7 +20,7 @@ namespace UI
 
         private void Start()
         {
-            _timerValue = 2;
+            _timerValue = 3;
             _animator.SetFloat("timer", _timerValue);
         }
 
