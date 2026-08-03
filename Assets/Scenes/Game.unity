@@ -490,6 +490,7 @@ MonoBehaviour:
   _retryCanvasPrefab: {fileID: 6369370860313447139, guid: 44c90e4b18f3ae446921314bf3febb2e, type: 3}
   _scoreView: {fileID: 447410326}
   _respawnTimerPrefab: {fileID: 14292194841401722, guid: 951ccddb9192b4b4293891908263a35e, type: 3}
+  _scoreCounter: {fileID: 0}
 --- !u!4 &544231728
 Transform:
   m_ObjectHideFlags: 0
@@ -1351,7 +1352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6574191712473146767, guid: d3b628452ec523d47804779c87456959, type: 3}
       propertyPath: _score
-      value: 0
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6574191712473146767, guid: d3b628452ec523d47804779c87456959, type: 3}
       propertyPath: _playerMovement
