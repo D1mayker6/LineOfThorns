@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GravityChanger
   _gravityValue: 1
+  _particlePrefab: {fileID: 8694926315615174292, guid: e4f285ac4c4916b4aab5f0101fe17901, type: 3}
   _impulse: 200
 --- !u!58 &1489887568932768480
 CircleCollider2D:

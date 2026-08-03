@@ -20,9 +20,6 @@ namespace Tools
         void Start()
         {
             _playerMovement.OnPlayerDied += DeathPlayer;
-            /*
-            _playerMovement.OnPlayerDied += TryRespawnTimer;
-            */
             _scoreCounter = _scoreView.GetComponentInChildren<ScoreCounter>();
 
         }
