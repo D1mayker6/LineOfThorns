@@ -21,8 +21,6 @@ namespace Player
         [SerializeField] private Transform _groundCheck;
         [SerializeField] private Transform _collisionCheck;
         [SerializeField] private float _speedMultiple;
-        [SerializeField] private GameObject _deathParticlePrefab;
-        
         [SerializeField] private RoomManager _roomManager;
         [SerializeField] private ScoreCounter _scoreCounter;
 
@@ -99,16 +97,8 @@ namespace Player
         {
             var hit = Physics2D.Raycast(_collisionCheck.position, _collisionCheck.right, _rayDuration, _mask);
             if (hit.collider != null)
-                StartCoroutine(InvokeDeath());
-        }
+                OnPlayerDied?.Invoke();
 
-        IEnumerator InvokeDeath()
-        {
-            _translationSpeed = 0;
-            gameObject.SetActive(false);
-            Instantiate(_deathParticlePrefab, transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(2);
-            OnPlayerDied?.Invoke();
         }
 
         private void Move()
@@ -125,7 +115,7 @@ namespace Player
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.CompareTag("Trap"))
-                StartCoroutine(InvokeDeath());
+                OnPlayerDied?.Invoke();
             if(other.gameObject.CompareTag("Teleport"))
                 _roomManager.GoToNextLevel();
         }

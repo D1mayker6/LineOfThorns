@@ -13,13 +13,28 @@ namespace Tools
         [SerializeField] private RetryCanvas _retryCanvasPrefab;
         [SerializeField] private ScoreView _scoreView;
         [SerializeField] private RespawnTimer _respawnTimerPrefab;
-        [SerializeField] private ScoreCounter _scoreCounter;
+        [SerializeField] private GameObject _deathPlayerParticlePrefab;
+
+        private ScoreCounter _scoreCounter;
 
         void Start()
         {
+            _playerMovement.OnPlayerDied += DeathPlayer;
+            /*
             _playerMovement.OnPlayerDied += TryRespawnTimer;
+            */
             _scoreCounter = _scoreView.GetComponentInChildren<ScoreCounter>();
 
+        }
+
+        private void DeathPlayer() => StartCoroutine(DeathPlayerCoroutine());
+
+        private IEnumerator DeathPlayerCoroutine()
+        {
+            _playerMovement.gameObject.SetActive(false);
+            Instantiate(_deathPlayerParticlePrefab, _playerMovement.transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(2);
+            TryRespawnTimer();
         }
 
         private void TryRespawnTimer()
