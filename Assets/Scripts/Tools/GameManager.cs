@@ -26,14 +26,13 @@ namespace Tools
         {
             _scoreView.StopCounterView();
             if(_scoreCounter.Score > 500)
-                StartCoroutine(RespawnTimerCoroutine());
+                RespawnTimerCoroutine();
             else
                 RestartGame();
         }
 
-        IEnumerator RespawnTimerCoroutine()
+        private void RespawnTimerCoroutine()
         {
-            yield return new WaitForSeconds(2);
             var timer = Instantiate(_respawnTimerPrefab);
             timer.OnTimerEnded += RestartGame;
         }

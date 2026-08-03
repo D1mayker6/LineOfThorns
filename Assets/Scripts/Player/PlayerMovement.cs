@@ -21,6 +21,7 @@ namespace Player
         [SerializeField] private Transform _groundCheck;
         [SerializeField] private Transform _collisionCheck;
         [SerializeField] private float _speedMultiple;
+        [SerializeField] private GameObject _deathParticlePrefab;
         
         [SerializeField] private RoomManager _roomManager;
         [SerializeField] private ScoreCounter _scoreCounter;
@@ -51,7 +52,6 @@ namespace Player
         private void Start()
         {
             _startPos = transform.position;
-            OnPlayerDied += () => gameObject.SetActive(false);
             _scoreCounter.OnDiffReached += DiffIncrease;
         }
 
@@ -105,6 +105,8 @@ namespace Player
         IEnumerator InvokeDeath()
         {
             _translationSpeed = 0;
+            gameObject.SetActive(false);
+            Instantiate(_deathParticlePrefab, transform.position, Quaternion.identity);
             yield return new WaitForSeconds(2);
             OnPlayerDied?.Invoke();
         }
