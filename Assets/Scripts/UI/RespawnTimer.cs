@@ -22,6 +22,7 @@ namespace UI
         {
             _timerValue = 3;
             _animator.SetFloat("timer", _timerValue);
+            _button.onClick.AddListener(AdWatch);
         }
 
         private void Update()
@@ -34,10 +35,12 @@ namespace UI
             }
         }
 
-        public void MinusSecond()
+        private void AdWatch()
         {
-            _timerValue--;
+            
         }
+
+        public void MinusSecond() => _timerValue--;
         
         
     }

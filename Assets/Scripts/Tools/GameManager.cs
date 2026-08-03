@@ -17,19 +17,22 @@ namespace Tools
 
         void Start()
         {
-            _playerMovement.OnPlayerDied += RespawnTimer;
+            _playerMovement.OnPlayerDied += TryRespawnTimer;
             _scoreCounter = _scoreView.GetComponentInChildren<ScoreCounter>();
 
         }
 
-        private void RespawnTimer()
+        private void TryRespawnTimer()
         {
-            StartCoroutine(RespawnTimerCoroutine());
+            _scoreView.StopCounterView();
+            if(_scoreCounter.Score > 500)
+                StartCoroutine(RespawnTimerCoroutine());
+            else
+                RestartGame();
         }
 
         IEnumerator RespawnTimerCoroutine()
         {
-            _scoreView.StopCounterView();
             yield return new WaitForSeconds(2);
             var timer = Instantiate(_respawnTimerPrefab);
             timer.OnTimerEnded += RestartGame;

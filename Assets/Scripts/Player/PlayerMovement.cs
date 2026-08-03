@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Enums;
 using Tools;
 using Triggers;
@@ -50,7 +51,7 @@ namespace Player
         private void Start()
         {
             _startPos = transform.position;
-            OnPlayerDied += () => {gameObject.SetActive(false); };
+            OnPlayerDied += () => gameObject.SetActive(false);
             _scoreCounter.OnDiffReached += DiffIncrease;
         }
 
@@ -97,8 +98,15 @@ namespace Player
         private void CheckDeath()
         {
             var hit = Physics2D.Raycast(_collisionCheck.position, _collisionCheck.right, _rayDuration, _mask);
-            if(hit.collider != null)
-                OnPlayerDied?.Invoke();
+            if (hit.collider != null)
+                StartCoroutine(InvokeDeath());
+        }
+
+        IEnumerator InvokeDeath()
+        {
+            _translationSpeed = 0;
+            yield return new WaitForSeconds(2);
+            OnPlayerDied?.Invoke();
         }
 
         private void Move()
@@ -115,7 +123,7 @@ namespace Player
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.CompareTag("Trap"))
-                OnPlayerDied?.Invoke();
+                StartCoroutine(InvokeDeath());
             if(other.gameObject.CompareTag("Teleport"))
                 _roomManager.GoToNextLevel();
         }
