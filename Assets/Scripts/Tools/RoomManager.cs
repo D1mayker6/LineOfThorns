@@ -11,10 +11,19 @@ namespace Tools
     public class RoomManager: MonoBehaviour
     {
         [SerializeField] private List<GameObject> _roomPrefabs;
+        [SerializeField] private ScoreCounter  _scoreCounter;
+        [SerializeField] private GameObject _firstRoom;
         private Stack<GameObject> _roomsHistory = new();
         private Vector3 _roomBasePosition;
-        private int _roomValue = 100;
-        [SerializeField] private ScoreCounter  _scoreCounter;
+        private GameObject _currentRoom;
+        
+        private List<SpriteRenderer> _spriteRenderers = new List<SpriteRenderer>(64);
+
+        private void Start()
+        {
+            _currentRoom = _firstRoom;
+            RecolorRoom(_currentRoom);
+        }
 
         public void GoToNextLevel()
         {
@@ -24,13 +33,25 @@ namespace Tools
 
         private void AddScoreForRoom()
         {
-            _scoreCounter.AddScore(_roomValue);
+            _scoreCounter.AddScore();
         }
 
 
         private void AddRoom()
         {
-            var room = Instantiate(RandomizeRoom());
+            _currentRoom = Instantiate(RandomizeRoom());
+            RecolorRoom(_currentRoom);
+        }
+
+        private void RecolorRoom(GameObject room)
+        {
+            _spriteRenderers.Clear();
+            _spriteRenderers.AddRange(_currentRoom.GetComponentsInChildren<SpriteRenderer>());
+            foreach (var spriteRenderer in _spriteRenderers)
+            {
+                if(!spriteRenderer.gameObject.CompareTag("Exit"))
+                    spriteRenderer.color = Color.red;
+            }
         }
 
         private GameObject RandomizeRoom()
@@ -48,6 +69,8 @@ namespace Tools
 
             return selectedRoom;
         }
+        
+        
         
     }
 }

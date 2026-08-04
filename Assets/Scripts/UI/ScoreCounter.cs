@@ -13,6 +13,8 @@ namespace UI
         private int _currentDiff = 0;
 
         private bool _isStopped;
+        
+        private int _roomValue = 100;
 
         public int Score
         {
@@ -61,9 +63,9 @@ namespace UI
             _isStopped = false;
         }
 
-        public void AddScore(int value)
+        public void AddScore()
         {
-            Score += value;
+            Score += _roomValue;
         }
     }
 }
