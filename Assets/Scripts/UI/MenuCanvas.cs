@@ -1,4 +1,5 @@
 using System;
+using Enums;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,8 +12,10 @@ namespace UI
         [SerializeField] private Button _playButton;
         [SerializeField] private Button _storeButton;
         [SerializeField] private Button _settingsButton;
-        [SerializeField] private Button _aboutButton;
         [SerializeField] private Button _exitButton;
+        
+        [SerializeField] private Button _telegramButton;
+        [SerializeField] private Button _youtubeButton;
        
         
         [SerializeField] private GameObject _cinematicTexture;
@@ -20,6 +23,8 @@ namespace UI
         [SerializeField] private VideoClip _menuClip;
 
         [SerializeField] private SceneLoader _sceneLoaderPrefab;
+
+        [SerializeField] private RedirectCanvas _redirectCanvasPrefab;
         
         private VideoPlayer _videoPlayer;
 
@@ -33,8 +38,10 @@ namespace UI
             _playButton.onClick.AddListener(Play);
             _storeButton.onClick.AddListener(Store);
             _settingsButton.onClick.AddListener(Settings);
-            _aboutButton.onClick.AddListener(About);
             _exitButton.onClick.AddListener(Exit);
+            
+            _telegramButton.onClick.AddListener(GoToTelegram);
+            _youtubeButton.onClick.AddListener(GoToYoutube);
         }
 
 
@@ -57,11 +64,6 @@ namespace UI
             Application.Quit();
         }
 
-        private void About()
-        {
-            throw new NotImplementedException();
-        }
-
         private void Settings()
         {
             throw new NotImplementedException();
@@ -71,6 +73,20 @@ namespace UI
         {
             throw new NotImplementedException();
         }
+
+
+        private void GoToTelegram()
+        {
+            var redirect = Instantiate(_redirectCanvasPrefab);
+            redirect.Initialize(SocialNetwork.Telegram, "https://t.me/d1mayker6WS");
+        }
+
+        private void GoToYoutube()
+        {
+            var redirect = Instantiate(_redirectCanvasPrefab);
+            redirect.Initialize(SocialNetwork.Youtube, "https://www.youtube.com/channel/UCiMu-22dEI8MgAry_YOUa5w");
+        }
+        
 
         private void OnDestroy()
         {
