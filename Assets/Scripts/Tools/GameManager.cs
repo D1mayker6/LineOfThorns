@@ -14,17 +14,19 @@ namespace Tools
         [SerializeField] private ScoreView _scoreView;
         [SerializeField] private RespawnTimer _respawnTimerPrefab;
         [SerializeField] private GameObject _deathPlayerParticlePrefab;
+        [SerializeField] private GameObject _diffViewPrefab;
 
-        private ScoreCounter _scoreCounter;
+        [SerializeField] private ScoreCounter _scoreCounter;
 
         void Start()
         {
             _playerMovement.OnPlayerDied += DeathPlayer;
-            _scoreCounter = _scoreView.GetComponentInChildren<ScoreCounter>();
-
+            _scoreCounter.OnDiffReached += ShowDiffView;
         }
 
         private void DeathPlayer() => StartCoroutine(DeathPlayerCoroutine());
+
+        private void ShowDiffView() => Instantiate(_diffViewPrefab);
 
         private IEnumerator DeathPlayerCoroutine()
         {

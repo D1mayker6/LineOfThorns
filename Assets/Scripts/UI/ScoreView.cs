@@ -1,18 +1,14 @@
-using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-
 namespace UI
 {
     public class ScoreView : MonoBehaviour
     {
-        private ScoreCounter _counter;
+        [SerializeField] private ScoreCounter _counter;
         [SerializeField] private TextMeshProUGUI _text;
 
         private void Start()
         {
-            _counter = GetComponentInChildren<ScoreCounter>();
             _counter.OnScoreChanged += UpdateScoreView;
             UpdateScoreView();
         }
