@@ -1,12 +1,12 @@
 # ninja log v5
-174	770	8052857648131055	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	231e08e8e6a799a3
-771	1237	8052857651578857	F:/Work/C#/pet-projects/LineOfThorns/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5c5mhmr5/obj/arm64-v8a/libswappywrapper.so	a79c0182870a50af
-137	2293	8052857663485432	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	4c1f9dec1fdf09
-160	2428	8052857664624583	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	85f24748167344f9
-110	2513	8052857664194619	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	de63df3920c93e0
-0	2516	8052857664786815	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	2ea1fdeada48b4d0
-60	2767	8052857667749613	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	6ca50a3d25275e80
-121	2919	8052857669792616	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	c2825f9bead72dc7
-45	2987	8052857670487446	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	603c56620924f55a
-148	3010	8052857670801312	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	b5a3e0805c5b98cb
-3010	3124	8052857671998376	F:/Work/C#/pet-projects/LineOfThorns/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5c5mhmr5/obj/arm64-v8a/libgame.so	6e9352f95d7b5ea1
+67	2147	8075325042757346	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	4c1f9dec1fdf09
+76	2518	8075325042797478	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	de63df3920c93e0
+17	2520	8075325043231660	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	2ea1fdeada48b4d0
+152	2523	8075325043327931	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	85f24748167344f9
+31	2535	8075325044037866	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	6ca50a3d25275e80
+284	2536	8075325044989978	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	231e08e8e6a799a3
+46	2729	8075325048424582	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	c2825f9bead72dc7
+2537	2765	8075325049076607	F:/Work/C#/pet-projects/LineOfThorns/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5c5mhmr5/obj/arm64-v8a/libswappywrapper.so	a79c0182870a50af
+0	2929	8075325050875164	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	603c56620924f55a
+232	3435	8075325053469633	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	b5a3e0805c5b98cb
+3466	3863	8075325060095411	F:/Work/C#/pet-projects/LineOfThorns/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5c5mhmr5/obj/arm64-v8a/libgame.so	6e9352f95d7b5ea1
