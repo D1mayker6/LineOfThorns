@@ -116,7 +116,7 @@ namespace Player
         {
             if (other.gameObject.CompareTag("Trap"))
                 OnPlayerDied?.Invoke();
-            if(other.gameObject.CompareTag("Teleport"))
+            if(other.gameObject.CompareTag("Exit"))
                 _roomManager.GoToNextLevel();
         }
     }

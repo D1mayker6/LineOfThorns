@@ -250,6 +250,7 @@ MonoBehaviour:
   _roomPrefabs:
   - {fileID: 8101518369225682520, guid: 5b0e29bcad1e66944b8c8d4091ccce9e, type: 3}
   _scoreCounter: {fileID: 1753602192}
+  _firstRoom: {fileID: 8101518367604293573}
 --- !u!4 &368679987
 Transform:
   m_ObjectHideFlags: 0
@@ -258,7 +259,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368679985}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1245,22 +1246,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teleport
       objectReference: {fileID: 0}
-    - target: {fileID: 7075506365071737175, guid: 19741672ed7f5c9499fde53951a289f3, type: 3}
-      propertyPath: m_Size.x
-      value: 1.0107019
-      objectReference: {fileID: 0}
-    - target: {fileID: 7075506365071737175, guid: 19741672ed7f5c9499fde53951a289f3, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.005351156
-      objectReference: {fileID: 0}
-    - target: {fileID: 8764652888737109000, guid: 19741672ed7f5c9499fde53951a289f3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8764652888737109000, guid: 19741672ed7f5c9499fde53951a289f3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 6.0000005
-      objectReference: {fileID: 0}
     - target: {fileID: 8764652888737109000, guid: 19741672ed7f5c9499fde53951a289f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 49
@@ -2026,8 +2011,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 1478124886}
-  - {fileID: 101120273}
   - {fileID: 368679987}
+  - {fileID: 101120273}
   - {fileID: 950211191766782481}
   - {fileID: 1216712912943043678}
   - {fileID: 544231728}
