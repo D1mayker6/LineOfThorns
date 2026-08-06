@@ -690,7 +690,7 @@ Transform:
   m_GameObject: {fileID: 1478124881}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.57, y: -11.693, z: 0}
+  m_LocalPosition: {x: -23.5, y: -11.2, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -820,6 +820,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1936563531264774105, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_fontSize
+      value: 130.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936563531264774105, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936563531264774105, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936563531264774105, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936563531264774105, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936563531264774105, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4293848831
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936563531264774105, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936563531264774105, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_overrideHtmlColors
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936563531264774105, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_enableVertexGradient
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2152433029923365534, guid: d3b628452ec523d47804779c87456959, type: 3}
       propertyPath: m_Name
       value: Score
@@ -903,6 +939,38 @@ PrefabInstance:
     - target: {fileID: 4759925135942791562, guid: d3b628452ec523d47804779c87456959, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302007420269602061, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.06022255
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302007420269602061, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.961
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302007420269602061, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.06022255
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302007420269602061, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.961
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302007420269602061, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 367.6028
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302007420269602061, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 175.6344
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302007420269602061, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 59.59021
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302007420269602061, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -73.44208
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1582,7 +1650,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1049911239}
   - {fileID: 1423977765}
   - {fileID: 1870701516}
   - {fileID: 1416090218}
@@ -1654,7 +1721,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 6881715535240829306}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 18972213340799462, guid: 1cbf5a2c351ee6c418da47461afe67f1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1882,6 +1949,7 @@ SceneRoots:
   - {fileID: 1478124886}
   - {fileID: 368679987}
   - {fileID: 101120273}
+  - {fileID: 7584877712393509215}
   - {fileID: 950211191766782481}
   - {fileID: 1216712912943043678}
   - {fileID: 544231728}

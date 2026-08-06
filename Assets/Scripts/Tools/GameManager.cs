@@ -11,7 +11,6 @@ namespace Tools
     
         [SerializeField] private PlayerMovement  _playerMovement;
         [SerializeField] private RetryCanvas _retryCanvasPrefab;
-        [SerializeField] private ScoreView _scoreView;
         [SerializeField] private RespawnTimer _respawnTimerPrefab;
         [SerializeField] private GameObject _deathPlayerParticlePrefab;
         [SerializeField] private GameObject _diffViewPrefab;
@@ -34,6 +33,7 @@ namespace Tools
         private IEnumerator DeathPlayerCoroutine()
         {
             _playerMovement.gameObject.SetActive(false);
+            _scoreCounter.SwitchCounter();
             Instantiate(_deathPlayerParticlePrefab, _playerMovement.transform.position, Quaternion.identity);
             yield return new WaitForSeconds(2);
             TryRespawnTimer();
@@ -41,7 +41,6 @@ namespace Tools
 
         private void TryRespawnTimer()
         {
-            _scoreView.StopCounterView();
             if (_scoreCounter.Score > 500 && !_timerFirstTime)
             {
                 RespawnTimerCoroutine();
@@ -64,6 +63,7 @@ namespace Tools
             _playerMovement.transform.position = _spawnpoint.position;
             _playerMovement.GetComponent<Rigidbody2D>().gravityScale *= -1;
             _playerMovement.ReverseForcePower();
+            _scoreCounter.SwitchCounter();
         }
 
         void RestartGame()

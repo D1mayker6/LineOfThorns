@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 namespace UI
@@ -7,9 +8,11 @@ namespace UI
         [SerializeField] private ScoreCounter _counter;
         [SerializeField] private TextMeshProUGUI _text;
 
+
         private void Start()
         {
             _counter.OnScoreChanged += UpdateScoreView;
+            _counter.OnCounterSwitch += SwitchCounterView;
             UpdateScoreView();
         }
 
@@ -18,16 +21,9 @@ namespace UI
             _text.text = _counter.Score.ToString();
         }
 
-        public void StopCounterView()
+        private void SwitchCounterView()
         {
-            _text.text = "";
-            _counter.StopCounter();
-        }
-
-        private void ResumeCounterView()
-        {
-            _text.text = _counter.Score.ToString();
-            _counter.ResumeCounter();
+            _text.enabled = !_text.enabled;
         }
         
         

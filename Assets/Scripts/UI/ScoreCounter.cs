@@ -29,6 +29,9 @@ namespace UI
         public event Action OnScoreChanged;
 
         public event Action OnDiffReached;
+        
+        public event Action OnCounterSwitch;
+
 
 
         private void Update()
@@ -53,14 +56,10 @@ namespace UI
             
         }
 
-        public void StopCounter()
+        public void SwitchCounter()
         {
-            _isStopped = true;
-        }
-
-        public void ResumeCounter()
-        {
-            _isStopped = false;
+            _isStopped = !_isStopped;
+            OnCounterSwitch?.Invoke();
         }
 
         public void AddScore()
