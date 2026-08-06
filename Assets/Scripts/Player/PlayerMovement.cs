@@ -74,6 +74,9 @@ namespace Player
     
             _animator.SetFloat("velocityY", relativeVelocity);
             _animator.SetBool("isGrounded", _isGrounded);
+            
+            if (Input.GetKeyDown(KeyCode.Escape));
+            
         }
         
         private void FixedUpdate()

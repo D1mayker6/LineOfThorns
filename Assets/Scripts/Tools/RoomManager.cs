@@ -13,7 +13,8 @@ namespace Tools
         [SerializeField] private List<GameObject> _roomPrefabs;
         [SerializeField] private ScoreCounter  _scoreCounter;
         [SerializeField] private GameObject _firstRoom;
-        [SerializeField] private Color _color;
+        [SerializeField] private Color _backgroundColor;
+        [SerializeField] private Color _blockcolor;
         private Stack<GameObject> _roomsHistory = new();
         private Vector3 _roomBasePosition;
         private GameObject _currentRoom;
@@ -47,12 +48,14 @@ namespace Tools
 
         private void RecolorRoom(GameObject room)
         {
+            if (Camera.main != null) 
+                Camera.main.backgroundColor = _backgroundColor;
             _spriteRenderers.Clear();
             _spriteRenderers.AddRange(_currentRoom.GetComponentsInChildren<SpriteRenderer>());
             foreach (var spriteRenderer in _spriteRenderers)
             {
                 if (!spriteRenderer.gameObject.CompareTag("Exit"))
-                    spriteRenderer.color = _color;
+                    spriteRenderer.color = _blockcolor;
             }
         }
 
