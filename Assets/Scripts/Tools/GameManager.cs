@@ -61,8 +61,9 @@ namespace Tools
         {
             _playerMovement.gameObject.SetActive(true);
             _playerMovement.transform.position = _spawnpoint.position;
-            _playerMovement.GetComponent<Rigidbody2D>().gravityScale *= -1;
-            _playerMovement.ReverseForcePower();
+            var rb = _playerMovement.GetComponent<Rigidbody2D>();
+            rb.gravityScale = Mathf.Abs(rb.gravityScale);
+            _playerMovement.AbsForcePower();
             _scoreCounter.SwitchCounter();
         }
 

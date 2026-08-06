@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 826449497328956923}
   - component: {fileID: 8616476794003988972}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SpeedDownRenderer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 991190690672948411}
   - component: {fileID: 653134121060401430}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: SpeedDownRenderer2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,7 +207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7262395278021118199}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.7075284, w: -0.706685}
+  m_LocalRotation: {x: -0, y: 0, z: -0.70752645, w: -0.7066869}
   m_LocalPosition: {x: 22.094128, y: -11.375298, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1

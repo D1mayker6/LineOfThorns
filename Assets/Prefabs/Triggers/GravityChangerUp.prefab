@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7421297481970321097}
   - component: {fileID: 2093781008383601081}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GravityChangerUpRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

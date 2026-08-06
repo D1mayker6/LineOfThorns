@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9010961799239698516}
   - component: {fileID: 83850482403984200}
   - component: {fileID: 907601601291499356}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Spike
   m_TagString: Trap
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1161241194007329534}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: checkPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -53,10 +53,8 @@ namespace Tools
             _spriteRenderers.Clear();
             _spriteRenderers.AddRange(_currentRoom.GetComponentsInChildren<SpriteRenderer>());
             foreach (var spriteRenderer in _spriteRenderers)
-            {
-                if (!spriteRenderer.gameObject.CompareTag("Exit"))
                     spriteRenderer.color = _blockcolor;
-            }
+            
         }
 
         private GameObject RandomizeRoom()

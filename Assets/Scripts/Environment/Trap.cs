@@ -1,6 +1,8 @@
-using System;
 using UnityEngine;
 
-public class Trap : MonoBehaviour
+namespace Environment
 {
+    public class Trap : MonoBehaviour
+    {
+    }
 }

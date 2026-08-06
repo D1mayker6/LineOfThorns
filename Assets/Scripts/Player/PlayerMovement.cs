@@ -53,6 +53,11 @@ namespace Player
         {
             _forcePower *= -1;
         }
+
+        public void AbsForcePower()
+        {
+            _forcePower = Mathf.Abs(_forcePower);
+        }
         
         private void DiffIncrease()
         {
