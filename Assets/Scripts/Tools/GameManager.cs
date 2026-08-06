@@ -18,6 +18,8 @@ namespace Tools
 
         [SerializeField] private ScoreCounter _scoreCounter;
         [SerializeField] private Transform _spawnpoint;
+        
+        private bool _timerFirstTime = false;
 
         void Start()
         {
@@ -40,8 +42,11 @@ namespace Tools
         private void TryRespawnTimer()
         {
             _scoreView.StopCounterView();
-            if(_scoreCounter.Score > 500)
+            if (_scoreCounter.Score > 500 && !_timerFirstTime)
+            {
                 RespawnTimerCoroutine();
+                _timerFirstTime = true;
+            }
             else
                 RestartGame();
         }
@@ -58,7 +63,7 @@ namespace Tools
             _playerMovement.gameObject.SetActive(true);
             _playerMovement.transform.position = _spawnpoint.position;
             _playerMovement.GetComponent<Rigidbody2D>().gravityScale *= -1;
-            _playerMovement.ReverseForcePower(1);
+            _playerMovement.ReverseForcePower();
         }
 
         void RestartGame()

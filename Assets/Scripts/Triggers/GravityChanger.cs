@@ -31,7 +31,7 @@ namespace Triggers
                 main.startSpeedMultiplier *= -1f;
             }
             rb.AddForceY(_impulse,ForceMode2D.Impulse);
-            playerMovement.ReverseForcePower(intGravityValue);
+            playerMovement.ReverseForcePower();
 
         }
     }

@@ -49,9 +49,9 @@ namespace Player
             _scoreCounter.OnDiffReached += DiffIncrease;
         }
 
-        public void ReverseForcePower(int gravityValue)
+        public void ReverseForcePower()
         {
-            _forcePower *= gravityValue;
+            _forcePower *= -1;
         }
         
         private void DiffIncrease()
