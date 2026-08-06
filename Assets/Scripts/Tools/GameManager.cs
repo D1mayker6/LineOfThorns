@@ -17,6 +17,7 @@ namespace Tools
         [SerializeField] private GameObject _diffViewPrefab;
 
         [SerializeField] private ScoreCounter _scoreCounter;
+        [SerializeField] private Transform _spawnpoint;
 
         void Start()
         {
@@ -49,6 +50,15 @@ namespace Tools
         {
             var timer = Instantiate(_respawnTimerPrefab);
             timer.OnTimerEnded += RestartGame;
+            timer.OnExtraLive += ExecuteExtraLive;
+        }
+
+        private void ExecuteExtraLive()
+        {
+            _playerMovement.gameObject.SetActive(true);
+            _playerMovement.transform.position = _spawnpoint.position;
+            _playerMovement.GetComponent<Rigidbody2D>().gravityScale *= -1;
+            _playerMovement.ReverseForcePower(1);
         }
 
         void RestartGame()

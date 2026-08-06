@@ -23,9 +23,6 @@ namespace Player
         [SerializeField] private float _speedMultiple;
         [SerializeField] private RoomManager _roomManager;
         [SerializeField] private ScoreCounter _scoreCounter;
-
-        private Vector2 _startPos;
-        
         [SerializeField] private Rigidbody2D _rb;
         [SerializeField] private Animator _animator;
         
@@ -48,14 +45,13 @@ namespace Player
         
 
         private void Start()
-        {
-            _startPos = transform.position;
+        { 
             _scoreCounter.OnDiffReached += DiffIncrease;
         }
 
-        public void ReverseForcePower(int direction)
+        public void ReverseForcePower(int gravityValue)
         {
-            _forcePower *= -1;
+            _forcePower *= gravityValue;
         }
         
         private void DiffIncrease()

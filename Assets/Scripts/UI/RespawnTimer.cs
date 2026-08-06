@@ -12,9 +12,9 @@ namespace UI
         [SerializeField] private TextMeshProUGUI _timerText;
         [SerializeField] private Button _button;
         [SerializeField] private Animator _animator;
-
         
         public event Action OnTimerEnded;
+        public event Action OnExtraLive;
 
         private int _timerValue;
 
@@ -37,7 +37,13 @@ namespace UI
 
         private void AdWatch()
         {
-            
+            InvokeExtraLife();
+        }
+
+        private void InvokeExtraLife()
+        {
+            Destroy(gameObject);
+            OnExtraLive?.Invoke();
         }
 
         public void MinusSecond() => _timerValue--;
