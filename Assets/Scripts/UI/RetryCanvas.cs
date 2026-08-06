@@ -1,7 +1,8 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 
 namespace UI
 {
@@ -11,6 +12,7 @@ namespace UI
         [SerializeField] private Button _mainMenuButton;
         [SerializeField] private TextMeshProUGUI _scoreText;
         [SerializeField] private SceneLoader _sceneLoaderPrefab;
+        [SerializeField] private GameObject _recordPanel;
         public void Initialize(int score)
         {
             _scoreText.text = "Score: " + score;
