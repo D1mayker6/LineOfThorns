@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using UnityEngine;
 
 namespace Data
@@ -10,6 +11,7 @@ namespace Data
     
         public int Record;
     
-        public List<bool> OpenedColors = new List<bool>(8);
+        [JsonProperty(ObjectCreationHandling = ObjectCreationHandling.Replace)]
+        public List<bool> OpenedColors;
     }
 }

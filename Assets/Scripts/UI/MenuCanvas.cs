@@ -1,4 +1,5 @@
 using System;
+using Data;
 using Enums;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -26,6 +27,8 @@ namespace UI
 
         [SerializeField] private RedirectCanvas _redirectCanvasPrefab;
         
+        [SerializeField] private DataManager _dataManager;
+        
         private VideoPlayer _videoPlayer;
 
         private void Start()
@@ -42,6 +45,8 @@ namespace UI
             
             _telegramButton.onClick.AddListener(GoToTelegram);
             _youtubeButton.onClick.AddListener(GoToYoutube);
+            
+            _dataManager.LoadData();
         }
 
 
@@ -90,6 +95,8 @@ namespace UI
 
         private void OnDestroy()
         {
+            _dataManager.SaveGameData();
+            _dataManager.SaveSettingsData();
             _playButton.onClick.RemoveListener(Play);
         }
     }
