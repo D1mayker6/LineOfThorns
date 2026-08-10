@@ -7,10 +7,10 @@ namespace Data
     {
         public bool MuteMusic;
     
-        public bool MuteSound;
+        public bool MuteSFX;
     
         public int MusicVolume;
     
-        public int SoundVolume;
+        public int SFXVolume;
     }
 }

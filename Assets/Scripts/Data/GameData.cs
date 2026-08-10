@@ -10,6 +10,6 @@ namespace Data
     
         public int Record;
     
-        public List<bool> openedColors = new List<bool>(8);
+        public List<bool> OpenedColors = new List<bool>(8);
     }
 }
