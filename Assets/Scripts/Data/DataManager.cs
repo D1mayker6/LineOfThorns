@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using Newtonsoft.Json;
 using UnityEngine;
@@ -9,31 +10,34 @@ namespace Data
         [SerializeField] private GameData _gameData;
         [SerializeField] private SettingsData _settingsData;
 
-        private string GetPathGameData() => Path.Combine(Application.persistentDataPath, "GameData");
-        
-        private string GetPathSettingsData() => Path.Combine(Application.persistentDataPath, "SettingsData");
+        private string _gamePath;
+        private string _settingsPath;
+
+        private void Awake()
+        {
+            _gamePath = Path.Combine(Application.persistentDataPath, "GameData.json");
+            _settingsPath = Path.Combine(Application.persistentDataPath, "SettingsData.json");
+        }
         
         public void LoadData()
         {
-           var gamepath =  GetPathGameData();
-           if (File.Exists(gamepath))
+           if (File.Exists(_gamePath))
            {
-                var json = File.ReadAllText(gamepath);
+                var json = File.ReadAllText(_gamePath);
                 JsonConvert.PopulateObject(json, _gameData);
            }
            
-           var settingspath = GetPathSettingsData();
-           if (File.Exists(settingspath))
+           if (File.Exists(_settingsPath))
            {
-               var json = File.ReadAllText(settingspath);
+               var json = File.ReadAllText(_settingsPath);
                JsonConvert.PopulateObject(json, _settingsData);
            }
            
         }
 
-        public void SaveData()
-        {
-            
-        }
+        public void SaveGameData() => File.WriteAllText(_gamePath, JsonConvert.SerializeObject(_gameData));
+        
+        public void SaveSettingsData() => File.WriteAllText(_settingsPath, JsonConvert.SerializeObject(_settingsData));
+
     }
 }
