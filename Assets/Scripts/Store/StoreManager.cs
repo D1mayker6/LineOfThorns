@@ -1,5 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using Data;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,14 +14,24 @@ namespace Store
         [SerializeField] private Button _backButton;
         [SerializeField] private Button _forMoneyButton;
         [SerializeField] private Button _forADButton;
-
-
-        private void Start()
+        [SerializeField] private DataManager _dataManager;
+        [SerializeField] private GameData _gameData;
+        [SerializeField] private TextMeshProUGUI _moneyCountText;
+        [SerializeField] private TextMeshProUGUI _priceText;
+        [SerializeField] private int _currentColorPrice;
+        
+        private void Awake()
         {
             _backButton.onClick.AddListener(Back);
             _forMoneyButton.onClick.AddListener(ForMoney);
             _forADButton.onClick.AddListener(ForAD);
-            
+        }
+
+        private void Start()
+        {
+            _moneyCountText.text = _gameData.Coins.ToString();
+            for (var i = 0; i < _colors.Count; i++)
+                _colors[i].IsOpen = _gameData.OpenedColors[i];
         }
 
 
@@ -29,17 +42,21 @@ namespace Store
 
         private void ForMoney()
         {
-           RandomizeColor(); 
+            if (_gameData.Coins >= _currentColorPrice)
+            {
+                _gameData.Coins -= _currentColorPrice;
+                StartCoroutine(RandomizeColor()); 
+            }
         }
 
         private void ForAD()
         { 
-           RandomizeColor();
+            StartCoroutine(RandomizeColor()); 
         }
 
-        private void RandomizeColor()
+        private IEnumerator RandomizeColor()
         {
-            
+            return null;
         }
     }
 }
