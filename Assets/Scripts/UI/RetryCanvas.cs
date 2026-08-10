@@ -13,6 +13,7 @@ namespace UI
         [SerializeField] private TextMeshProUGUI _scoreText;
         [SerializeField] private SceneLoader _sceneLoaderPrefab;
         [SerializeField] private GameObject _recordPanel;
+        [SerializeField] private TextMeshProUGUI _earnText;
         public void Initialize(int score)
         {
             _scoreText.text = "Score: " + score;
