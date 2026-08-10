@@ -8,9 +8,9 @@ namespace Tools
 
 
 
-        private int ConvertScore(int score)
+        public int ConvertScore(int score)
         {
-            var coins = score / 10;
+            var coins = score / _coinsMultiplier;
             return coins;
         }
     }

@@ -1,4 +1,5 @@
 using TMPro;
+using Tools;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -14,15 +15,20 @@ namespace UI
         [SerializeField] private SceneLoader _sceneLoaderPrefab;
         [SerializeField] private GameObject _recordPanel;
         [SerializeField] private TextMeshProUGUI _earnText;
+        [SerializeField] private CoinsConverter _coinsConverter;
+
+        private int _score;
         public void Initialize(int score)
         {
-            _scoreText.text = "Score: " + score;
+            _score =  score;
+            _scoreText.text = $"Score: {_score}";
         }
         
         private void Start()
         {
             _mainMenuButton.onClick.AddListener(Menu);
             _retryButton.onClick.AddListener(Retry);
+            _earnText.text = $"Earned: {_coinsConverter.ConvertScore(_score)}";
         }
 
         private void Menu()
