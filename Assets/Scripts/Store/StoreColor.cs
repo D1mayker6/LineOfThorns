@@ -10,16 +10,13 @@ namespace Store
         [SerializeField] private Color _blockColor;
         [SerializeField] private Image _image;
         [SerializeField] private bool _isOpen;
-        [SerializeField] private Outline _outline;
         [SerializeField] private bool _isCurrent;
-
-        public bool IsCurrent
-        {
-            get => _isCurrent;
-            set => _isCurrent = value;
-        }
+        [SerializeField] private Button _button;
+        
+        public event Action<Color, Color> OnColorChosen;
 
         [SerializeField] private Sprite _colorSprite;
+        [SerializeField] private Sprite _chosenSprite;
         public bool IsOpen
         {
             set
@@ -30,8 +27,15 @@ namespace Store
             }
         }
 
+        private void Start()
+        {
+            _button.onClick.AddListener(SetCurrentColor);
+        }
+
         private void SetCurrentColor()
         {
+            OnColorChosen?.Invoke(_backgroundColor, _blockColor);
+            GetComponent<Image>().sprite = _chosenSprite;
             
         }
     }

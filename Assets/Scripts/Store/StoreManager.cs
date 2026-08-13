@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using Data;
 using TMPro;
@@ -13,16 +11,16 @@ namespace Store
     public class StoreManager : MonoBehaviour
     {
         [SerializeField] private List<StoreColor> _colors;
-        [SerializeField] private List<Button> _colorsButtons;
+        [SerializeField] private List<Image> _colorsImages;
         [SerializeField] private Button _backButton;
         [SerializeField] private Button _forMoneyButton;
         [SerializeField] private Button _forADButton;
-        [SerializeField] private StoreColor _currentColor;
         [SerializeField] private DataManager _dataManager;
         [SerializeField] private GameData _gameData;
         [SerializeField] private TextMeshProUGUI _moneyCountText;
         [SerializeField] private TextMeshProUGUI _priceText;
         [SerializeField] private int _currentColorPrice;
+        [SerializeField] private Sprite _defaultSprite; 
         
         [SerializeField] private SceneLoader _sceneLoaderPrefab;
         
@@ -31,15 +29,17 @@ namespace Store
             _backButton.onClick.AddListener(Back);
             _forMoneyButton.onClick.AddListener(ForMoney);
             _forADButton.onClick.AddListener(ForAD);
-            foreach (var button in  _colorsButtons)
-            {
-                button.onClick.AddListener(SetCurrentColor);
-            }
+            foreach (var color in  _colors)
+                color.OnColorChosen += SetCurrentColor;
+            
         }
 
-        private void SetCurrentColor()
+        private void SetCurrentColor(Color backgroundColor, Color blockColor)
         {
-            
+            _gameData.BackgroundColor = ColorUtility.ToHtmlStringRGBA(backgroundColor);
+            _gameData.BlockColor = ColorUtility.ToHtmlStringRGBA(blockColor);
+            foreach (var color in _colorsImages)
+                color.sprite = _defaultSprite;
         }
 
         private void Start()
@@ -105,7 +105,7 @@ namespace Store
                     continue;
                 _colors[color].IsOpen = true;
                 _gameData.OpenedColors[color] = true;
-                _currentColor =  _colors[color];
+                //_currentColor =  _colors[color];
                 return;
             }
                 
