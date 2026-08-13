@@ -22,7 +22,6 @@ namespace Store
         [SerializeField] private Sprite _colorSprite;
         public bool IsOpen
         {
-            get => _isOpen;
             set
             {
                 _isOpen = value;

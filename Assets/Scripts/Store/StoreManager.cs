@@ -13,6 +13,7 @@ namespace Store
     public class StoreManager : MonoBehaviour
     {
         [SerializeField] private List<StoreColor> _colors;
+        [SerializeField] private List<Button> _colorsButtons;
         [SerializeField] private Button _backButton;
         [SerializeField] private Button _forMoneyButton;
         [SerializeField] private Button _forADButton;
@@ -30,11 +31,22 @@ namespace Store
             _backButton.onClick.AddListener(Back);
             _forMoneyButton.onClick.AddListener(ForMoney);
             _forADButton.onClick.AddListener(ForAD);
+            foreach (var button in  _colorsButtons)
+            {
+                button.onClick.AddListener(SetCurrentColor);
+            }
+        }
+
+        private void SetCurrentColor()
+        {
+            
         }
 
         private void Start()
         {
             RefreshUIMoney();
+            CheckMoney();
+            CheckMaxCountSkins();
             for (var i = 0; i < _colors.Count; i++)
                 _colors[i].IsOpen = _gameData.OpenedColors[i];
         }
@@ -48,15 +60,34 @@ namespace Store
 
         private void ForMoney()
         {
-            if (_gameData.Coins >= _currentColorPrice)
-            {
                 _gameData.Coins -= _currentColorPrice;
                 RandomizeColor();
                 RefreshUIMoney();
-            }
+                CheckMaxCountSkins();
         }
         
         private void RefreshUIMoney() => _moneyCountText.text = _gameData.Coins.ToString();
+
+        private void CheckMaxCountSkins()
+        {
+            foreach (var color in _gameData.OpenedColors)
+                if (!color)
+                    return;
+            _forADButton.interactable = false;
+            _forMoneyButton.interactable = false;
+            
+        }
+
+        private void CheckMoney()
+        {
+            if (_gameData.Coins <= _currentColorPrice)
+            {
+                _forMoneyButton.interactable = false;
+                return;
+            }
+            _forMoneyButton.interactable = true;
+        }
+        
 
         private void ForAD()
         { 
