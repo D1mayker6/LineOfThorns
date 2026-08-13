@@ -13,5 +13,9 @@ namespace Data
     
         [JsonProperty(ObjectCreationHandling = ObjectCreationHandling.Replace)]
         public List<bool> OpenedColors;
+
+        public string BackgroundColor = "#000000";
+
+        public string BlockColor = "#FFFFFF";
     }
 }

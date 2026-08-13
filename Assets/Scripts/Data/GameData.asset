@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9bda6904c922e4ab0d5a752fa8dbb2, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: Assembly-CSharp::Data.GameData
-  Coins: 0
+  Coins: 10000
   Record: 0
   OpenedColors: 0100000000000000
+  BackgroundColor: 000000
+  BlockColor: 
