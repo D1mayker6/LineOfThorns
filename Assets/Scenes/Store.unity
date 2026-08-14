@@ -223,6 +223,38 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1307389591557765440, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307389591557765440, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.b
+      value: 0.49019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307389591557765440, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.g
+      value: 0.69411767
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307389591557765440, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.r
+      value: 0.7372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487111171905153671, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487111171905153671, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.b
+      value: 0.6392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487111171905153671, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.g
+      value: 0.49803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487111171905153671, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.r
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3429273243484242845, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -270,6 +302,22 @@ PrefabInstance:
     - target: {fileID: 3859844928900857361, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180730042857412649, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180730042857412649, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.b
+      value: 0.47058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180730042857412649, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.g
+      value: 0.54509807
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180730042857412649, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.r
+      value: 0.5176471
       objectReference: {fileID: 0}
     - target: {fileID: 4246358644155685826, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
       propertyPath: m_Camera
@@ -323,6 +371,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5833627599455122991, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5833627599455122991, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.b
+      value: 0.6313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 5833627599455122991, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.g
+      value: 0.8117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5833627599455122991, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.r
+      value: 0.827451
+      objectReference: {fileID: 0}
     - target: {fileID: 6116356990346509147, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -346,6 +410,54 @@ PrefabInstance:
     - target: {fileID: 6116356990346509147, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247947986816744758, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247947986816744758, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.b
+      value: 0.36862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247947986816744758, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.g
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247947986816744758, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.r
+      value: 0.29803923
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655656625034886981, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655656625034886981, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.b
+      value: 0.40392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655656625034886981, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.g
+      value: 0.6392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655656625034886981, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.r
+      value: 0.9372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571592272553855637, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571592272553855637, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.b
+      value: 0.21960784
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571592272553855637, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.g
+      value: 0.5176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571592272553855637, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.r
+      value: 0.9137255
       objectReference: {fileID: 0}
     - target: {fileID: 7961088854916622030, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
       propertyPath: m_Pivot.x
@@ -478,6 +590,22 @@ PrefabInstance:
     - target: {fileID: 8147491589632142061, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
       propertyPath: m_Name
       value: Store
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620747446446888918, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620747446446888918, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.b
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620747446446888918, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.g
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620747446446888918, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _UIColor.r
+      value: 0.5019608
       objectReference: {fileID: 0}
     - target: {fileID: 9051542272810055314, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
       propertyPath: m_AnchorMax.y

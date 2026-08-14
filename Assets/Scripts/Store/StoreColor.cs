@@ -9,6 +9,7 @@ namespace Store
         [SerializeField] private int _id;
         [SerializeField] private Color _backgroundColor;
         [SerializeField] private Color _blockColor;
+        [SerializeField] private Color _UIColor;
         [SerializeField] private Image _image;
         [SerializeField] private bool _isOpen;
         [SerializeField] private bool _isCurrent;
