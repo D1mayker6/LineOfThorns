@@ -51,10 +51,11 @@ namespace Store
             var loader = Instantiate(_sceneLoaderPrefab);
             loader.LoadNewScene(0);
         }
-        private void SetCurrentColor(Color backgroundColor, Color blockColor, int id)
+        private void SetCurrentColor(Color backgroundColor, Color blockColor, Color uiColor, int id)
         {
-            _gameData.BackgroundColor = ColorUtility.ToHtmlStringRGBA(backgroundColor);
-            _gameData.BlockColor = ColorUtility.ToHtmlStringRGBA(blockColor);
+            _gameData.BackgroundColor =$"#{ColorUtility.ToHtmlStringRGB(backgroundColor)}";
+            _gameData.BlockColor = $"#{ColorUtility.ToHtmlStringRGB(blockColor)}";
+            _gameData.UIColor = $"#{ColorUtility.ToHtmlStringRGB(uiColor)}";
             foreach (var color in _colorsImages)
                 color.sprite = _defaultSprite;
             _gameData.CurentColor = id;
@@ -102,25 +103,18 @@ namespace Store
 
         private void RandomizeColor()
         {
-            var count = _colors.Count;
-            var random = new Random();
             while (true)
             {
-                var color = random.Next(0, count);
+                var color = UnityEngine.Random.Range(0, _colors.Count);
                 if (_gameData.OpenedColors[color])
                     continue;
                 _colors[color].IsOpen = true;
                 _gameData.OpenedColors[color] = true;
-                //_currentColor =  _colors[color];
                 return;
             }
                 
         }
 
-        private void OnDestroy()
-        {
-            _dataManager.SaveGameData();
-            Debug.Log("GameData saved");
+        private void OnDestroy() => _dataManager.SaveGameData();
         }
-    }
 }

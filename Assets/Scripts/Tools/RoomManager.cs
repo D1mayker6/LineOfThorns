@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Data;
 using Player;
 using UI;
 using UnityEngine;
@@ -13,20 +14,17 @@ namespace Tools
         [SerializeField] private List<GameObject> _roomPrefabs;
         [SerializeField] private ScoreCounter  _scoreCounter;
         [SerializeField] private GameObject _firstRoom;
-        [SerializeField] private Color _backgroundColor;
-        [SerializeField] private Color _blockcolor;
+        [SerializeField] private GameManager _gameManager;  
         private Stack<GameObject> _roomsHistory = new();
         private Vector3 _roomBasePosition;
         private GameObject _currentRoom;
         
-        
-        private List<SpriteRenderer> _spriteRenderers = new List<SpriteRenderer>(64);
-
         private void Start()
         {
-            _currentRoom = _firstRoom;
-            RecolorRoom(_currentRoom);
+            AddFirstRoom();
         }
+
+
 
         public void GoToNextLevel()
         {
@@ -39,29 +37,23 @@ namespace Tools
             _scoreCounter.AddScore();
         }
 
+        private void AddFirstRoom()
+        {
+            var room = Instantiate(_firstRoom);
+            _gameManager.RecolorRoom(room);
+        }
+
 
         private void AddRoom()
         {
             _currentRoom = Instantiate(RandomizeRoom());
-            RecolorRoom(_currentRoom);
-        }
-
-        private void RecolorRoom(GameObject room)
-        {
-            if (Camera.main != null) 
-                Camera.main.backgroundColor = _backgroundColor;
-            _spriteRenderers.Clear();
-            _spriteRenderers.AddRange(_currentRoom.GetComponentsInChildren<SpriteRenderer>());
-            foreach (var spriteRenderer in _spriteRenderers)
-                    spriteRenderer.color = _blockcolor;
-            
+            _gameManager.RecolorRoom(_currentRoom);
         }
 
         private GameObject RandomizeRoom()
         {
             if (_roomsHistory.Count >= _roomPrefabs.Count)
                 _roomsHistory.Clear();
-
 
             var availableRooms = _roomPrefabs.Where(r => !_roomsHistory.Contains(r)).ToList();
 

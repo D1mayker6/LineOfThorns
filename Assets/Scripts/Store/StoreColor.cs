@@ -9,13 +9,13 @@ namespace Store
         [SerializeField] private int _id;
         [SerializeField] private Color _backgroundColor;
         [SerializeField] private Color _blockColor;
-        [SerializeField] private Color _UIColor;
+        [SerializeField] private Color _uiColor;
         [SerializeField] private Image _image;
         [SerializeField] private bool _isOpen;
         [SerializeField] private bool _isCurrent;
         [SerializeField] private Button _button;
         
-        public event Action<Color, Color, int> OnColorChosen;
+        public event Action<Color, Color, Color, int> OnColorChosen;
 
         [SerializeField] private Sprite _colorSprite;
         public bool IsOpen
@@ -46,6 +46,6 @@ namespace Store
                 _button.interactable = true;
         }
 
-        private void SetCurrentColor() => OnColorChosen?.Invoke(_backgroundColor, _blockColor, _id);
+        private void SetCurrentColor() => OnColorChosen?.Invoke(_backgroundColor, _blockColor, _uiColor, _id);
     }
 }

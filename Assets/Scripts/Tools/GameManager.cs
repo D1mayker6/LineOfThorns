@@ -1,6 +1,9 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using Data;
 using Player;
+using TMPro;
 using UI;
 using UnityEngine;
 
@@ -14,16 +17,49 @@ namespace Tools
         [SerializeField] private RespawnTimer _respawnTimerPrefab;
         [SerializeField] private GameObject _deathPlayerParticlePrefab;
         [SerializeField] private GameObject _diffViewPrefab;
+        
+        [SerializeField] private Color _backgroundColor;
+        [SerializeField] private Color _blockColor;
+        [SerializeField] private Color _uiColor;
 
         [SerializeField] private ScoreCounter _scoreCounter;
+        [SerializeField] private TextMeshProUGUI _scoreViewText;
         [SerializeField] private Transform _spawnpoint;
+        [SerializeField] private GameData _gameData;
         
         private bool _timerFirstTime = false;
+        
+        private List<SpriteRenderer> _spriteRenderers = new List<SpriteRenderer>(64);
 
-        void Start()
+
+        void Awake()
         {
             _playerMovement.OnPlayerDied += DeathPlayer;
             _scoreCounter.OnDiffReached += ShowDiffView;
+            InitializeColors();
+        }
+
+        private void Start()
+        {
+            if (Camera.main != null) 
+                Camera.main.backgroundColor = _backgroundColor;
+            _scoreViewText.color = _uiColor;
+        }
+
+        private void InitializeColors()
+        {
+            ColorUtility.TryParseHtmlString(_gameData.BackgroundColor, out _backgroundColor);
+            ColorUtility.TryParseHtmlString(_gameData.BlockColor, out _blockColor);
+            ColorUtility.TryParseHtmlString(_gameData.UIColor, out _uiColor);
+        }
+        
+        public void RecolorRoom(GameObject room)
+        {
+            _spriteRenderers.Clear();
+            _spriteRenderers.AddRange(room.GetComponentsInChildren<SpriteRenderer>());
+            foreach (var spriteRenderer in _spriteRenderers)
+                spriteRenderer.color = _blockColor;
+            
         }
 
         private void DeathPlayer() => StartCoroutine(DeathPlayerCoroutine());
@@ -56,6 +92,8 @@ namespace Tools
             timer.OnTimerEnded += RestartGame;
             timer.OnExtraLive += ExecuteExtraLive;
         }
+        
+        
 
         private void ExecuteExtraLive()
         {
