@@ -15,5 +15,6 @@ MonoBehaviour:
   Coins: 0
   Record: 0
   OpenedColors: 0101010101010101
-  BackgroundColor: 000000
-  BlockColor: FFFFFF
+  BackgroundColor: 00000000
+  BlockColor: FFFFFF00
+  CurentColor: 0

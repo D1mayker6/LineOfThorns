@@ -21,6 +21,7 @@ namespace Store
         [SerializeField] private TextMeshProUGUI _priceText;
         [SerializeField] private int _currentColorPrice;
         [SerializeField] private Sprite _defaultSprite; 
+        [SerializeField] private Sprite _selectedSprite;
         
         [SerializeField] private SceneLoader _sceneLoaderPrefab;
         
@@ -31,16 +32,8 @@ namespace Store
             _forADButton.onClick.AddListener(ForAD);
             foreach (var color in  _colors)
                 color.OnColorChosen += SetCurrentColor;
-            
         }
 
-        private void SetCurrentColor(Color backgroundColor, Color blockColor)
-        {
-            _gameData.BackgroundColor = ColorUtility.ToHtmlStringRGBA(backgroundColor);
-            _gameData.BlockColor = ColorUtility.ToHtmlStringRGBA(blockColor);
-            foreach (var color in _colorsImages)
-                color.sprite = _defaultSprite;
-        }
 
         private void Start()
         {
@@ -49,6 +42,7 @@ namespace Store
             CheckMaxCountSkins();
             for (var i = 0; i < _colors.Count; i++)
                 _colors[i].IsOpen = _gameData.OpenedColors[i];
+            ChangeSelectedSprite();
         }
 
 
@@ -57,7 +51,19 @@ namespace Store
             var loader = Instantiate(_sceneLoaderPrefab);
             loader.LoadNewScene(0);
         }
+        private void SetCurrentColor(Color backgroundColor, Color blockColor, int id)
+        {
+            _gameData.BackgroundColor = ColorUtility.ToHtmlStringRGBA(backgroundColor);
+            _gameData.BlockColor = ColorUtility.ToHtmlStringRGBA(blockColor);
+            foreach (var color in _colorsImages)
+                color.sprite = _defaultSprite;
+            _gameData.CurentColor = id;
+            ChangeSelectedSprite();
+        }
 
+        private void ChangeSelectedSprite() => _colorsImages[_gameData.CurentColor].sprite = _selectedSprite;
+
+        
         private void ForMoney()
         {
                 _gameData.Coins -= _currentColorPrice;

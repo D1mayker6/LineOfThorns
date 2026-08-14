@@ -17,5 +17,7 @@ namespace Data
         public string BackgroundColor = "#000000";
 
         public string BlockColor = "#FFFFFF";
+
+        public int CurentColor;
     }
 }
