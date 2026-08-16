@@ -14,7 +14,8 @@ namespace Tools
         [SerializeField] private List<GameObject> _roomPrefabs;
         [SerializeField] private ScoreCounter  _scoreCounter;
         [SerializeField] private GameObject _firstRoom;
-        [SerializeField] private GameManager _gameManager;  
+        [SerializeField] private GameManager _gameManager; 
+        [SerializeField] private PlayerMovement _playerMovement;
         private Stack<GameObject> _roomsHistory = new();
         private Vector3 _roomBasePosition;
         private GameObject _currentRoom;
@@ -22,6 +23,7 @@ namespace Tools
         private void Start()
         {
             AddFirstRoom();
+            _playerMovement.OnPlayerLevelReached += GoToNextLevel;
         }
 
 

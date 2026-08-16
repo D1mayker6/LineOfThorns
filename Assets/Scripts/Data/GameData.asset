@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Data.GameData
   Coins: 0
   Record: 0
-  OpenedColors: 0101010101010101
-  BackgroundColor: '#FAAF3F'
-  BlockColor: '#D75830'
-  UIColor: '#E98438'
-  CurentColor: 2
+  OpenedColors: 0100010000000001
+  BackgroundColor: '#EEEB6A'
+  BlockColor: '#EF5A64'
+  UIColor: '#EFA367'
+  CurentColor: 7

@@ -36,6 +36,7 @@ namespace Tools
         {
             _playerMovement.OnPlayerDied += DeathPlayer;
             _scoreCounter.OnDiffReached += ShowDiffView;
+            _scoreCounter.OnDiffReached += _playerMovement.DiffIncrease;
             InitializeColors();
         }
 

@@ -21,13 +21,12 @@ namespace Player
         [SerializeField] private Transform _groundCheck;
         [SerializeField] private Transform _collisionCheck;
         [SerializeField] private float _speedMultiple;
-        [SerializeField] private RoomManager _roomManager;
-        [SerializeField] private ScoreCounter _scoreCounter;
         [SerializeField] private Rigidbody2D _rb;
         [SerializeField] private Animator _animator;
         
         [SerializeField] private LayerMask _mask;
         public event Action OnPlayerDied;
+        public event Action OnPlayerLevelReached;
         
         private bool _isGrounded;
         
@@ -41,13 +40,6 @@ namespace Player
                 _translationSpeed = value;
             }
         }
-        
-        
-
-        private void Start()
-        { 
-            _scoreCounter.OnDiffReached += DiffIncrease;
-        }
 
         public void ReverseForcePower()
         {
@@ -59,7 +51,7 @@ namespace Player
             _forcePower = Mathf.Abs(_forcePower);
         }
         
-        private void DiffIncrease()
+        public void DiffIncrease()
         {
             _translationSpeed += _speedMultiple;
         }
@@ -121,7 +113,7 @@ namespace Player
             if (other.gameObject.CompareTag("Trap"))
                 OnPlayerDied?.Invoke();
             if(other.gameObject.CompareTag("Exit"))
-                _roomManager.GoToNextLevel();
+                OnPlayerLevelReached?.Invoke();
         }
     }
 }
