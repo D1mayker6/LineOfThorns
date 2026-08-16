@@ -1,12 +1,5 @@
 using System;
-using System.Collections;
-using Enums;
-using Tools;
-using Triggers;
-using UI;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
-
 namespace Player
 {
     [RequireComponent(typeof(Rigidbody2D))]
@@ -19,7 +12,6 @@ namespace Player
         [SerializeField] private float _checkRadius;
         [SerializeField] private float _forcePower;
         [SerializeField] private Transform _groundCheck;
-        [SerializeField] private Transform _collisionCheck;
         [SerializeField] private float _speedMultiple;
         [SerializeField] private Rigidbody2D _rb;
         [SerializeField] private Animator _animator;
@@ -75,7 +67,6 @@ namespace Player
         private void FixedUpdate()
         {
             Move();
-            CheckDeath();
         }
 
 
@@ -88,14 +79,8 @@ namespace Player
                 _rb.AddForce(Vector2.up * _forcePower, ForceMode2D.Impulse);
             }
         }
-
-        private void CheckDeath()
-        {
-            var hit = Physics2D.Raycast(_collisionCheck.position, _collisionCheck.right, _rayDuration, _mask);
-            if (hit.collider != null)
-                OnPlayerDied?.Invoke();
-
-        }
+        
+        public void InvokeDeath() => OnPlayerDied?.Invoke();
 
         private void Move()
         {
@@ -111,7 +96,7 @@ namespace Player
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.CompareTag("Trap"))
-                OnPlayerDied?.Invoke();
+                InvokeDeath();
             if(other.gameObject.CompareTag("Exit"))
                 OnPlayerLevelReached?.Invoke();
         }
