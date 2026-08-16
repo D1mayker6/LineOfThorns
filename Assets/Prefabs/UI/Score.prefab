@@ -34,10 +34,10 @@ RectTransform:
   - {fileID: 6674492170368001552}
   m_Father: {fileID: 4759925135942791562}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.11765562, y: 0.8671624}
-  m_AnchorMax: {x: 0.11765562, y: 0.8671624}
-  m_AnchoredPosition: {x: -5, y: -7}
-  m_SizeDelta: {x: 326.8223, y: 156.1502}
+  m_AnchorMin: {x: 0.06022255, y: 0.961}
+  m_AnchorMax: {x: 0.06022255, y: 0.961}
+  m_AnchoredPosition: {x: 59.59021, y: -73.44208}
+  m_SizeDelta: {x: 367.6028, y: 175.6344}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9096241045544651470
 CanvasRenderer:
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 999
+  m_text: 9999
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 34b4112991f4b9d49a285216333b280b, type: 2}
   m_sharedMaterial: {fileID: -4037609360079533593, guid: 34b4112991f4b9d49a285216333b280b, type: 2}
@@ -302,4 +302,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a065f20320735134bbf0717362e44d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreCounter
-  _score: 500
+  _score: 0
+  _roomValue: 50

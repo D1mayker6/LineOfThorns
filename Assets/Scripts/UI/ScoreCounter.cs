@@ -14,7 +14,7 @@ namespace UI
 
         private bool _isStopped;
         
-        private int _roomValue = 100;
+        [SerializeField] private int _roomValue = 50;
 
         public int Score
         {
