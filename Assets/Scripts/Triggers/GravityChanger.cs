@@ -15,6 +15,7 @@ namespace Triggers
             if (other.TryGetComponent<PlayerMovement>(out var playerMovement))
             {
                 GravityChange(playerMovement);
+                Destroy(gameObject);
             }
         }
 

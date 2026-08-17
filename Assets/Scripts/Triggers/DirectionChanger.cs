@@ -13,7 +13,10 @@ namespace Triggers
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.TryGetComponent<PlayerMovement>(out var playerMovement))
+            {
                 DirectionChange(playerMovement);
+                Destroy(gameObject);
+            }
         }
 
         private void DirectionChange(PlayerMovement playerMovement)

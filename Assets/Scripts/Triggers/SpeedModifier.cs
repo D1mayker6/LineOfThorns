@@ -13,6 +13,7 @@ namespace Triggers
             if (other.TryGetComponent<PlayerMovement>(out var playerMovement))
             {
                 SpeedChangeUp(playerMovement);
+                Destroy(gameObject);
             }
         }
 
