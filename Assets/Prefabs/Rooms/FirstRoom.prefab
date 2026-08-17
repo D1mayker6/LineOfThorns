@@ -748,6 +748,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DirectionChangeLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 5823832260927813828, guid: 12050fdc44b8fa742ae32e1c16f415f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8603226094872388065, guid: 12050fdc44b8fa742ae32e1c16f415f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.425619
@@ -854,6 +858,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DirectionChangeRight
       objectReference: {fileID: 0}
+    - target: {fileID: 7343396460658725001, guid: 7b86e4ad139ce3347afb5f2623b6a952, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -915,6 +923,10 @@ PrefabInstance:
     - target: {fileID: 6899689251286962830, guid: 9d5131e46f48b5c46bb344302db5bf59, type: 3}
       propertyPath: m_Name
       value: GravityChangerDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 6899689251286962830, guid: 9d5131e46f48b5c46bb344302db5bf59, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -978,6 +990,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeedUp
       objectReference: {fileID: 0}
+    - target: {fileID: 5918874506051563438, guid: de10a9dbbf66e9d48b9bbd52e202ce57, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1040,6 +1056,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GravityChangerUp
       objectReference: {fileID: 0}
+    - target: {fileID: 8936583503751837991, guid: 79ddeea9d18c8b64c87fea3ee1734c8d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1101,6 +1121,10 @@ PrefabInstance:
     - target: {fileID: 7262395278021118199, guid: c6f1a4c466046104e92faafffe148c34, type: 3}
       propertyPath: m_Name
       value: SpeedDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 7262395278021118199, guid: c6f1a4c466046104e92faafffe148c34, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

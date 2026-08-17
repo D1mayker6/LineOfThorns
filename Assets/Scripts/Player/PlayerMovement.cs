@@ -60,8 +60,7 @@ namespace Player
             _animator.SetFloat("velocityY", relativeVelocity);
             _animator.SetBool("isGrounded", _isGrounded);
             
-            if (Input.GetKeyDown(KeyCode.Escape));
-            
+            Debug.Log(_rb.linearVelocityY);
         }
         
         private void FixedUpdate()
@@ -74,10 +73,8 @@ namespace Player
         {
             var overlap = Physics2D.OverlapCircle(_groundCheck.position, _checkRadius,
                 1 << LayerMask.NameToLayer("Ground"));
-            if (overlap && Mathf.Abs(_rb.linearVelocityY) < Mathf.Abs(_forcePower))
-            {
-                _rb.AddForce(Vector2.up * _forcePower, ForceMode2D.Impulse);
-            }
+            if (overlap)
+                _rb.linearVelocity = new Vector2(_rb.linearVelocityX, _forcePower);
         }
         
         public void InvokeDeath() => OnPlayerDied?.Invoke();
@@ -95,10 +92,19 @@ namespace Player
         
         private void OnTriggerEnter2D(Collider2D other)
         {
+            Debug.Log($"Триггер энтер игрока увидел {other.gameObject.name}");
             if (other.gameObject.CompareTag("Trap"))
                 InvokeDeath();
             if(other.gameObject.CompareTag("Exit"))
                 OnPlayerLevelReached?.Invoke();
+        }
+        
+        private void OnDrawGizmosSelected()
+        {
+            if (_groundCheck == null) return;
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(_groundCheck.position, _checkRadius);
         }
     }
 }

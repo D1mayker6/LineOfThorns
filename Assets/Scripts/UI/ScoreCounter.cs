@@ -45,7 +45,6 @@ namespace UI
                     _time = 0;
                 }
             }
-            Debug.Log(_currentDiff);
             var diffLvl = Score / 1000;
 
             if (diffLvl > _currentDiff)
