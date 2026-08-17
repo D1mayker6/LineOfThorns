@@ -221,6 +221,7 @@ MonoBehaviour:
   _scoreCounter: {fileID: 1753602192}
   _firstRoom: {fileID: 3013527301125451191, guid: 984e1da2e8152aa4cad9005b4212907f, type: 3}
   _gameManager: {fileID: 544231727}
+  _playerMovement: {fileID: 0}
 --- !u!4 &368679987
 Transform:
   m_ObjectHideFlags: 0

@@ -216,8 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba41c1cca394f96acd0ed2afe7a7814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tools.RoomManager
-  _roomPrefabs:
-  - {fileID: 8101518369225682520, guid: 5b0e29bcad1e66944b8c8d4091ccce9e, type: 3}
+  _roomPrefabs: []
   _scoreCounter: {fileID: 1753602192}
   _firstRoom: {fileID: 8101518369225682520, guid: 6fbe41c652c00c546989db6238fd21ee, type: 3}
   _gameManager: {fileID: 544231727}

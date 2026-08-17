@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 826449497328956923}
   - component: {fileID: 8616476794003988972}
   m_Layer: 0
-  m_Name: SpeedDownRenderer1
+  m_Name: SpeedDownRenderer_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,12 +79,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1529004468571396027, guid: 122bc75bf5b4a6642bb119cc77016fca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 122bc75bf5b4a6642bb119cc77016fca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.46, y: 0.9}
+  m_Size: {x: 1.52, y: 0.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 991190690672948411}
   - component: {fileID: 653134121060401430}
   m_Layer: 0
-  m_Name: SpeedDownRenderer2
+  m_Name: SpeedDownRenderer_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,12 +169,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1529004468571396027, guid: 122bc75bf5b4a6642bb119cc77016fca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfe8e9cb59dce8b45865da063b30d532, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.46, y: 0.9}
+  m_Size: {x: 1.52, y: 0.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -262,7 +262,7 @@ Animator:
   m_GameObject: {fileID: 7262395278021118199}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f1d5d2d4847cc74498ff41c83ecb2105, type: 2}
+  m_Controller: {fileID: 9100000, guid: f28a1333cb6e8d54083d2474bba08576, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
