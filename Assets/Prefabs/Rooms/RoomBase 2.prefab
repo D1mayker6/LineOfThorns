@@ -810,6 +810,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spike (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 5749701668262188347, guid: 166dbf8fbf0ba09489c218436fb5bfb7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1342,6 +1346,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spike (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 5749701668262188347, guid: 166dbf8fbf0ba09489c218436fb5bfb7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1737,6 +1745,10 @@ PrefabInstance:
     - target: {fileID: 5749701668262188347, guid: 166dbf8fbf0ba09489c218436fb5bfb7, type: 3}
       propertyPath: m_Name
       value: Spike
+      objectReference: {fileID: 0}
+    - target: {fileID: 5749701668262188347, guid: 166dbf8fbf0ba09489c218436fb5bfb7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
