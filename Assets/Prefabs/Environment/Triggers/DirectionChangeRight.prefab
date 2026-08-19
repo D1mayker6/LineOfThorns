@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Triggers.DirectionChange
   _direction: 1
+  _touchCount: 1
 --- !u!58 &8401407457400677204
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -83,7 +84,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.3
 --- !u!95 &788698005297136132
 Animator:
   serializedVersion: 7

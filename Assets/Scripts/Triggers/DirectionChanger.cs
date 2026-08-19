@@ -1,3 +1,4 @@
+using System;
 using Enums;
 using Player;
 using UnityEngine;
@@ -7,7 +8,21 @@ namespace Triggers
     public class DirectionChanger : MonoBehaviour
     {
         [SerializeField] private Direction _direction;
-    
+        [SerializeField] private int _touchCount = 1;
+
+        public int TouchCount
+        {
+            get => _touchCount;
+            set
+            {
+                _touchCount = value;
+                if (_touchCount == 0)
+                    DestroyTrigger();
+            }
+        }
+
+        private void DestroyTrigger() => Destroy(gameObject);
+
         public Direction Direction =>  _direction;
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -15,7 +30,8 @@ namespace Triggers
             if (other.TryGetComponent<PlayerMovement>(out var playerMovement))
             {
                 DirectionChange(playerMovement);
-                Destroy(gameObject);
+
+                TouchCount--;
             }
         }
 

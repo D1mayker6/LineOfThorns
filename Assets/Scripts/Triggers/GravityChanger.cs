@@ -10,12 +10,26 @@ namespace Triggers
         [SerializeField] private GravityValue _gravityValue;
         [SerializeField] private ParticleSystem _particlePrefab;
         [SerializeField] private float _impulse = 200f;
+        [SerializeField] private int _touchCount = 1;
+
+        public int TouchCount
+        {
+            get => _touchCount;
+            set
+            {
+                _touchCount = value;
+                if (_touchCount == 0)
+                    DestroyTrigger();
+            }
+        }
+
+        private void DestroyTrigger() => Destroy(gameObject);
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.TryGetComponent<PlayerMovement>(out var playerMovement))
             {
                 GravityChange(playerMovement);
-                Destroy(gameObject);
+                TouchCount--;
             }
         }
 

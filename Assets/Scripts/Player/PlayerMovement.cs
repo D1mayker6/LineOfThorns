@@ -92,7 +92,6 @@ namespace Player
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log($"Триггер энтер игрока увидел {other.gameObject.name}");
             if (other.gameObject.CompareTag("Trap"))
                 InvokeDeath();
             if(other.gameObject.CompareTag("Exit"))

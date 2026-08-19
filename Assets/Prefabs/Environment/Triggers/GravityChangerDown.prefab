@@ -140,6 +140,7 @@ MonoBehaviour:
   _gravityValue: 1
   _particlePrefab: {fileID: 8694926315615174292, guid: e4f285ac4c4916b4aab5f0101fe17901, type: 3}
   _impulse: 200
+  _touchCount: 0
 --- !u!58 &1489887568932768480
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -175,7 +176,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.3
 --- !u!95 &1225805259836895913
 Animator:
   serializedVersion: 7

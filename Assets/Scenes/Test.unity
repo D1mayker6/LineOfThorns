@@ -218,7 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Tools.RoomManager
   _roomPrefabs: []
   _scoreCounter: {fileID: 1753602192}
-  _firstRoom: {fileID: 8101518369225682520, guid: 9e7076c094b53064a95c939d433aa792, type: 3}
+  _firstRoom: {fileID: 8101518369225682520, guid: 946509fb846becf418ad10b1aeb9cdb7, type: 3}
   _gameManager: {fileID: 544231727}
   _playerMovement: {fileID: 1478124883}
 --- !u!4 &368679987
