@@ -24,10 +24,13 @@ namespace UI
         
         private void Start()
         {
+            _title.text = $"You will be redirected to {_socialNetwork}. \nContinue?";
+        }
+        
+        private void OnEnable()
+        {
             _continueButton.onClick.AddListener(Continue);
             _backButton.onClick.AddListener(Back);
-            _title.text = $"You will be redirected to {_socialNetwork}. \nContinue?";
-
         }
 
         private void Continue()
@@ -40,6 +43,12 @@ namespace UI
         {
             Destroy(gameObject);
         }
-    
+
+        private void OnDisable()
+        {
+            _continueButton.onClick.RemoveListener(Continue);
+            _backButton.onClick.RemoveListener(Back);
+            
+        }
     }
 }

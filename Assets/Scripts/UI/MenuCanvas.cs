@@ -49,6 +49,19 @@ namespace UI
             _dataManager.LoadData();
         }
 
+        private void OnEnable()
+        {
+            _videoPlayer.loopPointReached -= VideoPlayerOnloopPointReached;
+            
+            _playButton.onClick.RemoveListener(Play);
+            _storeButton.onClick.RemoveListener(Store);
+            _settingsButton.onClick.RemoveListener(Settings);
+            _exitButton.onClick.RemoveListener(Exit);
+            
+            _telegramButton.onClick.RemoveListener(GoToTelegram);
+            _youtubeButton.onClick.RemoveListener(GoToYoutube);
+        }
+
 
         private void VideoPlayerOnloopPointReached(VideoPlayer source)
         {

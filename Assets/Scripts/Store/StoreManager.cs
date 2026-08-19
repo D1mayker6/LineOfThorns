@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Data;
 using TMPro;
@@ -25,7 +26,8 @@ namespace Store
         
         [SerializeField] private SceneLoader _sceneLoaderPrefab;
         
-        private void Awake()
+
+        private void OnEnable()
         {
             _backButton.onClick.AddListener(Back);
             _forMoneyButton.onClick.AddListener(ForMoney);
@@ -115,6 +117,14 @@ namespace Store
                 
         }
 
-        private void OnDestroy() => _dataManager.SaveGameData();
+        private void OnDisable()
+        {
+            _dataManager.SaveGameData();
+            _backButton.onClick.RemoveListener(Back);
+            _forMoneyButton.onClick.RemoveListener(ForMoney);
+            _forADButton.onClick.RemoveListener(ForAD);
+            foreach (var color in  _colors)
+                color.OnColorChosen -= SetCurrentColor;
         }
+    }
 }

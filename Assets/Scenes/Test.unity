@@ -218,7 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Tools.RoomManager
   _roomPrefabs: []
   _scoreCounter: {fileID: 1753602192}
-  _firstRoom: {fileID: 8101518369225682520, guid: 946509fb846becf418ad10b1aeb9cdb7, type: 3}
+  _firstRoom: {fileID: 8101518369225682520, guid: 30090393752b05b41bd2d007263f9754, type: 3}
   _gameManager: {fileID: 544231727}
   _playerMovement: {fileID: 1478124883}
 --- !u!4 &368679987
@@ -527,6 +527,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1284147794810552084, guid: 945d03d59bfb8c543b8f76fd46d97931, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1576179934695190019, guid: 945d03d59bfb8c543b8f76fd46d97931, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22
@@ -570,6 +574,18 @@ PrefabInstance:
     - target: {fileID: 4493972040638695601, guid: 945d03d59bfb8c543b8f76fd46d97931, type: 3}
       propertyPath: m_Name
       value: PlayerCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 7334429379880990625, guid: 945d03d59bfb8c543b8f76fd46d97931, type: 3}
+      propertyPath: _forcePower
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7334429379880990625, guid: 945d03d59bfb8c543b8f76fd46d97931, type: 3}
+      propertyPath: _checkRadius
+      value: 1.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 7334429379880990625, guid: 945d03d59bfb8c543b8f76fd46d97931, type: 3}
+      propertyPath: _translationSpeed
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

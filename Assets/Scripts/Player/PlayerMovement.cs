@@ -21,6 +21,8 @@ namespace Player
         public event Action OnPlayerLevelReached;
         
         private bool _isGrounded;
+
+        private float _baseSpeed;
         
         public float TranslationSpeed
         {
@@ -33,20 +35,21 @@ namespace Player
             }
         }
 
-        public void ReverseForcePower()
+        private void OnEnable()
         {
-            _forcePower *= -1;
+            OnPlayerLevelReached += RestorePlayer;
+            _baseSpeed = _translationSpeed;
+
         }
 
-        public void AbsForcePower()
-        {
-            _forcePower = Mathf.Abs(_forcePower);
-        }
+        private void RestorePlayer() => _translationSpeed = _baseSpeed;
+
+        public void ReverseForcePower() => _forcePower *= -1;
         
-        public void DiffIncrease()
-        {
-            _translationSpeed += _speedMultiple;
-        }
+
+        public void AbsForcePower() => _forcePower = Mathf.Abs(_forcePower);
+        
+        public void DiffIncrease() => _translationSpeed += _speedMultiple;
 
         private void Update()
         {
@@ -60,7 +63,6 @@ namespace Player
             _animator.SetFloat("velocityY", relativeVelocity);
             _animator.SetBool("isGrounded", _isGrounded);
             
-            Debug.Log(_rb.linearVelocityY);
         }
         
         private void FixedUpdate()
@@ -85,17 +87,17 @@ namespace Player
             transform.Translate(move);
         }
 
-        public void SetDirection(int direction)
-        {
-            _direction = direction;
-        }
+        public void SetDirection(int direction) => _direction = direction;
         
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.CompareTag("Trap"))
                 InvokeDeath();
-            if(other.gameObject.CompareTag("Exit"))
+            if (other.gameObject.CompareTag("Exit"))
+            {
                 OnPlayerLevelReached?.Invoke();
+                Debug.Log("Exit");
+            }
         }
         
         private void OnDrawGizmosSelected()
@@ -104,6 +106,11 @@ namespace Player
 
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(_groundCheck.position, _checkRadius);
+        }
+
+        private void OnDisable()
+        {
+            OnPlayerLevelReached -= RestorePlayer;
         }
     }
 }

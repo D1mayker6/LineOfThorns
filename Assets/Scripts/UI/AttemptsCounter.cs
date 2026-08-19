@@ -22,7 +22,7 @@ namespace UI
 
         [SerializeField] private PlayerMovement _player;
 
-        private void Start()
+        private void OnEnable()
         {
             _player.OnPlayerDied += AddAttempt;
         }
@@ -30,6 +30,11 @@ namespace UI
         private void AddAttempt()
         {
             Attempts++;
+        }
+
+        private void OnDisable()
+        {
+            _player.OnPlayerDied -= AddAttempt;
         }
     }
 }

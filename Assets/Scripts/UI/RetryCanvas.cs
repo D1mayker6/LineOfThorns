@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using Tools;
 using UnityEngine;
@@ -26,9 +27,13 @@ namespace UI
         
         private void Start()
         {
+            _earnText.text = $"Earned: {_coinsConverter.ConvertScore(_score)}";
+        }
+
+        private void OnEnable()
+        {
             _mainMenuButton.onClick.AddListener(Menu);
             _retryButton.onClick.AddListener(Retry);
-            _earnText.text = $"Earned: {_coinsConverter.ConvertScore(_score)}";
         }
 
         private void Menu()
@@ -41,6 +46,12 @@ namespace UI
         {
             var loader = Instantiate(_sceneLoaderPrefab);
             loader.LoadNewScene(1);
+        }
+
+        private void OnDisable()
+        {
+            _mainMenuButton.onClick.RemoveListener(Menu);
+            _retryButton.onClick.RemoveListener(Retry);
         }
     }
 }

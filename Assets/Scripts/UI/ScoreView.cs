@@ -11,9 +11,13 @@ namespace UI
 
         private void Start()
         {
+            UpdateScoreView();
+        }
+
+        private void OnEnable()
+        {
             _counter.OnScoreChanged += UpdateScoreView;
             _counter.OnCounterSwitch += SwitchCounterView;
-            UpdateScoreView();
         }
 
         private void UpdateScoreView()
@@ -25,8 +29,12 @@ namespace UI
         {
             _text.enabled = !_text.enabled;
         }
-        
-        
+
+        private void OnDisable()
+        {
+            _counter.OnScoreChanged -= UpdateScoreView;
+            _counter.OnCounterSwitch -= SwitchCounterView;
+        }
     }
     
 }

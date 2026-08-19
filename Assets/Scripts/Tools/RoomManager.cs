@@ -30,6 +30,7 @@ namespace Tools
 
         public void GoToNextLevel()
         {
+            Debug.Log("Go to next level");
             AddRoom();
             AddScoreForRoom();
         }
@@ -66,8 +67,10 @@ namespace Tools
 
             return selectedRoom;
         }
-        
-        
-        
+
+        private void OnDisable()
+        {
+            _playerMovement.OnPlayerLevelReached -= GoToNextLevel;
+        }
     }
 }

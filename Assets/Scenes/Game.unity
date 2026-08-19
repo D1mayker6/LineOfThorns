@@ -217,7 +217,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tools.RoomManager
   _roomPrefabs:
-  - {fileID: 8101518369225682520, guid: 5b0e29bcad1e66944b8c8d4091ccce9e, type: 3}
+  - {fileID: 8101518369225682520, guid: 6c82ea096350aef4e9b744c7ad0abcb0, type: 3}
+  - {fileID: 8101518369225682520, guid: 6fbe41c652c00c546989db6238fd21ee, type: 3}
+  - {fileID: 8101518369225682520, guid: 9e7076c094b53064a95c939d433aa792, type: 3}
+  - {fileID: 8101518369225682520, guid: 85600ad1c86d8e14e9485fe3f4b80cde, type: 3}
+  - {fileID: 8101518369225682520, guid: 946509fb846becf418ad10b1aeb9cdb7, type: 3}
+  - {fileID: 8101518369225682520, guid: 4d60abc9b8f15fc429e732a79cd78d63, type: 3}
+  - {fileID: 8101518369225682520, guid: 30090393752b05b41bd2d007263f9754, type: 3}
   _scoreCounter: {fileID: 1753602192}
   _firstRoom: {fileID: 3013527301125451191, guid: 984e1da2e8152aa4cad9005b4212907f, type: 3}
   _gameManager: {fileID: 544231727}

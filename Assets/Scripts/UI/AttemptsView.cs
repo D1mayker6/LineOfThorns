@@ -13,7 +13,16 @@ namespace UI
         {
             _attemptsText = GetComponent<Text>();
             _attemptsCounter = GetComponentInChildren<AttemptsCounter>();
+        }
+
+        private void OnEnable()
+        {
             _attemptsCounter.OnValueChanged += UpdateView;
+        }
+
+        private void OnDisable()
+        {
+            _attemptsCounter.OnValueChanged -= UpdateView;
         }
 
         private void UpdateView()
