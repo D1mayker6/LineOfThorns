@@ -57,8 +57,12 @@ namespace Player
                 Jump();
             
             _isGrounded = Physics2D.OverlapCircle(_groundCheck.position, _checkRadius, 
-                1 << LayerMask.NameToLayer("Ground"));
+                _mask);
             float relativeVelocity = _rb.linearVelocityY * Mathf.Sign(_rb.gravityScale);
+
+            var hit = Physics2D.Raycast(_groundCheck.position, Vector2.right * _direction, _rayDuration, _mask);
+            if(hit.collider)
+                OnPlayerDied?.Invoke();
     
             _animator.SetFloat("velocityY", relativeVelocity);
             _animator.SetBool("isGrounded", _isGrounded);
@@ -91,6 +95,8 @@ namespace Player
         
         private void OnTriggerEnter2D(Collider2D other)
         {
+            Debug.Log($"игрок столкнулся с {other.gameObject.name}");
+
             if (other.gameObject.CompareTag("Trap"))
                 InvokeDeath();
             if (other.gameObject.CompareTag("Exit"))
@@ -99,13 +105,15 @@ namespace Player
                 Debug.Log("Exit");
             }
         }
-        
+
         private void OnDrawGizmosSelected()
         {
             if (_groundCheck == null) return;
 
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(_groundCheck.position, _checkRadius);
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(_groundCheck.position, _groundCheck.position + new Vector3(_rayDuration * _direction, 0,  0));
         }
 
         private void OnDisable()

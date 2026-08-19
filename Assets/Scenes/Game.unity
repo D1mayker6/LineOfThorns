@@ -227,7 +227,7 @@ MonoBehaviour:
   _scoreCounter: {fileID: 1753602192}
   _firstRoom: {fileID: 3013527301125451191, guid: 984e1da2e8152aa4cad9005b4212907f, type: 3}
   _gameManager: {fileID: 544231727}
-  _playerMovement: {fileID: 0}
+  _playerMovement: {fileID: 1478124883}
 --- !u!4 &368679987
 Transform:
   m_ObjectHideFlags: 0
@@ -536,7 +536,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1576179934695190019, guid: 945d03d59bfb8c543b8f76fd46d97931, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1576179934695190019, guid: 945d03d59bfb8c543b8f76fd46d97931, type: 3}
       propertyPath: m_LocalPosition.y
@@ -579,13 +579,9 @@ PrefabInstance:
       value: PlayerCube
       objectReference: {fileID: 0}
     - target: {fileID: 7334429379880990625, guid: 945d03d59bfb8c543b8f76fd46d97931, type: 3}
-      propertyPath: _roomManager
-      value: 
-      objectReference: {fileID: 368679986}
-    - target: {fileID: 7334429379880990625, guid: 945d03d59bfb8c543b8f76fd46d97931, type: 3}
-      propertyPath: _scoreCounter
-      value: 
-      objectReference: {fileID: 1753602192}
+      propertyPath: _checkRadius
+      value: 1.31
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

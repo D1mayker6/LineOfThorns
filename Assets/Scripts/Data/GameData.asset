@@ -15,7 +15,7 @@ MonoBehaviour:
   Coins: 0
   Record: 0
   OpenedColors: 0101010101010101
-  BackgroundColor: '#A0D7B7'
-  BlockColor: '#92278F'
-  UIColor: '#997FA3'
-  CurentColor: 5
+  BackgroundColor: '#B6E2E1'
+  BlockColor: '#52330E'
+  UIColor: '#848B78'
+  CurentColor: 4
