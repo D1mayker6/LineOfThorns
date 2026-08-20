@@ -20,6 +20,13 @@ namespace Triggers
                     DestroyTrigger();
             }
         }
+        
+        private int _startTouchCount;
+
+        private void Start()
+        {
+            _startTouchCount = TouchCount;
+        }
 
         private void DestroyTrigger() => Destroy(gameObject);
 
@@ -30,8 +37,9 @@ namespace Triggers
             if (other.TryGetComponent<PlayerMovement>(out var playerMovement))
             {
                 DirectionChange(playerMovement);
-
                 TouchCount--;
+                if(playerMovement && gameObject)
+                    playerMovement.OnPlayerDied += ResetTouches;
             }
         }
 
@@ -41,6 +49,11 @@ namespace Triggers
             playerMovement.SetDirection(dir);
             var pos = new Vector3(playerMovement.transform.localScale.x * dir,playerMovement.transform.localScale.y,playerMovement.transform.localScale.z);
             playerMovement.transform.localScale = pos;
+        }
+
+        private void ResetTouches()
+        {
+            TouchCount = _startTouchCount;
         }
     }
 }

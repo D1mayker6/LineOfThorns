@@ -36,7 +36,6 @@ namespace Tools
         {
             _playerMovement.OnPlayerDied += DeathPlayer;
             _scoreCounter.OnDiffReached += ShowDiffView;
-            _scoreCounter.OnDiffReached += _playerMovement.DiffIncrease;
             InitializeColors();
         }
 
@@ -65,7 +64,7 @@ namespace Tools
 
         private void DeathPlayer() => StartCoroutine(DeathPlayerCoroutine());
 
-        private void ShowDiffView() => Instantiate(_diffViewPrefab);
+        private void ShowDiffView(int diff = 0) => Instantiate(_diffViewPrefab);
 
         private IEnumerator DeathPlayerCoroutine()
         {
@@ -117,7 +116,6 @@ namespace Tools
         {
             _playerMovement.OnPlayerDied -= DeathPlayer;
             _scoreCounter.OnDiffReached -= ShowDiffView;
-            _scoreCounter.OnDiffReached -= _playerMovement.DiffIncrease;
         }
     }
 }

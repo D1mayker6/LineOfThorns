@@ -216,14 +216,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba41c1cca394f96acd0ed2afe7a7814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tools.RoomManager
-  _roomPrefabs:
+  _currentroomPrefabs: []
+  _firstroomPrefabs:
   - {fileID: 8101518369225682520, guid: 6c82ea096350aef4e9b744c7ad0abcb0, type: 3}
+  - {fileID: 8101518369225682520, guid: 85600ad1c86d8e14e9485fe3f4b80cde, type: 3}
+  - {fileID: 8101518369225682520, guid: 2ff100d4e173c304ab1f718da5880452, type: 3}
+  - {fileID: 8101518369225682520, guid: f084780eb1a5bf648b7358f9f1ef8dbb, type: 3}
+  - {fileID: 8101518369225682520, guid: 3ce87ed48f37cc44ab72b9c53e8b9077, type: 3}
+  - {fileID: 8101518369225682520, guid: a0c3c448b11efa4448e50853601bf18f, type: 3}
+  - {fileID: 8101518369225682520, guid: 3712b0b76d4d2924cad29152c013f451, type: 3}
+  - {fileID: 8101518369225682520, guid: 1bec48a9f07289447a73d968b0d6fd32, type: 3}
+  _secondroomPrefabs:
+  - {fileID: 8101518369225682520, guid: 30090393752b05b41bd2d007263f9754, type: 3}
+  _thirdroomPrefabs:
+  - {fileID: 8101518369225682520, guid: 946509fb846becf418ad10b1aeb9cdb7, type: 3}
+  _fourthroomPrefabs:
+  - {fileID: 8101518369225682520, guid: 6b0f1cc507400a645a29820a5a937416, type: 3}
+  _fifthroomPrefabs:
   - {fileID: 8101518369225682520, guid: 6fbe41c652c00c546989db6238fd21ee, type: 3}
   - {fileID: 8101518369225682520, guid: 9e7076c094b53064a95c939d433aa792, type: 3}
-  - {fileID: 8101518369225682520, guid: 85600ad1c86d8e14e9485fe3f4b80cde, type: 3}
-  - {fileID: 8101518369225682520, guid: 946509fb846becf418ad10b1aeb9cdb7, type: 3}
   - {fileID: 8101518369225682520, guid: 4d60abc9b8f15fc429e732a79cd78d63, type: 3}
-  - {fileID: 8101518369225682520, guid: 30090393752b05b41bd2d007263f9754, type: 3}
   _scoreCounter: {fileID: 1753602192}
   _firstRoom: {fileID: 3013527301125451191, guid: 984e1da2e8152aa4cad9005b4212907f, type: 3}
   _gameManager: {fileID: 544231727}
@@ -520,6 +532,10 @@ PrefabInstance:
     - target: {fileID: 4759925135942791562, guid: d3b628452ec523d47804779c87456959, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574191712473146767, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: _diffChangeValue
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

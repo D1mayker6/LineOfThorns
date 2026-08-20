@@ -11,7 +11,12 @@ namespace Tools
 {
     public class RoomManager: MonoBehaviour
     {
-        [SerializeField] private List<GameObject> _roomPrefabs;
+        [SerializeField] private List<GameObject> _currentroomPrefabs;
+        [SerializeField] private List<GameObject> _firstroomPrefabs;
+        [SerializeField] private List<GameObject> _secondroomPrefabs;
+        [SerializeField] private List<GameObject> _thirdroomPrefabs;
+        [SerializeField] private List<GameObject> _fourthroomPrefabs;
+        [SerializeField] private List<GameObject> _fifthroomPrefabs;
         [SerializeField] private ScoreCounter  _scoreCounter;
         [SerializeField] private GameObject _firstRoom;
         [SerializeField] private GameManager _gameManager; 
@@ -19,18 +24,56 @@ namespace Tools
         private Stack<GameObject> _roomsHistory = new();
         private Vector3 _roomBasePosition;
         private GameObject _currentRoom;
-        
+
+        private void OnEnable()
+        {
+            _playerMovement.OnPlayerLevelReached += GoToNextLevel;
+            _scoreCounter.OnDiffReached += UpdateDiff;
+        }
+
         private void Start()
         {
+            UpdateDiff(0);
             AddFirstRoom();
-            _playerMovement.OnPlayerLevelReached += GoToNextLevel;
+        }
+
+        private void UpdateDiff(int diff)
+        {
+            switch (diff)
+            {
+                case 0:
+                    PushingRooms(_firstroomPrefabs);
+                    break;
+                case 1:
+                    PushingRooms(_secondroomPrefabs);
+                    break;
+                case 2:
+                    PushingRooms(_thirdroomPrefabs);
+                    break;
+                case 3:
+                    PushingRooms(_fourthroomPrefabs);
+                    break;
+                case 4:
+                    PushingRooms(_fifthroomPrefabs);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void PushingRooms(List<GameObject> rooms)
+        {
+            _currentroomPrefabs.Clear();
+            foreach (var room in rooms)
+            {
+                _currentroomPrefabs.Add(room);
+            }
         }
 
 
 
         public void GoToNextLevel()
         {
-            Debug.Log("Go to next level");
             AddRoom();
             AddScoreForRoom();
         }
@@ -55,10 +98,10 @@ namespace Tools
 
         private GameObject RandomizeRoom()
         {
-            if (_roomsHistory.Count >= _roomPrefabs.Count)
+            if (_roomsHistory.Count >= _currentroomPrefabs.Count)
                 _roomsHistory.Clear();
 
-            var availableRooms = _roomPrefabs.Where(r => !_roomsHistory.Contains(r)).ToList();
+            var availableRooms = _currentroomPrefabs.Where(r => !_roomsHistory.Contains(r)).ToList();
 
             int randomIndex = UnityEngine.Random.Range(0, availableRooms.Count);
             GameObject selectedRoom = availableRooms[randomIndex];

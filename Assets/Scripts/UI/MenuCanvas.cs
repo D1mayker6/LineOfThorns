@@ -33,6 +33,7 @@ namespace UI
 
         private void Start()
         {
+            Application.targetFrameRate = 60;
             _mainMenuPanel.SetActive(false);
             _videoPlayer = _cinematicTexture.GetComponentInChildren<VideoPlayer>();
             _videoPlayer.loopPointReached += VideoPlayerOnloopPointReached;

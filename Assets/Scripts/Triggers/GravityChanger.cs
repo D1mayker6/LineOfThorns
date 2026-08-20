@@ -22,6 +22,12 @@ namespace Triggers
                     DestroyTrigger();
             }
         }
+        private int _startTouchCount;
+
+        private void Start()
+        {
+            _startTouchCount = TouchCount;
+        }
 
         private void DestroyTrigger() => Destroy(gameObject);
         private void OnTriggerEnter2D(Collider2D other)
@@ -30,6 +36,8 @@ namespace Triggers
             {
                 GravityChange(playerMovement);
                 TouchCount--;
+                if(playerMovement && gameObject)
+                    playerMovement.OnPlayerDied += ResetTouches;
             }
         }
 
@@ -48,6 +56,11 @@ namespace Triggers
             rb.AddForceY(_impulse,ForceMode2D.Impulse);
             playerMovement.ReverseForcePower();
 
+        }
+        
+        private void ResetTouches()
+        {
+            TouchCount = _startTouchCount;
         }
     }
 }

@@ -48,9 +48,6 @@ namespace Player
         
 
         public void AbsForcePower() => _forcePower = Mathf.Abs(_forcePower);
-        
-        public void DiffIncrease() => _translationSpeed += _speedMultiple;
-
         private void Update()
         {
             if (Input.GetMouseButton(0) || Input.touches.Length > 0)
@@ -95,14 +92,12 @@ namespace Player
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log($"игрок столкнулся с {other.gameObject.name}");
 
             if (other.gameObject.CompareTag("Trap"))
                 InvokeDeath();
             if (other.gameObject.CompareTag("Exit"))
             {
                 OnPlayerLevelReached?.Invoke();
-                Debug.Log("Exit");
             }
         }
 

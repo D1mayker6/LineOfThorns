@@ -12,6 +12,8 @@ namespace UI
 
         private int _currentDiff = 0;
 
+        [SerializeField] private  int _diffChangeValue;
+
         private bool _isStopped;
         
         [SerializeField] private int _roomValue = 50;
@@ -28,7 +30,7 @@ namespace UI
         
         public event Action OnScoreChanged;
 
-        public event Action OnDiffReached;
+        public event Action<int> OnDiffReached;
         
         public event Action OnCounterSwitch;
 
@@ -45,12 +47,12 @@ namespace UI
                     _time = 0;
                 }
             }
-            var diffLvl = Score / 1000;
-
+            var diffLvl = Score / _diffChangeValue;
+            Debug.Log(diffLvl);
             if (diffLvl > _currentDiff)
             {
-                OnDiffReached?.Invoke();    
-                _currentDiff++;
+                _currentDiff = diffLvl;
+                OnDiffReached?.Invoke(_currentDiff);    
             }
             
         }
