@@ -397,7 +397,6 @@ MonoBehaviour:
   _uiColor: {r: 0, g: 0, b: 0, a: 0}
   _scoreCounter: {fileID: 1753602192}
   _scoreViewText: {fileID: 455161838}
-  _spawnpoint: {fileID: 1049911239}
   _gameData: {fileID: 11400000, guid: ab12e154fc15af74dae56a18a75bc026, type: 2}
 --- !u!4 &544231728
 Transform:
@@ -534,6 +533,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6574191712473146767, guid: d3b628452ec523d47804779c87456959, type: 3}
+      propertyPath: _score
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574191712473146767, guid: d3b628452ec523d47804779c87456959, type: 3}
       propertyPath: _diffChangeValue
       value: 500
       objectReference: {fileID: 0}
@@ -594,6 +597,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCube
       objectReference: {fileID: 0}
+    - target: {fileID: 7334429379880990625, guid: 945d03d59bfb8c543b8f76fd46d97931, type: 3}
+      propertyPath: _spawnpoint
+      value: 
+      objectReference: {fileID: 1049911239}
     - target: {fileID: 7334429379880990625, guid: 945d03d59bfb8c543b8f76fd46d97931, type: 3}
       propertyPath: _checkRadius
       value: 1.31

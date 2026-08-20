@@ -1,3 +1,4 @@
+using System;
 using Enums;
 using Player;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace Triggers
         [SerializeField] private int _touchCount = 1;
         [SerializeField] private Collider2D _collider2D;
         [SerializeField] private SpriteRenderer _spriteRenderer;
+        [SerializeField] private PlayerMovement _playerMovement;
 
         public int TouchCount
         {
@@ -24,6 +26,13 @@ namespace Triggers
                     DestroyTrigger();
             }
         }
+        
+        private int _startTouchCount;
+
+        private void Start()
+        {
+            _startTouchCount =  TouchCount;
+        }
 
         private void DestroyTrigger()
         {
@@ -34,19 +43,20 @@ namespace Triggers
         {
             if (other.TryGetComponent<PlayerMovement>(out var playerMovement))
             {
-                GravityChange(playerMovement);
+                _playerMovement = playerMovement;
+                GravityChange();
                 TouchCount--;
-                if(playerMovement && gameObject)
-                    playerMovement. OnPlayerDied += ResetTrigger;
+                _playerMovement.OnPlayerDied -= ResetTrigger;
+                _playerMovement.OnPlayerDied += ResetTrigger;
             }
         }
 
-        private void GravityChange(PlayerMovement playerMovement)
+        private void GravityChange()
         {
-            var rb = playerMovement.GetComponent<Rigidbody2D>();
+            var rb = _playerMovement.GetComponent<Rigidbody2D>();
             var intGravityValue = (int)_gravityValue;
             rb.gravityScale = Mathf.Abs(rb.gravityScale) * intGravityValue;
-            var particle = Instantiate(_particlePrefab, playerMovement.transform.position, Quaternion.identity);
+            var particle = Instantiate(_particlePrefab, _playerMovement.transform.position, Quaternion.identity);
             if (_gravityValue == GravityValue.Down)
             {
                 _impulse *= -1f;
@@ -54,7 +64,7 @@ namespace Triggers
                 main.startSpeedMultiplier *= -1f;
             }
             rb.AddForceY(_impulse,ForceMode2D.Impulse);
-            playerMovement.ReverseForcePower();
+            _playerMovement.ReverseForcePower();
 
         }
         
@@ -65,6 +75,15 @@ namespace Triggers
                 _collider2D.enabled = true;
                 _spriteRenderer.enabled = true;
             }
+            TouchCount = _startTouchCount;
+            _playerMovement.OnPlayerDied -= ResetTrigger;
+        }
+
+        private void OnDisable()
+        {
+            if(_playerMovement!=null)
+                _playerMovement.OnPlayerDied -= ResetTrigger;
+            
         }
     }
 }

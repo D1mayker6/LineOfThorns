@@ -288,7 +288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Triggers.SpeedUp
   _modifier: 2
   _speed: 0
-  _touchCount: 0
+  _touchCount: 1
   _collider2D: {fileID: 2049201082213953807}
   _spriteRenderer1: {fileID: 8616476794003988972}
   _spriteRenderer2: {fileID: 653134121060401430}
+  _playerMovement: {fileID: 0}

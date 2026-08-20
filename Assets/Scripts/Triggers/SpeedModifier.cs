@@ -1,3 +1,4 @@
+using System;
 using Enums;
 using Player;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace Triggers
         [SerializeField] private Collider2D _collider2D;
         [SerializeField] private SpriteRenderer _spriteRenderer1;
         [SerializeField] private SpriteRenderer _spriteRenderer2;
+        [SerializeField] private PlayerMovement _playerMovement;
 
         public int TouchCount
         {
@@ -22,6 +24,14 @@ namespace Triggers
                 if (_touchCount <= 0)
                     DestroyTrigger();
             }
+        }
+        
+        private int _startTouchCount;
+
+
+        private void Start()
+        {
+            _startTouchCount =  TouchCount;
         }
 
         private void DestroyTrigger()
@@ -34,18 +44,20 @@ namespace Triggers
         {
             if (other.TryGetComponent<PlayerMovement>(out var playerMovement))
             {
-                SpeedChangeUp(playerMovement);
+                _playerMovement = playerMovement;
+                SpeedChangeUp();
                 TouchCount--;
-                playerMovement.OnPlayerDied += ResetTrigger;
+                _playerMovement.OnPlayerDied -= ResetTrigger;
+                _playerMovement.OnPlayerDied += ResetTrigger;
             }
         }
 
-        private void SpeedChangeUp(PlayerMovement playerMovement)
+        private void SpeedChangeUp()
         {
-            if(_speed == Speed.Speed)
-                playerMovement.TranslationSpeed *= _modifier;
+            if(_speed == Speed.Fast)
+                _playerMovement.TranslationSpeed *= _modifier;
             else
-                playerMovement.TranslationSpeed /= _modifier;
+                _playerMovement.TranslationSpeed /= _modifier;
         }
         
         private void ResetTrigger()
@@ -56,6 +68,14 @@ namespace Triggers
                 _spriteRenderer1.enabled = true;
                 _spriteRenderer2.enabled = true;
             }
+            TouchCount = _startTouchCount;
+            _playerMovement.OnPlayerDied -= ResetTrigger;
+        }
+        
+        private void OnDisable()
+        {
+            if(_playerMovement!=null)
+                _playerMovement.OnPlayerDied -= ResetTrigger;
         }
     }
 }

@@ -25,6 +25,14 @@ namespace Triggers
                     DestroyTrigger();
             }
         }
+        
+        private int _startTouchCount;
+
+
+        private void Start()
+        {
+            _startTouchCount =  TouchCount;
+        }
 
         private void DestroyTrigger()
         {
@@ -41,6 +49,7 @@ namespace Triggers
                 _playerMovement = playerMovement;
                 DirectionChange();
                 TouchCount--;
+                _playerMovement.OnPlayerDied -= ResetTrigger;
                 _playerMovement.OnPlayerDied += ResetTrigger;
             }
         }
@@ -62,11 +71,14 @@ namespace Triggers
                 _collider2D.enabled = true;
                 _spriteRenderer.enabled = true;
             }
+            TouchCount = _startTouchCount;
+            _playerMovement.OnPlayerDied -= ResetTrigger;
         }
-
+        
         private void OnDisable()
         {
-            _playerMovement.OnPlayerDied -= ResetTrigger;
+            if(_playerMovement!=null)
+                _playerMovement.OnPlayerDied -= ResetTrigger;
         }
     }
 }

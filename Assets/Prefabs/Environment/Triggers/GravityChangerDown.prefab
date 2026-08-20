@@ -140,9 +140,10 @@ MonoBehaviour:
   _gravityValue: 1
   _particlePrefab: {fileID: 8694926315615174292, guid: e4f285ac4c4916b4aab5f0101fe17901, type: 3}
   _impulse: 200
-  _touchCount: 0
+  _touchCount: 1
   _collider2D: {fileID: 1489887568932768480}
   _spriteRenderer: {fileID: 3336911386853044893}
+  _playerMovement: {fileID: 0}
 --- !u!58 &1489887568932768480
 CircleCollider2D:
   m_ObjectHideFlags: 0
