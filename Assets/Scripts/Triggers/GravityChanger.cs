@@ -11,6 +11,8 @@ namespace Triggers
         [SerializeField] private ParticleSystem _particlePrefab;
         [SerializeField] private float _impulse = 200f;
         [SerializeField] private int _touchCount = 1;
+        [SerializeField] private Collider2D _collider2D;
+        [SerializeField] private SpriteRenderer _spriteRenderer;
 
         public int TouchCount
         {
@@ -22,14 +24,12 @@ namespace Triggers
                     DestroyTrigger();
             }
         }
-        private int _startTouchCount;
 
-        private void Start()
+        private void DestroyTrigger()
         {
-            _startTouchCount = TouchCount;
+            _collider2D.enabled = false;
+            _spriteRenderer.enabled = false;
         }
-
-        private void DestroyTrigger() => Destroy(gameObject);
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.TryGetComponent<PlayerMovement>(out var playerMovement))
@@ -37,7 +37,7 @@ namespace Triggers
                 GravityChange(playerMovement);
                 TouchCount--;
                 if(playerMovement && gameObject)
-                    playerMovement.OnPlayerDied += ResetTouches;
+                    playerMovement. OnPlayerDied += ResetTrigger;
             }
         }
 
@@ -58,9 +58,13 @@ namespace Triggers
 
         }
         
-        private void ResetTouches()
+        private void ResetTrigger()
         {
-            TouchCount = _startTouchCount;
+            if (!_collider2D.enabled)
+            {
+                _collider2D.enabled = true;
+                _spriteRenderer.enabled = true;
+            }
         }
     }
 }

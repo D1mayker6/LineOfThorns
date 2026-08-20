@@ -139,6 +139,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Triggers.DirectionChange
   _direction: -1
   _touchCount: 1
+  _collider2D: {fileID: 2222406618164091737}
+  _spriteRenderer: {fileID: 8549064537319473459}
 --- !u!58 &2222406618164091737
 CircleCollider2D:
   m_ObjectHideFlags: 0

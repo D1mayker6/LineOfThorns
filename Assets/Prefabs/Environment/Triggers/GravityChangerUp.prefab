@@ -141,6 +141,8 @@ MonoBehaviour:
   _particlePrefab: {fileID: 8694926315615174292, guid: e4f285ac4c4916b4aab5f0101fe17901, type: 3}
   _impulse: 200
   _touchCount: 0
+  _collider2D: {fileID: 599929818433804177}
+  _spriteRenderer: {fileID: 2093781008383601081}
 --- !u!58 &599929818433804177
 CircleCollider2D:
   m_ObjectHideFlags: 0

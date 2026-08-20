@@ -1,4 +1,5 @@
 using System;
+using Enums;
 using UnityEngine;
 namespace Player
 {
@@ -12,6 +13,7 @@ namespace Player
         [SerializeField] private float _checkRadius;
         [SerializeField] private float _forcePower;
         [SerializeField] private Transform _groundCheck;
+        [SerializeField] private Transform _spawnpoint;
         [SerializeField] private float _speedMultiple;
         [SerializeField] private Rigidbody2D _rb;
         [SerializeField] private Animator _animator;
@@ -38,7 +40,17 @@ namespace Player
         private void OnEnable()
         {
             OnPlayerLevelReached += RestorePlayer;
+            OnPlayerDied += ResetPlayerStates;
             _baseSpeed = _translationSpeed;
+            transform.position = _spawnpoint.position;
+        }
+
+        private void ResetPlayerStates()
+        {
+            _translationSpeed = _baseSpeed;
+            _rb.gravityScale = Mathf.Abs(_rb.gravityScale);
+            AbsForcePower();
+            SetDirection((int)Direction.Right);
 
         }
 
@@ -86,6 +98,7 @@ namespace Player
         {
             var move = Vector2.right * (_direction * _translationSpeed * Time.fixedDeltaTime);
             transform.Translate(move);
+            Debug.Log(move);
         }
 
         public void SetDirection(int direction) => _direction = direction;

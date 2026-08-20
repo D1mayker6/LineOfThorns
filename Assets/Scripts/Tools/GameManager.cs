@@ -24,7 +24,6 @@ namespace Tools
 
         [SerializeField] private ScoreCounter _scoreCounter;
         [SerializeField] private TextMeshProUGUI _scoreViewText;
-        [SerializeField] private Transform _spawnpoint;
         [SerializeField] private GameData _gameData;
         
         private bool _timerFirstTime = false;
@@ -68,6 +67,7 @@ namespace Tools
 
         private IEnumerator DeathPlayerCoroutine()
         {
+            Debug.Log("DeathPlayerCoroutine");
             _playerMovement.gameObject.SetActive(false);
             _scoreCounter.SwitchCounter();
             Instantiate(_deathPlayerParticlePrefab, _playerMovement.transform.position, Quaternion.identity);
@@ -98,10 +98,6 @@ namespace Tools
         private void ExecuteExtraLive()
         {
             _playerMovement.gameObject.SetActive(true);
-            _playerMovement.transform.position = _spawnpoint.position;
-            var rb = _playerMovement.GetComponent<Rigidbody2D>();
-            rb.gravityScale = Mathf.Abs(rb.gravityScale);
-            _playerMovement.AbsForcePower();
             _scoreCounter.SwitchCounter();
         }
 

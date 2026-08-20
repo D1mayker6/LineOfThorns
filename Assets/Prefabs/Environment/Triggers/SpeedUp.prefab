@@ -289,3 +289,6 @@ MonoBehaviour:
   _modifier: 2
   _speed: 1
   _touchCount: 0
+  _collider2D: {fileID: 1805006483719347077}
+  _spriteRenderer1: {fileID: 3584531314066326581}
+  _spriteRenderer2: {fileID: 8102265530212392902}

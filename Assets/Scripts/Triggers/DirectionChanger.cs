@@ -9,7 +9,12 @@ namespace Triggers
     {
         [SerializeField] private Direction _direction;
         [SerializeField] private int _touchCount = 1;
-
+        [SerializeField] private Collider2D _collider2D;
+        [SerializeField] private SpriteRenderer _spriteRenderer;
+        
+        private PlayerMovement _playerMovement;
+        private Vector3 _localScale;
+        
         public int TouchCount
         {
             get => _touchCount;
@@ -20,15 +25,12 @@ namespace Triggers
                     DestroyTrigger();
             }
         }
-        
-        private int _startTouchCount;
 
-        private void Start()
+        private void DestroyTrigger()
         {
-            _startTouchCount = TouchCount;
+            _collider2D.enabled = false;
+            _spriteRenderer.enabled = false;
         }
-
-        private void DestroyTrigger() => Destroy(gameObject);
 
         public Direction Direction =>  _direction;
 
@@ -36,24 +38,35 @@ namespace Triggers
         {
             if (other.TryGetComponent<PlayerMovement>(out var playerMovement))
             {
-                DirectionChange(playerMovement);
+                _playerMovement = playerMovement;
+                DirectionChange();
                 TouchCount--;
-                if(playerMovement && gameObject)
-                    playerMovement.OnPlayerDied += ResetTouches;
+                _playerMovement.OnPlayerDied += ResetTrigger;
             }
         }
 
-        private void DirectionChange(PlayerMovement playerMovement)
+        private void DirectionChange()
         {
             var dir = (int)_direction;
-            playerMovement.SetDirection(dir);
-            var pos = new Vector3(playerMovement.transform.localScale.x * dir,playerMovement.transform.localScale.y,playerMovement.transform.localScale.z);
-            playerMovement.transform.localScale = pos;
+            _playerMovement.SetDirection(dir);
+            _localScale = _playerMovement.transform.localScale;
+            var invertedLocalScale = _localScale;
+            invertedLocalScale.x *= dir;
+            _playerMovement.transform.localScale = invertedLocalScale;
         }
 
-        private void ResetTouches()
+        private void ResetTrigger()
         {
-            TouchCount = _startTouchCount;
+            if (!_collider2D.enabled)
+            {
+                _collider2D.enabled = true;
+                _spriteRenderer.enabled = true;
+            }
+        }
+
+        private void OnDisable()
+        {
+            _playerMovement.OnPlayerDied -= ResetTrigger;
         }
     }
 }
