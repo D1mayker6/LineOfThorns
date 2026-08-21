@@ -42,7 +42,10 @@ namespace UI
         
         private void Start()
         {
-            _earnText.text = $"Earned: {_coinsConverter.ConvertScore(_score)}";
+            var coins = _coinsConverter.ConvertScore(_score);
+            _gameData.Coins += coins;
+            _earnText.text = $"Earned: {coins}";
+            _record = _gameData.Record;
             _recordText.text = $"Record: {_record}";
         }
 

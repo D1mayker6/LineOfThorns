@@ -52,7 +52,7 @@ namespace UI
 
         private void OnEnable()
         {
-            _videoPlayer.loopPointReached -= VideoPlayerOnloopPointReached;
+            //_videoPlayer.loopPointReached -= VideoPlayerOnloopPointReached;
             
             _playButton.onClick.RemoveListener(Play);
             _storeButton.onClick.RemoveListener(Store);
