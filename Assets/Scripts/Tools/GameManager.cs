@@ -83,14 +83,17 @@ namespace Tools
                 _timerFirstTime = true;
             }
             else
+            {
+                Debug.Log("Вызван из трай респавн");
                 RestartGame();
+            }
         }
 
         private void RespawnTimerCoroutine()
         {
-            var timer = Instantiate(_respawnTimerPrefab);
-            timer.OnTimerEnded += RestartGame;
-            timer.OnExtraLive += ExecuteExtraLive;
+            _respawnTimerPrefab = Instantiate(_respawnTimerPrefab);
+            _respawnTimerPrefab.OnTimerEnded += RestartGame;
+            _respawnTimerPrefab.OnExtraLive += ExecuteExtraLive;
         }
         
         
@@ -112,6 +115,8 @@ namespace Tools
         {
             _playerMovement.OnPlayerDied -= DeathPlayer;
             _scoreCounter.OnDiffReached -= ShowDiffView;
+            _respawnTimerPrefab.OnTimerEnded -= RestartGame;
+            _respawnTimerPrefab.OnExtraLive -= ExecuteExtraLive;
         }
     }
 }
