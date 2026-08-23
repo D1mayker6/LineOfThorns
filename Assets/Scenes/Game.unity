@@ -228,6 +228,7 @@ MonoBehaviour:
   - {fileID: 8101518369225682520, guid: 1bec48a9f07289447a73d968b0d6fd32, type: 3}
   _secondroomPrefabs:
   - {fileID: 8101518369225682520, guid: 30090393752b05b41bd2d007263f9754, type: 3}
+  - {fileID: 8101518369225682520, guid: fde8a420d92f8f84a984af320d6b92e8, type: 3}
   _thirdroomPrefabs:
   - {fileID: 8101518369225682520, guid: 946509fb846becf418ad10b1aeb9cdb7, type: 3}
   _fourthroomPrefabs:
@@ -596,6 +597,10 @@ PrefabInstance:
     - target: {fileID: 4493972040638695601, guid: 945d03d59bfb8c543b8f76fd46d97931, type: 3}
       propertyPath: m_Name
       value: PlayerCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 7334429379880990625, guid: 945d03d59bfb8c543b8f76fd46d97931, type: 3}
+      propertyPath: _forcePower
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7334429379880990625, guid: 945d03d59bfb8c543b8f76fd46d97931, type: 3}
       propertyPath: _spawnpoint

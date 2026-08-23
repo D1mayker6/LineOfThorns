@@ -42,6 +42,7 @@ namespace Tools
             switch (diff)
             {
                 case 0:
+                    _currentroomPrefabs.Clear();
                     PushingRooms(_firstroomPrefabs);
                     break;
                 case 1:
@@ -63,7 +64,6 @@ namespace Tools
 
         private void PushingRooms(List<GameObject> rooms)
         {
-            _currentroomPrefabs.Clear();
             foreach (var room in rooms)
             {
                 _currentroomPrefabs.Add(room);
