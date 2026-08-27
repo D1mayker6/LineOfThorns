@@ -16,7 +16,6 @@ namespace Tools
         [SerializeField] private List<GameObject> _secondroomPrefabs;
         [SerializeField] private List<GameObject> _thirdroomPrefabs;
         [SerializeField] private List<GameObject> _fourthroomPrefabs;
-        [SerializeField] private List<GameObject> _fifthroomPrefabs;
         [SerializeField] private ScoreCounter  _scoreCounter;
         [SerializeField] private GameObject _firstRoom;
         [SerializeField] private GameManager _gameManager; 
@@ -54,9 +53,6 @@ namespace Tools
                 case 3:
                     PushingRooms(_fourthroomPrefabs);
                     break;
-                case 4:
-                    PushingRooms(_fifthroomPrefabs);
-                    break;
                 default:
                     break;
             }
@@ -90,10 +86,10 @@ namespace Tools
         }
 
 
-        private void AddRoom()
+        private void AddRoom(GameObject room = null)
         {
-            _currentRoom = Instantiate(RandomizeRoom());
-            _gameManager.RecolorRoom(_currentRoom);
+                _currentRoom = Instantiate(RandomizeRoom());
+                _gameManager.RecolorRoom(_currentRoom);
         }
 
         private GameObject RandomizeRoom()

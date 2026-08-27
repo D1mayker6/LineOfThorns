@@ -229,13 +229,18 @@ MonoBehaviour:
   _secondroomPrefabs:
   - {fileID: 8101518369225682520, guid: 30090393752b05b41bd2d007263f9754, type: 3}
   - {fileID: 8101518369225682520, guid: fde8a420d92f8f84a984af320d6b92e8, type: 3}
+  - {fileID: 8101518369225682520, guid: 8212ff7dce38fdd4e8a3f02105afd1ed, type: 3}
+  - {fileID: 8101518369225682520, guid: 45ceda3b444db9b4b8f0dcdc0a77762d, type: 3}
+  - {fileID: 8101518369225682520, guid: 1937fe90baaa3de4d85ff83b7eed8055, type: 3}
   _thirdroomPrefabs:
   - {fileID: 8101518369225682520, guid: 946509fb846becf418ad10b1aeb9cdb7, type: 3}
+  - {fileID: 8101518369225682520, guid: 2083cb98086f56041b116df26a3415d4, type: 3}
+  - {fileID: 8101518369225682520, guid: 9a5b612b1396df2488b56f54cb46e7c2, type: 3}
   _fourthroomPrefabs:
   - {fileID: 8101518369225682520, guid: 6b0f1cc507400a645a29820a5a937416, type: 3}
-  _fifthroomPrefabs:
   - {fileID: 8101518369225682520, guid: 6fbe41c652c00c546989db6238fd21ee, type: 3}
   - {fileID: 8101518369225682520, guid: 9e7076c094b53064a95c939d433aa792, type: 3}
+  - {fileID: 8101518369225682520, guid: 4d60abc9b8f15fc429e732a79cd78d63, type: 3}
   - {fileID: 8101518369225682520, guid: 4d60abc9b8f15fc429e732a79cd78d63, type: 3}
   _scoreCounter: {fileID: 1753602192}
   _firstRoom: {fileID: 3013527301125451191, guid: 984e1da2e8152aa4cad9005b4212907f, type: 3}
