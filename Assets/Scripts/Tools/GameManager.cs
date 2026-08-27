@@ -6,6 +6,7 @@ using Player;
 using TMPro;
 using UI;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Tools
 {
@@ -25,6 +26,8 @@ namespace Tools
         [SerializeField] private ScoreCounter _scoreCounter;
         [SerializeField] private TextMeshProUGUI _scoreViewText;
         [SerializeField] private GameData _gameData;
+        [SerializeField] private Button _pauseButton;
+        [SerializeField] private GameObject _pauseCanvas;
         
         private bool _timerFirstTime = false;
         
@@ -35,6 +38,7 @@ namespace Tools
         {
             _playerMovement.OnPlayerDied += DeathPlayer;
             _scoreCounter.OnDiffReached += ShowDiffView;
+            _pauseButton.onClick.AddListener(PauseButton_OnClick);
             InitializeColors();
         }
 
@@ -43,6 +47,12 @@ namespace Tools
             if (Camera.main != null) 
                 Camera.main.backgroundColor = _backgroundColor;
             _scoreViewText.color = _uiColor;
+        }
+
+        private void PauseButton_OnClick()
+        {
+            _pauseCanvas.SetActive(true);
+             Time.timeScale = 0;
         }
 
         private void InitializeColors()
