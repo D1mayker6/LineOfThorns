@@ -221,9 +221,8 @@ MonoBehaviour:
   _secondroomPrefabs: []
   _thirdroomPrefabs: []
   _fourthroomPrefabs: []
-  _fifthroomPrefabs: []
   _scoreCounter: {fileID: 1753602192}
-  _firstRoom: {fileID: 8101518369225682520, guid: b3c5d691ae32d7b4395697c51fdf41ad, type: 3}
+  _firstRoom: {fileID: 8101518369225682520, guid: 3ce87ed48f37cc44ab72b9c53e8b9077, type: 3}
   _gameManager: {fileID: 544231727}
   _playerMovement: {fileID: 1478124883}
 --- !u!4 &368679987
@@ -377,13 +376,15 @@ MonoBehaviour:
   _retryCanvasPrefab: {fileID: 6369370860313447139, guid: 44c90e4b18f3ae446921314bf3febb2e, type: 3}
   _respawnTimerPrefab: {fileID: 14292194841401722, guid: 951ccddb9192b4b4293891908263a35e, type: 3}
   _deathPlayerParticlePrefab: {fileID: 2610062634599340265, guid: 7b45e471d1ef91745bb695d5b279a98c, type: 3}
-  _diffViewPrefab: {fileID: 1616828604296868540, guid: c3ce2669ae2a4ab458805f20814adac7, type: 3}
+  _diffViewPrefab: {fileID: 3755955227145079655, guid: c3ce2669ae2a4ab458805f20814adac7, type: 3}
   _backgroundColor: {r: 0, g: 0, b: 0, a: 0}
-  _blockColor: {r: 0, g: 0, b: 0, a: 0}
+  _blockColor: {r: 1, g: 1, b: 1, a: 0}
   _uiColor: {r: 0, g: 0, b: 0, a: 0}
   _scoreCounter: {fileID: 1753602192}
   _scoreViewText: {fileID: 455161838}
   _gameData: {fileID: 11400000, guid: ab12e154fc15af74dae56a18a75bc026, type: 2}
+  _pauseButton: {fileID: 0}
+  _pauseCanvas: {fileID: 0}
 --- !u!4 &544231728
 Transform:
   m_ObjectHideFlags: 0

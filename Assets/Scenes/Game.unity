@@ -187,17 +187,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &290098852 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3493040876952848889, guid: c8bc6cadd4d0f094391f067fba806c87, type: 3}
-  m_PrefabInstance: {fileID: 7388348349856744468}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &368679985
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +397,7 @@ MonoBehaviour:
   _retryCanvasPrefab: {fileID: 6369370860313447139, guid: 44c90e4b18f3ae446921314bf3febb2e, type: 3}
   _respawnTimerPrefab: {fileID: 14292194841401722, guid: 951ccddb9192b4b4293891908263a35e, type: 3}
   _deathPlayerParticlePrefab: {fileID: 2610062634599340265, guid: 7b45e471d1ef91745bb695d5b279a98c, type: 3}
-  _diffViewPrefab: {fileID: 1616828604296868540, guid: c3ce2669ae2a4ab458805f20814adac7, type: 3}
+  _diffViewPrefab: {fileID: 3755955227145079655, guid: c3ce2669ae2a4ab458805f20814adac7, type: 3}
   _backgroundColor: {r: 0, g: 0, b: 0, a: 0}
   _blockColor: {r: 0, g: 0, b: 0, a: 0}
   _uiColor: {r: 0, g: 0, b: 0, a: 0}
@@ -589,31 +578,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6099283064623044574, guid: c8bc6cadd4d0f094391f067fba806c87, type: 3}
   m_PrefabInstance: {fileID: 7388348349856744468}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1979896551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1979896550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 459bf32d77c32c942a318ec13637e721, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
-  _backButton: {fileID: 290098852}
-  _mainMenuButton: {fileID: 2085640815}
---- !u!114 &2085640815 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6572226754078321135, guid: c8bc6cadd4d0f094391f067fba806c87, type: 3}
-  m_PrefabInstance: {fileID: 7388348349856744468}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1001 &1216712912943043678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -803,10 +767,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause
       objectReference: {fileID: 0}
-    - target: {fileID: 6099283064623044574, guid: c8bc6cadd4d0f094391f067fba806c87, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6250591729604573519, guid: c8bc6cadd4d0f094391f067fba806c87, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -890,10 +850,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6099283064623044574, guid: c8bc6cadd4d0f094391f067fba806c87, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1979896551}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8bc6cadd4d0f094391f067fba806c87, type: 3}
 --- !u!1001 &7584877712393509215
 PrefabInstance:
