@@ -17,7 +17,7 @@ namespace Tools
         [SerializeField] private RetryCanvas _retryCanvasPrefab;
         [SerializeField] private RespawnTimer _respawnTimerPrefab;
         [SerializeField] private GameObject _deathPlayerParticlePrefab;
-        [SerializeField] private GameObject _diffViewPrefab;
+        [SerializeField] private DiffView _diffViewPrefab;
         
         [SerializeField] private Color _backgroundColor;
         [SerializeField] private Color _blockColor;
@@ -73,7 +73,13 @@ namespace Tools
 
         private void DeathPlayer() => StartCoroutine(DeathPlayerCoroutine());
 
-        private void ShowDiffView(int diff = 0) => Instantiate(_diffViewPrefab);
+        private void ShowDiffView(int diff)
+        {
+            var diffView = Instantiate(_diffViewPrefab);
+            diffView.Initialize(diff);
+        }
+
+
 
         private IEnumerator DeathPlayerCoroutine()
         {
