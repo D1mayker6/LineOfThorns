@@ -49,7 +49,7 @@ namespace UI
             }
             var diffLvl = Score / _diffChangeValue;
             Debug.Log(diffLvl);
-            if (diffLvl > _currentDiff)
+            if (diffLvl > _currentDiff && diffLvl <= 3)
             {
                 _currentDiff = diffLvl;
                 OnDiffReached?.Invoke(_currentDiff);    

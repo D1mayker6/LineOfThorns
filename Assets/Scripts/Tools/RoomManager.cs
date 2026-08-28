@@ -12,6 +12,8 @@ namespace Tools
     public class RoomManager: MonoBehaviour
     {
         [SerializeField] private List<GameObject> _currentroomPrefabs;
+        private List<GameObject> _unusedRooms = new List<GameObject>();
+        private GameObject _lastSelectedRoom = null;
         [SerializeField] private List<GameObject> _firstroomPrefabs;
         [SerializeField] private List<GameObject> _secondroomPrefabs;
         [SerializeField] private List<GameObject> _thirdroomPrefabs;
@@ -20,7 +22,6 @@ namespace Tools
         [SerializeField] private GameObject _firstRoom;
         [SerializeField] private GameManager _gameManager; 
         [SerializeField] private PlayerMovement _playerMovement;
-        private Stack<GameObject> _roomsHistory = new();
         private Vector3 _roomBasePosition;
         private GameObject _currentRoom;
 
@@ -42,6 +43,8 @@ namespace Tools
             {
                 case 0:
                     _currentroomPrefabs.Clear();
+                    _unusedRooms.Clear();
+                    _lastSelectedRoom = null;
                     PushingRooms(_firstroomPrefabs);
                     break;
                 case 1:
@@ -60,10 +63,9 @@ namespace Tools
 
         private void PushingRooms(List<GameObject> rooms)
         {
-            foreach (var room in rooms)
-            {
-                _currentroomPrefabs.Add(room);
-            }
+                _currentroomPrefabs.AddRange(rooms);
+                _unusedRooms.AddRange(rooms);
+            
         }
 
 
@@ -86,7 +88,7 @@ namespace Tools
         }
 
 
-        private void AddRoom(GameObject room = null)
+        private void AddRoom()
         {
                 _currentRoom = Instantiate(RandomizeRoom());
                 _gameManager.RecolorRoom(_currentRoom);
@@ -94,15 +96,29 @@ namespace Tools
 
         private GameObject RandomizeRoom()
         {
-            if (_roomsHistory.Count >= _currentroomPrefabs.Count)
-                _roomsHistory.Clear();
+            if (_currentroomPrefabs == null || _currentroomPrefabs.Count == 0)
+            {
+                Debug.LogError("Список префабов комнат пуст!");
+                return null;
+            }
 
-            var availableRooms = _currentroomPrefabs.Where(r => !_roomsHistory.Contains(r)).ToList();
+            if (_unusedRooms.Count == 0)
+            {
+                _unusedRooms.AddRange(_currentroomPrefabs);
+            }
 
-            int randomIndex = UnityEngine.Random.Range(0, availableRooms.Count);
-            GameObject selectedRoom = availableRooms[randomIndex];
+            int randomIndex = UnityEngine.Random.Range(0, _unusedRooms.Count);
+            GameObject selectedRoom = _unusedRooms[randomIndex];
+            
+            if (selectedRoom == _lastSelectedRoom && _unusedRooms.Count > 1)
+            {
+                randomIndex = (randomIndex + 1) % _unusedRooms.Count;
+                selectedRoom = _unusedRooms[randomIndex];
+            }
 
-            _roomsHistory.Push(selectedRoom);
+            _unusedRooms.RemoveAt(randomIndex);
+    
+            _lastSelectedRoom = selectedRoom;
 
             return selectedRoom;
         }
@@ -110,6 +126,7 @@ namespace Tools
         private void OnDisable()
         {
             _playerMovement.OnPlayerLevelReached -= GoToNextLevel;
+            _scoreCounter.OnDiffReached -= UpdateDiff;
         }
     }
 }
