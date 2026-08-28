@@ -21,8 +21,6 @@ namespace UI
         
         [SerializeField] private GameObject _cinematicTexture;
         [SerializeField] private GameObject _mainMenuPanel;
-        [SerializeField] private VideoClip _menuClip;
-
         [SerializeField] private SceneLoader _sceneLoaderPrefab;
 
         [SerializeField] private RedirectCanvas _redirectCanvasPrefab;
@@ -35,11 +33,16 @@ namespace UI
 
         private void Start()
         {
-            Application.targetFrameRate = 60;
+            
             _mainMenuPanel.SetActive(false);
             _videoPlayer = _cinematicTexture.GetComponentInChildren<VideoPlayer>();
-            _videoPlayer.loopPointReached += VideoPlayerOnloopPointReached;
-            _videoPlayer.Play();
+            _audioChannel.Play();
+            _mainMenuPanel.SetActive(true);
+        }
+
+        private void OnEnable()
+        {
+            //_videoPlayer.loopPointReached -= VideoPlayerOnloopPointReached;
             
             _playButton.onClick.AddListener(Play);
             _storeButton.onClick.AddListener(Store);
@@ -48,38 +51,12 @@ namespace UI
             
             _telegramButton.onClick.AddListener(GoToTelegram);
             _youtubeButton.onClick.AddListener(GoToYoutube);
-            
-            _dataManager.LoadData();
-            
-            _audioChannel.Play();
-        }
-
-        private void OnEnable()
-        {
-            //_videoPlayer.loopPointReached -= VideoPlayerOnloopPointReached;
-            
-            _playButton.onClick.RemoveListener(Play);
-            _storeButton.onClick.RemoveListener(Store);
-            _settingsButton.onClick.RemoveListener(Settings);
-            _exitButton.onClick.RemoveListener(Exit);
-            
-            _telegramButton.onClick.RemoveListener(GoToTelegram);
-            _youtubeButton.onClick.RemoveListener(GoToYoutube);
-        }
-
-
-        private void VideoPlayerOnloopPointReached(VideoPlayer source)
-        {
-            _videoPlayer.clip = _menuClip;
-            _videoPlayer.isLooping = true;
-            _videoPlayer.Play();
-            _mainMenuPanel.SetActive(true);
         }
 
         private void Play()
         {
             var loader = Instantiate(_sceneLoaderPrefab);
-            loader.LoadNewScene(1);
+            loader.LoadNewScene(2);
         }
         
         private void Exit()
@@ -90,13 +67,13 @@ namespace UI
         private void Settings()
         {
             var loader = Instantiate(_sceneLoaderPrefab);
-            loader.LoadNewScene(3);
+            loader.LoadNewScene(4);
         }
 
         private void Store()
         {
             var loader = Instantiate(_sceneLoaderPrefab);
-            loader.LoadNewScene(2);
+            loader.LoadNewScene(3);
         }
 
 

@@ -51,7 +51,7 @@ namespace Store
         private void Back()
         {
             var loader = Instantiate(_sceneLoaderPrefab);
-            loader.LoadNewScene(0);
+            loader.LoadNewScene(1);
         }
         private void SetCurrentColor(Color backgroundColor, Color blockColor, Color uiColor, int id)
         {

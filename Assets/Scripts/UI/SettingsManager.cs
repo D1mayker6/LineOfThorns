@@ -48,7 +48,7 @@ namespace UI
         private void Back()
         {
             var loader = Instantiate(_sceneLoader);
-            loader.LoadNewScene(0);
+            loader.LoadNewScene(1);
         }
 
         private void EnableDeletePopup()

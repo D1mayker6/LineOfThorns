@@ -17,5 +17,5 @@ MonoBehaviour:
   OpenedColors: 
   BackgroundColor: '#000000'
   BlockColor: '#FFFFFF'
-  UIColor: '#FFFFFF'
+  UIColor: '#808080'
   CurentColor: 0

@@ -58,13 +58,13 @@ namespace UI
         private void Menu()
         {
             var loader = Instantiate(_sceneLoaderPrefab);
-            loader.LoadNewScene(0);
+            loader.LoadNewScene(1);
         }
 
         private void Retry()
         {
             var loader = Instantiate(_sceneLoaderPrefab);
-            loader.LoadNewScene(1);
+            loader.LoadNewScene(2);
         }
 
         private void OnDisable()
