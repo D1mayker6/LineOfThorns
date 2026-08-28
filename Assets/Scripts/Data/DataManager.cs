@@ -39,5 +39,13 @@ namespace Data
         
         public void SaveSettingsData() => File.WriteAllText(_settingsPath, JsonConvert.SerializeObject(_settingsData));
 
+        public void DeleteGameData()
+        {
+            File.Delete(_gamePath);
+            _gameData.ResetData();
+            Application.Quit();
+        }
+            
+        
     }
 }

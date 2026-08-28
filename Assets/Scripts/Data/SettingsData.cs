@@ -9,8 +9,8 @@ namespace Data
     
         public bool MuteSFX;
     
-        public int MusicVolume;
+        public float MusicVolume;
     
-        public int SFXVolume;
+        public float SFXVolume;
     }
 }

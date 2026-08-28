@@ -113,6 +113,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\Enums\Direction.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
+    <Compile Include="Assets\Scripts\UI\DeleteDataPopup.cs" />
     <Compile Include="Assets\Scripts\Triggers\TeleportRoom.cs" />
     <Compile Include="Assets\Scripts\Environment\Ground.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

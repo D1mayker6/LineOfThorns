@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Data.SettingsData
   MuteMusic: 0
   MuteSFX: 0
-  MusicVolume: 100
-  SFXVolume: 100
+  MusicVolume: 1
+  SFXVolume: 1

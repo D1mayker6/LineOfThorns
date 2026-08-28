@@ -85,7 +85,8 @@ namespace UI
 
         private void Settings()
         {
-            throw new NotImplementedException();
+            var loader = Instantiate(_sceneLoaderPrefab);
+            loader.LoadNewScene(3);
         }
 
         private void Store()

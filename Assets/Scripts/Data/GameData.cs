@@ -21,5 +21,10 @@ namespace Data
         public string UIColor = "#FFFFFF";
 
         public int CurentColor;
+        
+        public void ResetData()
+        {
+            JsonUtility.FromJsonOverwrite(JsonUtility.ToJson(CreateInstance<GameData>()), this);
+        }
     }
 }
