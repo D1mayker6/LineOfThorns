@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Triggers\SpeedModifier.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Scripts\Enums\Social.cs" />
+    <Compile Include="Assets\Scripts\UI\SettingsManager.cs" />
     <Compile Include="Assets\Scripts\Store\StoreColor.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Scripts\Tools\GameManager.cs" />
@@ -74,8 +75,8 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
-    <Compile Include="Assets\Scripts\Tools\RoomManager.cs" />
     <Compile Include="Assets\Scripts\UI\DiffView.cs" />
+    <Compile Include="Assets\Scripts\Tools\RoomManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Scripts\UI\AttemptsCounter.cs" />
     <Compile Include="Assets\Scripts\Environment\Cube.cs" />
