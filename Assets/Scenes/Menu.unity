@@ -636,7 +636,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928961898}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 3ac31e86478b79640a1229e93b5b7024, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: c92d8238090e98041a46f0c213bfb3b1, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -650,12 +650,14 @@ VideoPlayer:
   m_TimeUpdateMode: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
-  m_TargetAudioSources: []
-  m_DirectAudioVolumes: []
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
   m_Url: 
-  m_EnabledAudioTracks: 
-  m_DirectAudioMutes: 
-  m_ControlledAudioTrackCount: 0
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
@@ -2094,6 +2096,7 @@ MonoBehaviour:
   _sceneLoaderPrefab: {fileID: 8764230145383079381, guid: ccec636c8bf545b4aa1e0f4494b44026, type: 3}
   _redirectCanvasPrefab: {fileID: 8149001441665772842, guid: 498cb4e81864b974ebf830b5335e0b4b, type: 3}
   _dataManager: {fileID: 1161553210}
+  _audioChannel: {fileID: 11400000, guid: abcf5369f1277e144844e74db93687f3, type: 2}
 --- !u!114 &2117616851
 MonoBehaviour:
   m_ObjectHideFlags: 0

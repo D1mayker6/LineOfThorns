@@ -31,6 +31,7 @@ namespace UI
             _deleteDataPopup.OnSaveDelete += ClearGameData;
             _musicSlider.value = _settings.MusicVolume;
             _sfxSlider.value = _settings.SFXVolume;
+            
         }
 
         private void OnDisable()

@@ -30,6 +30,8 @@ namespace UI
         [SerializeField] private DataManager _dataManager;
         
         private VideoPlayer _videoPlayer;
+        
+        [SerializeField] private AudioChannel _audioChannel;
 
         private void Start()
         {
@@ -48,6 +50,8 @@ namespace UI
             _youtubeButton.onClick.AddListener(GoToYoutube);
             
             _dataManager.LoadData();
+            
+            _audioChannel.Play();
         }
 
         private void OnEnable()
