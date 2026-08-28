@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 65180763}
   - component: {fileID: 65180762}
   m_Layer: 5
-  m_Name: Cinematic
+  m_Name: MenuVideo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

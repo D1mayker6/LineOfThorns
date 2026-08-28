@@ -13,4 +13,9 @@ public class AudioChannel : ScriptableObject
         int random = UnityEngine.Random.Range(0, Sounds.Length);
         OnPlayRequested?.Invoke(Sounds[random]);
     }
+
+    public void SetVolume(float volume)
+    {
+        
+    }
 }

@@ -13,6 +13,7 @@ namespace Audio
         private void OnEnable()
         {
             _channel.OnPlayRequested += PlaySound;
+            _settings.OnMusicVolumeChanged += SetVolume;
             _source.volume = _settings.MusicVolume;
             DontDestroyOnLoad(gameObject);
         }
@@ -23,6 +24,17 @@ namespace Audio
             Debug.Log("PlaySound");
             _source.clip = clip;
             _source.Play();
+        }
+
+        private void SetVolume(float volume)
+        {
+            _source.volume = volume;
+        }
+
+        private void OnDisable()
+        {
+            _channel.OnPlayRequested -= PlaySound;
+            _settings.OnMusicVolumeChanged -= SetVolume;
         }
     }
 }
