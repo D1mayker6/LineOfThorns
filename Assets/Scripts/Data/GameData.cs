@@ -22,9 +22,17 @@ namespace Data
 
         public int CurentColor;
         
+        private readonly int _colorsCount = 8;
+        
         public void ResetData()
         {
             JsonUtility.FromJsonOverwrite(JsonUtility.ToJson(CreateInstance<GameData>()), this);
+            for (var i = 0; i < _colorsCount; i++)
+            {
+                OpenedColors.Add(false);
+            }
+
+            OpenedColors[0] = true;
         }
     }
 }

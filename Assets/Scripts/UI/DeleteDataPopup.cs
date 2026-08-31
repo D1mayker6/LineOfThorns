@@ -7,6 +7,7 @@ public class DeleteDataPopup : MonoBehaviour
 
     [SerializeField] private Button _yesButton;
     [SerializeField] private Button _noButton;
+    [SerializeField] private AudioClip _clickSound;
 
 
     public event Action OnSaveDelete;
@@ -21,12 +22,14 @@ public class DeleteDataPopup : MonoBehaviour
 
     private void Yes()
     {
+        AudioSource.PlayClipAtPoint(_clickSound, transform.position);
         OnSaveDelete?.Invoke();
         gameObject.SetActive(false);
     }
 
     private void No()
     {
+        AudioSource.PlayClipAtPoint(_clickSound, transform.position);
         gameObject.SetActive(false);
     }
     

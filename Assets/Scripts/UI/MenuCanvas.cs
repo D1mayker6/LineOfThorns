@@ -1,4 +1,5 @@
 using System;
+using Audio;
 using Data;
 using Enums;
 using UnityEngine;
@@ -27,22 +28,17 @@ namespace UI
         
         [SerializeField] private DataManager _dataManager;
         
-        private VideoPlayer _videoPlayer;
-        
-        [SerializeField] private AudioChannel _audioChannel;
+        [SerializeField] private VideoPlayer _videoPlayer;
 
+        [SerializeField] private AudioClip _clickSound;
         private void Start()
         {
-            
             _mainMenuPanel.SetActive(false);
-            _videoPlayer = _cinematicTexture.GetComponentInChildren<VideoPlayer>();
-            _audioChannel.Play();
             _mainMenuPanel.SetActive(true);
         }
 
         private void OnEnable()
         {
-            //_videoPlayer.loopPointReached -= VideoPlayerOnloopPointReached;
             
             _playButton.onClick.AddListener(Play);
             _storeButton.onClick.AddListener(Store);
@@ -55,6 +51,7 @@ namespace UI
 
         private void Play()
         {
+            AudioSource.PlayClipAtPoint(_clickSound, transform.position);
             var loader = Instantiate(_sceneLoaderPrefab);
             loader.LoadNewScene(2);
         }
@@ -66,12 +63,14 @@ namespace UI
 
         private void Settings()
         {
+            AudioSource.PlayClipAtPoint(_clickSound, transform.position);
             var loader = Instantiate(_sceneLoaderPrefab);
             loader.LoadNewScene(4);
         }
 
         private void Store()
         {
+            AudioSource.PlayClipAtPoint(_clickSound, transform.position);
             var loader = Instantiate(_sceneLoaderPrefab);
             loader.LoadNewScene(3);
         }
@@ -79,12 +78,14 @@ namespace UI
 
         private void GoToTelegram()
         {
+            AudioSource.PlayClipAtPoint(_clickSound, transform.position);
             var redirect = Instantiate(_redirectCanvasPrefab);
             redirect.Initialize(SocialNetwork.Telegram, "https://t.me/d1mayker6WS");
         }
 
         private void GoToYoutube()
         {
+            AudioSource.PlayClipAtPoint(_clickSound, transform.position);
             var redirect = Instantiate(_redirectCanvasPrefab);
             redirect.Initialize(SocialNetwork.Youtube, "https://www.youtube.com/channel/UCiMu-22dEI8MgAry_YOUa5w");
         }

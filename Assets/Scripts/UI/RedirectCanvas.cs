@@ -11,6 +11,7 @@ namespace UI
         [SerializeField] private Button _continueButton;
         [SerializeField] private Button _backButton;
         [SerializeField] private TextMeshProUGUI _title;
+        [SerializeField] private AudioClip _clickSound;
         
         private SocialNetwork _socialNetwork;
         private string _url;
@@ -35,6 +36,7 @@ namespace UI
 
         private void Continue()
         {
+            AudioSource.PlayClipAtPoint(_clickSound, transform.position);
             Destroy(gameObject);
             Application.OpenURL(_url);
         }
@@ -46,6 +48,7 @@ namespace UI
 
         private void OnDisable()
         {
+            AudioSource.PlayClipAtPoint(_clickSound, transform.position);
             _continueButton.onClick.RemoveListener(Continue);
             _backButton.onClick.RemoveListener(Back);
             

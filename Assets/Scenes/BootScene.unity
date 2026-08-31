@@ -292,9 +292,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2bc09d8ee4415048b20a4dca6c61dfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  _channel: {fileID: 11400000, guid: abcf5369f1277e144844e74db93687f3, type: 2}
   _source: {fileID: 744256833}
   _settings: {fileID: 11400000, guid: f45cba8c5c58bb34a84dc3b700a55fcb, type: 2}
+  Sounds:
+  - {fileID: 8300000, guid: 67b1811d310a5044baadae0ae37bee02, type: 3}
+  - {fileID: 8300000, guid: 52206a72e263fd34eb1ae2cf25a0836d, type: 3}
+  - {fileID: 8300000, guid: 6132e3d1d1a30f7428511e7a197e6f9d, type: 3}
+  - {fileID: 8300000, guid: 383bb8802fb940e4b939ccaed8c6296f, type: 3}
+  - {fileID: 8300000, guid: 6585007b78a3c0440ad08034bf2be696, type: 3}
+  - {fileID: 8300000, guid: dd165f863a0de4640885bdb9510933ef, type: 3}
 --- !u!4 &744256835
 Transform:
   m_ObjectHideFlags: 0

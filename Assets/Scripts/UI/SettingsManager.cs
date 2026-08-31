@@ -19,6 +19,8 @@ namespace UI
         [SerializeField] private SceneLoader _sceneLoader;
         
         [SerializeField] private DeleteDataPopup _deleteDataPopup;
+        [SerializeField] private AudioClip _clickSound;
+        
 
 
         private void OnEnable()
@@ -47,17 +49,20 @@ namespace UI
 
         private void Back()
         {
+            AudioSource.PlayClipAtPoint(_clickSound, transform.position);
             var loader = Instantiate(_sceneLoader);
             loader.LoadNewScene(1);
         }
 
         private void EnableDeletePopup()
         {
+            AudioSource.PlayClipAtPoint(_clickSound, transform.position);
             _deleteDataPopup.gameObject.SetActive(true);
         }
 
         private void ClearGameData()
         {
+            AudioSource.PlayClipAtPoint(_clickSound, transform.position);
             _dataManager.DeleteGameData();
         }
 

@@ -43,7 +43,7 @@ namespace Store
             CheckMoney();
             CheckMaxCountSkins();
             for (var i = 0; i < _colors.Count; i++)
-                _colors[i].IsOpen = _gameData.OpenedColors[i];
+                    _colors[i].IsOpen = _gameData.OpenedColors[i];
             ChangeSelectedSprite();
         }
 
@@ -80,8 +80,7 @@ namespace Store
         private void CheckMaxCountSkins()
         {
             foreach (var color in _gameData.OpenedColors)
-                if (!color)
-                    return;
+                if (!color) return;
             _forADButton.interactable = false;
             _forMoneyButton.interactable = false;
             
@@ -101,6 +100,7 @@ namespace Store
         private void ForAD()
         { 
             RandomizeColor(); 
+            CheckMaxCountSkins();
         }
 
         private void RandomizeColor()

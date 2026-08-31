@@ -857,6 +857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _yesButton: {fileID: 2018605635}
   _noButton: {fileID: 825442940}
+  _clickSound: {fileID: 8300000, guid: 2a779efe789e542418d28631a374fd2e, type: 3}
 --- !u!114 &582448689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2818,6 +2819,7 @@ MonoBehaviour:
   _sfxSlider: {fileID: 886608820}
   _sceneLoader: {fileID: 8764230145383079381, guid: ccec636c8bf545b4aa1e0f4494b44026, type: 3}
   _deleteDataPopup: {fileID: 582448688}
+  _clickSound: {fileID: 8300000, guid: 2a779efe789e542418d28631a374fd2e, type: 3}
 --- !u!114 &1927528901
 MonoBehaviour:
   m_ObjectHideFlags: 0

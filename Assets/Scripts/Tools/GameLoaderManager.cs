@@ -30,7 +30,6 @@ namespace Tools
         {
             Application.targetFrameRate = 60;
             _dataManager.LoadData();
-            _audioManager.gameObject.SetActive(true);
             var async = SceneManager.LoadSceneAsync(1);
             async.allowSceneActivation = false;
             _videoPlayer.Prepare();
@@ -46,6 +45,7 @@ namespace Tools
                 yield return null;
             
             
+            _audioManager.gameObject.SetActive(true);
             async.allowSceneActivation = true;
             
         }

@@ -43,6 +43,7 @@ namespace Data
         {
             File.Delete(_gamePath);
             _gameData.ResetData();
+            SaveGameData();
             Application.Quit();
         }
             

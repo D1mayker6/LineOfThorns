@@ -2093,7 +2093,8 @@ MonoBehaviour:
   _sceneLoaderPrefab: {fileID: 8764230145383079381, guid: ccec636c8bf545b4aa1e0f4494b44026, type: 3}
   _redirectCanvasPrefab: {fileID: 8149001441665772842, guid: 498cb4e81864b974ebf830b5335e0b4b, type: 3}
   _dataManager: {fileID: 1161553210}
-  _audioChannel: {fileID: 11400000, guid: abcf5369f1277e144844e74db93687f3, type: 2}
+  _videoPlayer: {fileID: 1379882366}
+  _clickSound: {fileID: 8300000, guid: 2a779efe789e542418d28631a374fd2e, type: 3}
 --- !u!114 &2117616851
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -251,6 +251,46 @@ PrefabInstance:
       propertyPath: _uiColor.r
       value: 0.7372549
       objectReference: {fileID: 0}
+    - target: {fileID: 2272995232492578245, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _defaultColor
+      value: 
+      objectReference: {fileID: 4057675390356701738}
+    - target: {fileID: 2272995232492578245, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _colors.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2272995232492578245, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: '_colors.Array.data[0]'
+      value: 
+      objectReference: {fileID: 4057675390356701738}
+    - target: {fileID: 2272995232492578245, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: '_colors.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4057675390356701737}
+    - target: {fileID: 2272995232492578245, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: '_colors.Array.data[2]'
+      value: 
+      objectReference: {fileID: 4057675390356701736}
+    - target: {fileID: 2272995232492578245, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: '_colors.Array.data[3]'
+      value: 
+      objectReference: {fileID: 4057675390356701735}
+    - target: {fileID: 2272995232492578245, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: '_colors.Array.data[4]'
+      value: 
+      objectReference: {fileID: 4057675390356701734}
+    - target: {fileID: 2272995232492578245, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: '_colors.Array.data[5]'
+      value: 
+      objectReference: {fileID: 4057675390356701733}
+    - target: {fileID: 2272995232492578245, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: '_colors.Array.data[6]'
+      value: 
+      objectReference: {fileID: 4057675390356701732}
+    - target: {fileID: 2272995232492578245, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: '_colors.Array.data[7]'
+      value: 
+      objectReference: {fileID: 4057675390356701731}
     - target: {fileID: 2487111171905153671, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
       propertyPath: _UIColor.a
       value: 1
@@ -732,6 +772,94 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+--- !u!114 &4057675390356701731 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6655656625034886981, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+  m_PrefabInstance: {fileID: 4057675390356701730}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30baf8f7e8aaaa242bbaed3fcfbd674a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoreColor
+--- !u!114 &4057675390356701732 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5833627599455122991, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+  m_PrefabInstance: {fileID: 4057675390356701730}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30baf8f7e8aaaa242bbaed3fcfbd674a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoreColor
+--- !u!114 &4057675390356701733 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2487111171905153671, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+  m_PrefabInstance: {fileID: 4057675390356701730}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30baf8f7e8aaaa242bbaed3fcfbd674a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoreColor
+--- !u!114 &4057675390356701734 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4180730042857412649, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+  m_PrefabInstance: {fileID: 4057675390356701730}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30baf8f7e8aaaa242bbaed3fcfbd674a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoreColor
+--- !u!114 &4057675390356701735 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6247947986816744758, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+  m_PrefabInstance: {fileID: 4057675390356701730}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30baf8f7e8aaaa242bbaed3fcfbd674a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoreColor
+--- !u!114 &4057675390356701736 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7571592272553855637, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+  m_PrefabInstance: {fileID: 4057675390356701730}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30baf8f7e8aaaa242bbaed3fcfbd674a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoreColor
+--- !u!114 &4057675390356701737 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1307389591557765440, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+  m_PrefabInstance: {fileID: 4057675390356701730}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30baf8f7e8aaaa242bbaed3fcfbd674a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoreColor
+--- !u!114 &4057675390356701738 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8620747446446888918, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+  m_PrefabInstance: {fileID: 4057675390356701730}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30baf8f7e8aaaa242bbaed3fcfbd674a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoreColor
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
