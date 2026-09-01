@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using Data;
 using Player;
 using TMPro;
@@ -33,6 +34,9 @@ namespace Tools
         
         private bool _timerFirstTime = false;
         
+        
+        private AudioManager _audioManager;
+        
         private List<SpriteRenderer> _spriteRenderers = new List<SpriteRenderer>(64);
 
 
@@ -49,6 +53,7 @@ namespace Tools
             if (Camera.main != null) 
                 Camera.main.backgroundColor = _backgroundColor;
             _scoreViewText.color = _uiColor;
+            _audioManager = FindFirstObjectByType<AudioManager>();
         }
 
         private void PauseButton_OnClick()
@@ -86,6 +91,7 @@ namespace Tools
         private IEnumerator DeathPlayerCoroutine()
         {
             AudioSource.PlayClipAtPoint(_deathSound, Camera.main.transform.position, _settings.SFXVolume);
+            StartCoroutine(_audioManager.LowerPitch());
             _playerMovement.gameObject.SetActive(false);
             _scoreCounter.SwitchCounter();
             Instantiate(_deathPlayerParticlePrefab, _playerMovement.transform.position, Quaternion.identity);
@@ -102,7 +108,6 @@ namespace Tools
             }
             else
             {
-                Debug.Log("Вызван из трай респавн");
                 RestartGame();
             }
         }
@@ -118,6 +123,7 @@ namespace Tools
 
         private void ExecuteExtraLive()
         {
+            StartCoroutine(_audioManager.UpperPitch());
             _playerMovement.gameObject.SetActive(true);
             _scoreCounter.SwitchCounter();
         }
@@ -126,7 +132,7 @@ namespace Tools
         {
             var retryCanvas = Instantiate(_retryCanvasPrefab);
             var score = _scoreCounter.Score;
-            retryCanvas.Initialize(score);
+            retryCanvas.Initialize(score, _audioManager);
         }
 
         private void OnDisable()

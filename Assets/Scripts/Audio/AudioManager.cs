@@ -56,5 +56,26 @@ namespace Audio
         {
             _settings.OnMusicVolumeChanged -= SetVolume;
         }
+
+        public IEnumerator LowerPitch()
+        {
+            while (_source.pitch > 0.3f)
+            {
+                _source.pitch -= 0.5f * Time.deltaTime; 
+                Debug.Log(_source.pitch);
+                yield return null;
+            }
+            _source.pitch = 0.3f; 
+        }
+
+        public IEnumerator UpperPitch()
+        {
+            while (_source.pitch < 1f)
+            {
+                _source.pitch += 0.5f * Time.deltaTime; 
+                yield return null;
+            }
+            _source.pitch = 1f; 
+        }
     }
 }

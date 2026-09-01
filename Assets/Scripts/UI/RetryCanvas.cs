@@ -1,4 +1,5 @@
 using System;
+using Audio;
 using Data;
 using TMPro;
 using Tools;
@@ -21,16 +22,18 @@ namespace UI
         [SerializeField] private CoinsConverter _coinsConverter;
         [SerializeField] private GameData _gameData;
         [SerializeField] private DataManager _dataManager;
+        
+        private AudioManager _audioManager;
 
         private int _score;
         private int _record;
-        public void Initialize(int score)
+        public void Initialize(int score, AudioManager audioManager)
         {
             _score =  score;
+            _audioManager = audioManager;
             _scoreText.text = $"Score: {_score}";
             if (_gameData.Record < _score)
                 SetNewRecord(_score);
-
         }
 
         private void SetNewRecord(int record)
@@ -57,12 +60,14 @@ namespace UI
 
         private void Menu()
         {
+            StartCoroutine(_audioManager.UpperPitch());
             var loader = Instantiate(_sceneLoaderPrefab);
             loader.LoadNewScene(1);
         }
 
         private void Retry()
         {
+            StartCoroutine(_audioManager.UpperPitch());
             var loader = Instantiate(_sceneLoaderPrefab);
             loader.LoadNewScene(2);
         }
