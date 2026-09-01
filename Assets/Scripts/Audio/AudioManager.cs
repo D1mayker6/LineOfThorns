@@ -21,7 +21,6 @@ namespace Audio
         private void OnEnable()
         {
             _settings.OnMusicVolumeChanged += SetVolume;
-            _source.volume = _settings.MusicVolume;
             PlaySound();
         }
 
@@ -39,8 +38,15 @@ namespace Audio
             } while (random == _prevSound);
             
             _source.clip = random;
+            _source.volume = 0f;
             _prevSound = random;
             _source.Play();
+            while (_source.volume < _settings.MusicVolume)
+            {
+                _source.volume += (_settings.MusicVolume / 5f) *  Time.deltaTime;
+                yield return null;
+            }
+            _source.volume = _settings.MusicVolume;
             while (_source.isPlaying)
                 yield return null;
             
