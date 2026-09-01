@@ -89,10 +89,15 @@ namespace Player
             var overlap = Physics2D.OverlapCircle(_groundCheck.position, _checkRadius,
                 1 << LayerMask.NameToLayer("Ground"));
             if (overlap)
+            {
                 _rb.linearVelocity = new Vector2(_rb.linearVelocityX, _forcePower);
+            }
         }
         
-        public void InvokeDeath() => OnPlayerDied?.Invoke();
+        public void InvokeDeath()
+        {
+            OnPlayerDied?.Invoke();
+        }
 
         private void Move()
         {

@@ -292,4 +292,7 @@ MonoBehaviour:
   _collider2D: {fileID: 1805006483719347077}
   _spriteRenderer1: {fileID: 3584531314066326581}
   _spriteRenderer2: {fileID: 8102265530212392902}
-  _playerMovement: {fileID: 0}
+  _audioClips:
+  - {fileID: 8300000, guid: 09e8c3387b9f6984db14731ebc718ea7, type: 3}
+  - {fileID: 8300000, guid: 776bb5f98912d8848a9c4b7172a7bcd0, type: 3}
+  _settings: {fileID: 11400000, guid: f45cba8c5c58bb34a84dc3b700a55fcb, type: 2}

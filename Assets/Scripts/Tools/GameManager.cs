@@ -26,6 +26,8 @@ namespace Tools
         [SerializeField] private ScoreCounter _scoreCounter;
         [SerializeField] private TextMeshProUGUI _scoreViewText;
         [SerializeField] private GameData _gameData;
+        [SerializeField] private SettingsData _settings;
+        [SerializeField] private AudioClip _deathSound;
         [SerializeField] private Button _pauseButton;
         [SerializeField] private GameObject _pauseCanvas;
         
@@ -83,7 +85,7 @@ namespace Tools
 
         private IEnumerator DeathPlayerCoroutine()
         {
-            Debug.Log("DeathPlayerCoroutine");
+            AudioSource.PlayClipAtPoint(_deathSound, Camera.main.transform.position, _settings.SFXVolume);
             _playerMovement.gameObject.SetActive(false);
             _scoreCounter.SwitchCounter();
             Instantiate(_deathPlayerParticlePrefab, _playerMovement.transform.position, Quaternion.identity);

@@ -13,6 +13,7 @@ namespace Tools
     {
 
         [SerializeField] private DataManager _dataManager;
+        [SerializeField] private SettingsData _settings;
         [SerializeField] private AudioManager _audioManager;
         [SerializeField] private VideoPlayer _videoPlayer;
         [SerializeField] private Animator _screenAnimator;
@@ -40,6 +41,7 @@ namespace Tools
             yield return new WaitForSeconds(1f);
             _loadScreen.gameObject.SetActive(false);
             
+            _videoPlayer.SetDirectAudioVolume(0, _settings.SFXVolume);
             _videoPlayer.Play();
             while (_videoPlayer.isPlaying)
                 yield return null;

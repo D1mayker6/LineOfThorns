@@ -19,6 +19,8 @@ namespace Tools
         [SerializeField] private List<GameObject> _thirdroomPrefabs;
         [SerializeField] private List<GameObject> _fourthroomPrefabs;
         [SerializeField] private ScoreCounter  _scoreCounter;
+        [SerializeField] private SettingsData _settings;
+        [SerializeField] private AudioClip _finishSound;
         [SerializeField] private GameObject _firstRoom;
         [SerializeField] private GameManager _gameManager; 
         [SerializeField] private PlayerMovement _playerMovement;
@@ -72,6 +74,7 @@ namespace Tools
 
         public void GoToNextLevel()
         {
+            AudioSource.PlayClipAtPoint(_finishSound, Camera.main.transform.position, _settings.SFXVolume);
             AddRoom();
             AddScoreForRoom();
         }

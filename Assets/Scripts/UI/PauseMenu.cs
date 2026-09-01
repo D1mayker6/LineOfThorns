@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private SceneLoader _sceneLoaderPrefab;
 
 
-    private void Awake()
+    private void OnEnable()
     {
         _backButton.onClick.AddListener(BackButton_OnClick);
         _mainMenuButton.onClick.AddListener(MainMenuButton_OnClick);
@@ -27,6 +27,12 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         gameObject.SetActive(false);
         var loader = Instantiate(_sceneLoaderPrefab);
-        loader.LoadNewScene(0);
+        loader.LoadNewScene(1);
+    }
+    
+    private void OnDisable()
+    {
+        _backButton.onClick.RemoveListener(BackButton_OnClick);
+        _mainMenuButton.onClick.RemoveListener(MainMenuButton_OnClick);
     }
 }

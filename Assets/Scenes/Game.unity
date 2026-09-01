@@ -243,6 +243,8 @@ MonoBehaviour:
   - {fileID: 8101518369225682520, guid: 4d60abc9b8f15fc429e732a79cd78d63, type: 3}
   - {fileID: 8101518369225682520, guid: 4d60abc9b8f15fc429e732a79cd78d63, type: 3}
   _scoreCounter: {fileID: 1753602192}
+  _settings: {fileID: 11400000, guid: f45cba8c5c58bb34a84dc3b700a55fcb, type: 2}
+  _finishSound: {fileID: 8300000, guid: 925d8a25405f2444bb75e18453a34619, type: 3}
   _firstRoom: {fileID: 3013527301125451191, guid: 984e1da2e8152aa4cad9005b4212907f, type: 3}
   _gameManager: {fileID: 544231727}
   _playerMovement: {fileID: 1478124883}
@@ -404,6 +406,8 @@ MonoBehaviour:
   _scoreCounter: {fileID: 1753602192}
   _scoreViewText: {fileID: 455161838}
   _gameData: {fileID: 11400000, guid: ab12e154fc15af74dae56a18a75bc026, type: 2}
+  _settings: {fileID: 11400000, guid: f45cba8c5c58bb34a84dc3b700a55fcb, type: 2}
+  _deathSound: {fileID: 8300000, guid: 1cb11ecc2df018b4896d5a15ce65a57d, type: 3}
   _pauseButton: {fileID: 563217423}
   _pauseCanvas: {fileID: 1979896550}
 --- !u!4 &544231728

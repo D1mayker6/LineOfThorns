@@ -143,7 +143,10 @@ MonoBehaviour:
   _touchCount: 1
   _collider2D: {fileID: 599929818433804177}
   _spriteRenderer: {fileID: 2093781008383601081}
-  _playerMovement: {fileID: 0}
+  _audioClips:
+  - {fileID: 8300000, guid: 09e8c3387b9f6984db14731ebc718ea7, type: 3}
+  - {fileID: 8300000, guid: 776bb5f98912d8848a9c4b7172a7bcd0, type: 3}
+  _settings: {fileID: 11400000, guid: f45cba8c5c58bb34a84dc3b700a55fcb, type: 2}
 --- !u!58 &599929818433804177
 CircleCollider2D:
   m_ObjectHideFlags: 0

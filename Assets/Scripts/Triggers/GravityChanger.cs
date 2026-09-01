@@ -1,4 +1,5 @@
 using System;
+using Data;
 using Enums;
 using Player;
 using UnityEngine;
@@ -14,8 +15,10 @@ namespace Triggers
         [SerializeField] private int _touchCount = 1;
         [SerializeField] private Collider2D _collider2D;
         [SerializeField] private SpriteRenderer _spriteRenderer;
-        [SerializeField] private PlayerMovement _playerMovement;
+        [SerializeField] private AudioClip[] _audioClips;
+        [SerializeField] private SettingsData _settings;
 
+        private PlayerMovement _playerMovement;
         public int TouchCount
         {
             get => _touchCount;
@@ -43,6 +46,8 @@ namespace Triggers
         {
             if (other.TryGetComponent<PlayerMovement>(out var playerMovement))
             {
+                var rand = UnityEngine.Random.Range(0, _audioClips.Length);
+                AudioSource.PlayClipAtPoint(_audioClips[rand], Camera.main.transform.position, _settings.SFXVolume);
                 _playerMovement = playerMovement;
                 GravityChange();
                 TouchCount--;
