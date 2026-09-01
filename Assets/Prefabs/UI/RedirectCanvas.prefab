@@ -802,6 +802,7 @@ MonoBehaviour:
   _backButton: {fileID: 2250446392844308836}
   _title: {fileID: 7150142667203505770}
   _clickSound: {fileID: 8300000, guid: 2a779efe789e542418d28631a374fd2e, type: 3}
+  _settings: {fileID: 11400000, guid: f45cba8c5c58bb34a84dc3b700a55fcb, type: 2}
 --- !u!1 &6498029124611278198
 GameObject:
   m_ObjectHideFlags: 0

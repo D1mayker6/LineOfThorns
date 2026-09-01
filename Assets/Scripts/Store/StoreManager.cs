@@ -23,6 +23,9 @@ namespace Store
         [SerializeField] private int _currentColorPrice;
         [SerializeField] private Sprite _defaultSprite; 
         [SerializeField] private Sprite _selectedSprite;
+        [SerializeField] private SettingsData _settings;
+        [SerializeField] private AudioClip _clickSound;
+
         
         [SerializeField] private SceneLoader _sceneLoaderPrefab;
         
@@ -50,11 +53,13 @@ namespace Store
 
         private void Back()
         {
+            AudioSource.PlayClipAtPoint(_clickSound, Camera.main.transform.position,_settings.SFXVolume);
             var loader = Instantiate(_sceneLoaderPrefab);
             loader.LoadNewScene(1);
         }
         private void SetCurrentColor(Color backgroundColor, Color blockColor, Color uiColor, int id)
         {
+            AudioSource.PlayClipAtPoint(_clickSound, Camera.main.transform.position,_settings.SFXVolume);
             _gameData.BackgroundColor =$"#{ColorUtility.ToHtmlStringRGB(backgroundColor)}";
             _gameData.BlockColor = $"#{ColorUtility.ToHtmlStringRGB(blockColor)}";
             _gameData.UIColor = $"#{ColorUtility.ToHtmlStringRGB(uiColor)}";
@@ -69,10 +74,11 @@ namespace Store
         
         private void ForMoney()
         {
-                _gameData.Coins -= _currentColorPrice;
-                RandomizeColor();
-                RefreshUIMoney();
-                CheckMaxCountSkins();
+            AudioSource.PlayClipAtPoint(_clickSound, Camera.main.transform.position,_settings.SFXVolume);
+            _gameData.Coins -= _currentColorPrice;
+            RandomizeColor();
+            RefreshUIMoney();
+            CheckMaxCountSkins();
         }
         
         private void RefreshUIMoney() => _moneyCountText.text = _gameData.Coins.ToString();
@@ -99,6 +105,7 @@ namespace Store
 
         private void ForAD()
         { 
+            AudioSource.PlayClipAtPoint(_clickSound, Camera.main.transform.position,_settings.SFXVolume);
             RandomizeColor(); 
             CheckMaxCountSkins();
         }

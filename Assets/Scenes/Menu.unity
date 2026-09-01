@@ -2095,6 +2095,7 @@ MonoBehaviour:
   _dataManager: {fileID: 1161553210}
   _videoPlayer: {fileID: 1379882366}
   _clickSound: {fileID: 8300000, guid: 2a779efe789e542418d28631a374fd2e, type: 3}
+  _settings: {fileID: 11400000, guid: f45cba8c5c58bb34a84dc3b700a55fcb, type: 2}
 --- !u!114 &2117616851
 MonoBehaviour:
   m_ObjectHideFlags: 0

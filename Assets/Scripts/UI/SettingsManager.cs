@@ -49,20 +49,20 @@ namespace UI
 
         private void Back()
         {
-            AudioSource.PlayClipAtPoint(_clickSound, transform.position);
+            AudioSource.PlayClipAtPoint(_clickSound, Camera.main.transform.position,_settings.SFXVolume);
             var loader = Instantiate(_sceneLoader);
             loader.LoadNewScene(1);
         }
 
         private void EnableDeletePopup()
         {
-            AudioSource.PlayClipAtPoint(_clickSound, transform.position);
+            AudioSource.PlayClipAtPoint(_clickSound, Camera.main.transform.position,_settings.SFXVolume);
             _deleteDataPopup.gameObject.SetActive(true);
         }
 
         private void ClearGameData()
         {
-            AudioSource.PlayClipAtPoint(_clickSound, transform.position);
+            AudioSource.PlayClipAtPoint(_clickSound, Camera.main.transform.position,_settings.SFXVolume);
             _dataManager.DeleteGameData();
         }
 

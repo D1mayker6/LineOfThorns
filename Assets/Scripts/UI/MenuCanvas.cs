@@ -31,6 +31,7 @@ namespace UI
         [SerializeField] private VideoPlayer _videoPlayer;
 
         [SerializeField] private AudioClip _clickSound;
+        [SerializeField] private SettingsData _settings;
         private void Start()
         {
             _mainMenuPanel.SetActive(false);
@@ -51,7 +52,7 @@ namespace UI
 
         private void Play()
         {
-            AudioSource.PlayClipAtPoint(_clickSound, transform.position);
+            AudioSource.PlayClipAtPoint(_clickSound, Camera.main.transform.position,_settings.SFXVolume);
             var loader = Instantiate(_sceneLoaderPrefab);
             loader.LoadNewScene(2);
         }
@@ -63,14 +64,14 @@ namespace UI
 
         private void Settings()
         {
-            AudioSource.PlayClipAtPoint(_clickSound, transform.position);
+            AudioSource.PlayClipAtPoint(_clickSound, Camera.main.transform.position,_settings.SFXVolume);
             var loader = Instantiate(_sceneLoaderPrefab);
             loader.LoadNewScene(4);
         }
 
         private void Store()
         {
-            AudioSource.PlayClipAtPoint(_clickSound, transform.position);
+            AudioSource.PlayClipAtPoint(_clickSound, Camera.main.transform.position,_settings.SFXVolume);
             var loader = Instantiate(_sceneLoaderPrefab);
             loader.LoadNewScene(3);
         }
@@ -78,14 +79,14 @@ namespace UI
 
         private void GoToTelegram()
         {
-            AudioSource.PlayClipAtPoint(_clickSound, transform.position);
+            AudioSource.PlayClipAtPoint(_clickSound, Camera.main.transform.position,_settings.SFXVolume);
             var redirect = Instantiate(_redirectCanvasPrefab);
             redirect.Initialize(SocialNetwork.Telegram, "https://t.me/d1mayker6WS");
         }
 
         private void GoToYoutube()
         {
-            AudioSource.PlayClipAtPoint(_clickSound, transform.position);
+            AudioSource.PlayClipAtPoint(_clickSound, Camera.main.transform.position,_settings.SFXVolume);
             var redirect = Instantiate(_redirectCanvasPrefab);
             redirect.Initialize(SocialNetwork.Youtube, "https://www.youtube.com/channel/UCiMu-22dEI8MgAry_YOUa5w");
         }

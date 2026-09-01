@@ -252,6 +252,14 @@ PrefabInstance:
       value: 0.7372549
       objectReference: {fileID: 0}
     - target: {fileID: 2272995232492578245, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _settings
+      value: 
+      objectReference: {fileID: 11400000, guid: f45cba8c5c58bb34a84dc3b700a55fcb, type: 2}
+    - target: {fileID: 2272995232492578245, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
+      propertyPath: _clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a779efe789e542418d28631a374fd2e, type: 3}
+    - target: {fileID: 2272995232492578245, guid: a7179a2563b10434ba6eb7f4d131f11a, type: 3}
       propertyPath: _defaultColor
       value: 
       objectReference: {fileID: 4057675390356701738}

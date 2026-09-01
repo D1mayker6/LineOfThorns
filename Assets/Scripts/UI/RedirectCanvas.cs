@@ -1,4 +1,5 @@
 using System;
+using Data;
 using Enums;
 using TMPro;
 using UnityEngine;
@@ -12,6 +13,8 @@ namespace UI
         [SerializeField] private Button _backButton;
         [SerializeField] private TextMeshProUGUI _title;
         [SerializeField] private AudioClip _clickSound;
+        [SerializeField] private SettingsData _settings;
+
         
         private SocialNetwork _socialNetwork;
         private string _url;
@@ -36,7 +39,7 @@ namespace UI
 
         private void Continue()
         {
-            AudioSource.PlayClipAtPoint(_clickSound, transform.position);
+            AudioSource.PlayClipAtPoint(_clickSound, Camera.main.transform.position,_settings.SFXVolume);
             Destroy(gameObject);
             Application.OpenURL(_url);
         }
@@ -48,7 +51,7 @@ namespace UI
 
         private void OnDisable()
         {
-            AudioSource.PlayClipAtPoint(_clickSound, transform.position);
+            AudioSource.PlayClipAtPoint(_clickSound, Camera.main.transform.position,_settings.SFXVolume);
             _continueButton.onClick.RemoveListener(Continue);
             _backButton.onClick.RemoveListener(Back);
             

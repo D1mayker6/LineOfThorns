@@ -858,6 +858,7 @@ MonoBehaviour:
   _yesButton: {fileID: 2018605635}
   _noButton: {fileID: 825442940}
   _clickSound: {fileID: 8300000, guid: 2a779efe789e542418d28631a374fd2e, type: 3}
+  _settings: {fileID: 11400000, guid: f45cba8c5c58bb34a84dc3b700a55fcb, type: 2}
 --- !u!114 &582448689
 MonoBehaviour:
   m_ObjectHideFlags: 0
