@@ -53,6 +53,7 @@ namespace Tools
             if (Camera.main != null) 
                 Camera.main.backgroundColor = _backgroundColor;
             _scoreViewText.color = _uiColor;
+            _pauseButton.GetComponent<Image>().color = _uiColor;
             _audioManager = FindFirstObjectByType<AudioManager>();
         }
 
@@ -91,7 +92,8 @@ namespace Tools
         private IEnumerator DeathPlayerCoroutine()
         {
             AudioSource.PlayClipAtPoint(_deathSound, Camera.main.transform.position, _settings.SFXVolume);
-            StartCoroutine(_audioManager.LowerPitch());
+            if(_audioManager != null)
+                StartCoroutine(_audioManager.LowerPitch());
             _playerMovement.gameObject.SetActive(false);
             _scoreCounter.SwitchCounter();
             Instantiate(_deathPlayerParticlePrefab, _playerMovement.transform.position, Quaternion.identity);
@@ -123,7 +125,8 @@ namespace Tools
 
         private void ExecuteExtraLive()
         {
-            StartCoroutine(_audioManager.UpperPitch());
+            if(_audioManager != null)
+                StartCoroutine(_audioManager.UpperPitch());
             _playerMovement.gameObject.SetActive(true);
             _scoreCounter.SwitchCounter();
         }

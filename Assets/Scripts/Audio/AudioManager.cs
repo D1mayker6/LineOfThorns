@@ -43,10 +43,11 @@ namespace Audio
             _source.Play();
             while (_source.volume < _settings.MusicVolume)
             {
-                _source.volume += (_settings.MusicVolume / 5f) *  Time.deltaTime;
+                _source.volume += (_settings.MusicVolume / 2f) *  Time.deltaTime;
                 yield return null;
             }
             _source.volume = _settings.MusicVolume;
+            
             while (_source.isPlaying)
                 yield return null;
             

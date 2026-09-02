@@ -3,6 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{d67c66e2-cc22-f47f-9955-457ce562cf1d}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{c1c4662c-4e1c-aa0f-d1bd-d111f0f37bbb}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppMetricaAdRevenueAdapter", "AppMetricaAdRevenueAdapter.csproj", "{05a7512c-034f-7fe2-3979-1d1956c6cae1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppMetricaAdRevenueAdapter.Editor", "AppMetricaAdRevenueAdapter.Editor.csproj", "{b95f2161-d415-0c3b-6fac-225094e2d639}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -10,6 +16,12 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{d67c66e2-cc22-f47f-9955-457ce562cf1d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{d67c66e2-cc22-f47f-9955-457ce562cf1d}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{c1c4662c-4e1c-aa0f-d1bd-d111f0f37bbb}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{c1c4662c-4e1c-aa0f-d1bd-d111f0f37bbb}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05a7512c-034f-7fe2-3979-1d1956c6cae1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05a7512c-034f-7fe2-3979-1d1956c6cae1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{b95f2161-d415-0c3b-6fac-225094e2d639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{b95f2161-d415-0c3b-6fac-225094e2d639}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

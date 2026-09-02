@@ -24,11 +24,6 @@ namespace UI
             _animator.SetFloat("timer", _timerValue);
         }
 
-        private void OnEnable()
-        {
-            _button.onClick.AddListener(AdWatch);
-        }
-
         private void Update()
         {
             _timerText.text = _timerValue.ToString();
@@ -38,23 +33,12 @@ namespace UI
                Destroy(gameObject); 
             }
         }
-
-        private void AdWatch()
-        {
-            InvokeExtraLife();
-        }
-
-        private void InvokeExtraLife()
+        public void InvokeExtraLife()
         {
             Destroy(gameObject);
             OnExtraLive?.Invoke();
         }
 
         public void MinusSecond() => _timerValue--;
-
-        private void OnDisable()
-        {
-            _button.onClick.RemoveListener(AdWatch);
-        }
     }
 }

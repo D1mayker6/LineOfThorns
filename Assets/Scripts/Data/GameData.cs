@@ -24,6 +24,8 @@ namespace Data
         
         private readonly int _colorsCount = 8;
         
+        public int AttempsCount = 0;
+        
         public void ResetData()
         {
             JsonUtility.FromJsonOverwrite(JsonUtility.ToJson(CreateInstance<GameData>()), this);

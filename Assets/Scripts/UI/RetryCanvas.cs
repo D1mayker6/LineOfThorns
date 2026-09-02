@@ -22,6 +22,7 @@ namespace UI
         [SerializeField] private CoinsConverter _coinsConverter;
         [SerializeField] private GameData _gameData;
         [SerializeField] private DataManager _dataManager;
+        [SerializeField] private SimpleYandexAds _yandexAds;
         
         private AudioManager _audioManager;
 
@@ -60,14 +61,19 @@ namespace UI
 
         private void Menu()
         {
-            StartCoroutine(_audioManager.UpperPitch());
+            if(_audioManager != null)
+                StartCoroutine(_audioManager.UpperPitch());
             var loader = Instantiate(_sceneLoaderPrefab);
             loader.LoadNewScene(1);
         }
 
         private void Retry()
         {
-            StartCoroutine(_audioManager.UpperPitch());
+            if(_audioManager != null)
+                StartCoroutine(_audioManager.UpperPitch());
+            _gameData.AttempsCount++;
+            if(_gameData.AttempsCount % 5 == 0)
+                _yandexAds.ShowInterstitial();   
             var loader = Instantiate(_sceneLoaderPrefab);
             loader.LoadNewScene(2);
         }

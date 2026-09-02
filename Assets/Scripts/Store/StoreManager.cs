@@ -34,7 +34,6 @@ namespace Store
         {
             _backButton.onClick.AddListener(Back);
             _forMoneyButton.onClick.AddListener(ForMoney);
-            _forADButton.onClick.AddListener(ForAD);
             foreach (var color in  _colors)
                 color.OnColorChosen += SetCurrentColor;
         }
@@ -103,7 +102,7 @@ namespace Store
         }
         
 
-        private void ForAD()
+        public void ForAD()
         { 
             AudioSource.PlayClipAtPoint(_clickSound, Camera.main.transform.position,_settings.SFXVolume);
             RandomizeColor(); 
