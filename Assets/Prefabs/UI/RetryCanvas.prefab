@@ -1148,7 +1148,7 @@ MonoBehaviour:
   _coinsConverter: {fileID: 5866018504988649355}
   _gameData: {fileID: 11400000, guid: ab12e154fc15af74dae56a18a75bc026, type: 2}
   _dataManager: {fileID: 6407737149361118328}
-  _yandexAds: {fileID: 0}
+  _yandexAds: {fileID: 5111284015613145996}
 --- !u!1 &6303768810423151163
 GameObject:
   m_ObjectHideFlags: 0

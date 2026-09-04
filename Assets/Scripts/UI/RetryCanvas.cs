@@ -61,6 +61,12 @@ namespace UI
 
         private void Menu()
         {
+            if (_gameData.AttempsCount % 5 == 0)
+            {
+                _yandexAds.ShowInterstitial();   
+                Debug.Log("Yandex Ads Show Interstitial");
+            }
+            _gameData.AttempsCount++;
             if(_audioManager != null)
                 StartCoroutine(_audioManager.UpperPitch());
             var loader = Instantiate(_sceneLoaderPrefab);
@@ -69,11 +75,14 @@ namespace UI
 
         private void Retry()
         {
+            if (_gameData.AttempsCount % 5 == 0)
+            {
+                _yandexAds.ShowInterstitial();   
+                Debug.Log("Yandex Ads Show Interstitial");
+            }
+            _gameData.AttempsCount++;
             if(_audioManager != null)
                 StartCoroutine(_audioManager.UpperPitch());
-            _gameData.AttempsCount++;
-            if(_gameData.AttempsCount % 5 == 0)
-                _yandexAds.ShowInterstitial();   
             var loader = Instantiate(_sceneLoaderPrefab);
             loader.LoadNewScene(2);
         }
